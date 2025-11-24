@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -294,7 +295,7 @@
             background: rgba(0, 234, 255, 0.1);
         }
         
-        .services, .portfolio, .contact { 
+        .services, .portfolio, .contact, .logo-design, .pricing { 
             position: relative;
         }
 
@@ -387,6 +388,161 @@
 
         .service-card p {
             color: var(--text-light);
+        }
+
+        /* Logo Design Section */
+        .logo-design {
+            background-color: var(--dark);
+        }
+
+        .logo-process {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .process-step {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 234, 255, 0.1);
+        }
+
+        .process-step:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 234, 255, 0.2);
+        }
+
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient);
+            color: #000;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .logo-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+        }
+
+        .logo-item {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 200px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 234, 255, 0.1);
+        }
+
+        .logo-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 234, 255, 0.2);
+            border-color: var(--primary);
+        }
+
+        .logo-placeholder {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary);
+            text-align: center;
+        }
+
+        /* Pricing Section */
+        .pricing {
+            background-color: var(--dark-light);
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .pricing-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 234, 255, 0.1);
+            position: relative;
+        }
+
+        .pricing-card.featured {
+            border-color: var(--primary);
+            transform: scale(1.05);
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 234, 255, 0.3);
+        }
+
+        .pricing-card.featured:hover {
+            transform: scale(1.05) translateY(-10px);
+        }
+
+        .pricing-badge {
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--gradient);
+            color: #000;
+            padding: 5px 20px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .pricing-header {
+            margin-bottom: 30px;
+        }
+
+        .pricing-name {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .pricing-price {
+            font-size: 3rem;
+            font-weight: bold;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .pricing-period {
+            color: var(--text-light);
+        }
+
+        .pricing-features {
+            margin-bottom: 30px;
+            text-align: left;
+        }
+
+        .pricing-feature {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .pricing-feature i {
+            color: var(--primary);
+            margin-right: 10px;
         }
 
         /* Portfolio Section */
@@ -636,6 +792,14 @@
             .contact-content {
                 grid-template-columns: 1fr;
             }
+            
+            .pricing-card.featured {
+                transform: scale(1);
+            }
+            
+            .pricing-card.featured:hover {
+                transform: translateY(-10px);
+            }
         }
          
 
@@ -748,6 +912,8 @@
                 <ul class="nav-links" id="navLinks">
                     <li><a href="#home">Home</a></li>
                     <li><a href="#services">Services</a></li>
+                    <li><a href="#logo-design">Logo Design</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
                     <li><a href="#portfolio">Portfolio</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
@@ -810,12 +976,302 @@
 
                 <div class="service-card animate delay-1">
                     <div class="service-icon">
-                        <i class="fas fa-laptop-code"></i>
+                        <i class="fas fa-palette"></i>
                     </div>
                     <h3>Logo & Design Services</h3>
-                    <p>Responsive, high-performance websites and web applications that drive business growth.</p>
+                    <p>Professional logo design and branding solutions that make your business stand out.</p>
                 </div>
 
+            </div>
+        </div>
+    </section>
+
+    <!-- Logo Design Section -->
+    <section class="logo-design" id="logo-design">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Brand Identity</span>
+                <h2 class="section-title">Logo Design Services</h2>
+                <p class="section-desc">We create memorable logos that represent your brand's identity and values.</p>
+            </div>
+            
+            <div class="logo-process">
+                <div class="process-step animate">
+                    <div class="step-number">1</div>
+                    <h3>Consultation</h3>
+                    <p>We discuss your brand, target audience, and design preferences to understand your vision.</p>
+                </div>
+                
+                <div class="process-step animate delay-1">
+                    <div class="step-number">2</div>
+                    <h3>Concept Creation</h3>
+                    <p>Our designers create multiple logo concepts based on your requirements and feedback.</p>
+                </div>
+                
+                <div class="process-step animate delay-2">
+                    <div class="step-number">3</div>
+                    <h3>Refinement</h3>
+                    <p>We refine the selected concept, making adjustments until it perfectly represents your brand.</p>
+                </div>
+                
+                <div class="process-step animate delay-3">
+                    <div class="step-number">4</div>
+                    <h3>Delivery</h3>
+                    <p>You receive all logo files in various formats for both digital and print use.</p>
+                </div>
+            </div>
+            
+            <div class="section-header">
+                <h3 class="section-title">Logo Portfolio</h3>
+                <p class="section-desc">Some of our recent logo design projects.</p>
+            </div>
+            
+            <div class="logo-gallery">
+                <div class="logo-item animate">
+                    <div class="logo-placeholder">Your Logo Here</div>
+                </div>
+                
+                <div class="logo-item animate delay-1">
+                    <div class="logo-placeholder">Your Logo Here</div>
+                </div>
+                
+                <div class="logo-item animate delay-2">
+                    <div class="logo-placeholder">Your Logo Here</div>
+                </div>
+                
+                <div class="logo-item animate delay-3">
+                    <div class="logo-placeholder">Your Logo Here</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Affordable Plans</span>
+                <h2 class="section-title">Our Pricing</h2>
+                <p class="section-desc">Choose the plan that best fits your needs and budget.</p>
+            </div>
+            
+            <div class="pricing-tabs">
+                <div class="tab-buttons">
+                    <button class="tab-button active" data-tab="website">Website Development</button>
+                    <button class="tab-button" data-tab="logo">Logo Design</button>
+                </div>
+                
+                <div class="tab-content active" id="website-tab">
+                    <div class="pricing-grid">
+                        <div class="pricing-card animate">
+                            <div class="pricing-header">
+                                <h3 class="pricing-name">Basic Website</h3>
+                                <div class="pricing-price">LKR 15,000</div>
+                                <div class="pricing-period">One-time payment</div>
+                            </div>
+                            
+                            <div class="pricing-features">
+                                <div class="pricing-feature">
+                                    <i class="fas fa-check"></i>
+                                    <span>Up to 5 pages</span>
+                                </div>
+                                <div class="pricing-feature">
+                                    <i class="fas fa-check"></i>
+                                    <span>Responsive design</span>
+                                </div>
+                                <div class="pricing-feature">
+                                    <i class="fas fa-check"></i>
+                                    <span>Contact form</span>
+                                </div>
+                                <div class="pricing-feature">
+                                    <i class="fas fa-check"></i>
+                                    <span>Basic SEO setup</span>
+                                </div>
+                                <div class="pricing-feature">
+                                    <i class="fas fa-check"></i>
+                                    <span>1 month support</span>
+                                </div>
+                            </div>
+                            
+                            <a href="#contact" class="btn btn-primary">Get Started</a>
+                        </div>
+                        
+                        <div class="pricing-card featured animate delay-1">
+                            <div class="pricing-badge">Most Popular</div>
+                            <div class="pricing-header">
+                                <h3 class="pricing-name">Business Website</h3>
+                                <div class="pricing-price">LKR 35,000</div>
+                                <div class="pricing-period">One-time payment</div>
+                            </div>
+                            
+                            <div class="pricing-features">
+                                <div class="pricing-feature">
+                                    <i class="fas fa-check"></i>
+                                    <span>Up to 15 pages</span>
+                                </div>
+                                <div class="pricing-feature">
+                                    <i class="fas fa-check"></i>
+                                    <span>Responsive design</span>
+                                </div>
+                                <div class="pricing-feature">
+                                    <i class="fas fa-check"></i>
+                                    <span>Contact form & newsletter</span>
+                                </div>
+                                <div class="pricing-feature">
+                                    <i class="fas fa-check"></i>
+                                    <span>Advanced SEO</span>
+                                </div>
+                                <div class="pricing-feature">
+                                    <i class="fas fa-check"></i>
+                                    <span>Content management system</span>
+                                </div>
+                                <div class="pricing-feature">
+                                    <i class="fas fa-check"></i>
+                                    <span>3 months support</span>
+                                </div>
+                            </div>
+                            
+                            <a href="#contact" class="btn btn-primary">Get Started</a>
+                        </div>
+                        
+                        <div class="pricing-card animate delay-2">
+                            <div class="pricing-header">
+                                <h3 class="pricing-name">E-commerce Website</h3>
+                                <div class="pricing-price">LKR 75,000</div>
+                                <div class="pricing-period">One-time payment</div>
+                            </div>
+                            
+                            <div class="pricing-features">
+                                <div class="pricing-feature">
+                                    <i class="fas fa-check"></i>
+                                    <span>Unlimited products</span>
+                                </div>
+                                <div class="pricing-feature">
+                                    <i class="fas fa-check"></i>
+                                    <span>Payment gateway integration</span>
+                                </div>
+                                <div class="pricing-feature">
+                                    <i class="fas fa-check"></i>
+                                    <span>Inventory management</span>
+                                </div>
+                                <div class="pricing-feature">
+                                    <i class="fas fa-check"></i>
+                                    <span>Order tracking system</span>
+                                </div>
+                                <div class="pricing-feature">
+                                    <i class="fas fa-check"></i>
+                                    <span>Admin dashboard</span>
+                                </div>
+                                <div class="pricing-feature">
+                                    <i class="fas fa-check"></i>
+                                    <span>6 months support</span>
+                                </div>
+                            </div>
+                            
+                            <a href="#contact" class="btn btn-primary">Get Started</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tab-content" id="logo-tab">
+                    <div class="pricing-grid">
+                        <div class="pricing-card animate">
+                            <div class="pricing-header">
+                                <h3 class="pricing-name">Basic Logo</h3>
+                                <div class="pricing-price">LKR 5,000</div>
+                                <div class="pricing-period">One-time payment</div>
+                            </div>
+                            
+                            <div class="pricing-features">
+                                <div class="pricing-feature">
+                                    <i class="fas fa-check"></i>
+                                    <span>2 initial concepts</span>
+                                </div>
+                                <div class="pricing-feature">
+                                    <i class="fas fa-check"></i>
+                                    <span>2 revision rounds</span>
+                                </div>
+                                <div class="pricing-feature">
+                                    <i class="fas fa-check"></i>
+                                    <span>PNG & JPEG files</span>
+                                </div>
+                                <div class="pricing-feature">
+                                    <i class="fas fa-check"></i>
+                                    <span>Color version only</span>
+                                </div>
+                            </div>
+                            
+                            <a href="#contact" class="btn btn-primary">Get Started</a>
+                        </div>
+                        
+                        <div class="pricing-card featured animate delay-1">
+                            <div class="pricing-badge">Most Popular</div>
+                            <div class="pricing-header">
+                                <h3 class="pricing-name">Professional Logo</h3>
+                                <div class="pricing-price">LKR 10,000</div>
+                                <div class="pricing-period">One-time payment</div>
+                            </div>
+                            
+                            <div class="pricing-features">
+                                <div class="pricing-feature">
+                                    <i class="fas fa-check"></i>
+                                    <span>4 initial concepts</span>
+                                </div>
+                                <div class="pricing-feature">
+                                    <i class="fas fa-check"></i>
+                                    <span>Unlimited revisions</span>
+                                </div>
+                                <div class="pricing-feature">
+                                    <i class="fas fa-check"></i>
+                                    <span>All file formats (PNG, JPEG, SVG, PDF)</span>
+                                </div>
+                                <div class="pricing-feature">
+                                    <i class="fas fa-check"></i>
+                                    <span>Color + B&W versions</span>
+                                </div>
+                                <div class="pricing-feature">
+                                    <i class="fas fa-check"></i>
+                                    <span>Source files included</span>
+                                </div>
+                            </div>
+                            
+                            <a href="#contact" class="btn btn-primary">Get Started</a>
+                        </div>
+                        
+                        <div class="pricing-card animate delay-2">
+                            <div class="pricing-header">
+                                <h3 class="pricing-name">Brand Identity Package</h3>
+                                <div class="pricing-price">LKR 25,000</div>
+                                <div class="pricing-period">One-time payment</div>
+                            </div>
+                            
+                            <div class="pricing-features">
+                                <div class="pricing-feature">
+                                    <i class="fas fa-check"></i>
+                                    <span>Professional Logo (all features)</span>
+                                </div>
+                                <div class="pricing-feature">
+                                    <i class="fas fa-check"></i>
+                                    <span>Business card design</span>
+                                </div>
+                                <div class="pricing-feature">
+                                    <i class="fas fa-check"></i>
+                                    <span>Letterhead design</span>
+                                </div>
+                                <div class="pricing-feature">
+                                    <i class="fas fa-check"></i>
+                                    <span>Social media kit</span>
+                                </div>
+                                <div class="pricing-feature">
+                                    <i class="fas fa-check"></i>
+                                    <span>Brand guidelines PDF</span>
+                                </div>
+                            </div>
+                            
+                            <a href="#contact" class="btn btn-primary">Get Started</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -1013,7 +1469,70 @@
             header.classList.remove("scrolled");
         }
     });
+
+    // Pricing Tabs
+    const tabButtons = document.querySelectorAll('.tab-button');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    tabButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // Remove active class from all buttons and contents
+            tabButtons.forEach(btn => btn.classList.remove('active'));
+            tabContents.forEach(content => content.classList.remove('active'));
+            
+            // Add active class to clicked button
+            button.classList.add('active');
+            
+            // Show corresponding content
+            const tabId = button.getAttribute('data-tab') + '-tab';
+            document.getElementById(tabId).classList.add('active');
+        });
+    });
 </script>
+
+<style>
+    /* Pricing Tabs */
+    .pricing-tabs {
+        margin-bottom: 40px;
+    }
+    
+    .tab-buttons {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 40px;
+        background: var(--card-bg);
+        border-radius: 12px;
+        padding: 10px;
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .tab-button {
+        flex: 1;
+        padding: 12px 20px;
+        background: transparent;
+        border: none;
+        color: var(--text-light);
+        font-weight: 600;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    
+    .tab-button.active {
+        background: var(--gradient);
+        color: #000;
+    }
+    
+    .tab-content {
+        display: none;
+    }
+    
+    .tab-content.active {
+        display: block;
+    }
+</style>
 
 </body>
 </html>

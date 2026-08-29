@@ -4,56 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>CodeSolo - Software Development</title>
+    <title>CodeSolo | Software Development</title>
 
     <meta name="description"
-          content="CodeSolo is a Sri Lankan software development team creating modern websites, web applications, AI solutions and digital products.">
+          content="CodeSolo is a Sri Lankan software development company building modern websites, web applications, AI solutions and automation systems.">
+
+    <link rel="icon" type="image/png" href="favicon/favicon-96x96.png">
 
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="favicon/favicon-96x96.png">
-    <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg">
-    <link rel="shortcut icon" href="favicon/favicon.ico">
-    <link rel="apple-touch-icon" href="favicon/apple-touch-icon.png">
-    <link rel="manifest" href="favicon/site.webmanifest">
-
     <style>
-
-        /* =========================================================
-           ROOT
-        ========================================================= */
-
-        :root {
-            --primary: #00eaff;
-            --primary-2: #00a2ff;
-
-            --bg: #07090c;
-            --bg-2: #0d1117;
-            --card: rgba(17, 23, 31, 0.78);
-            --card-2: rgba(20, 27, 36, 0.92);
-
-            --white: #ffffff;
-            --text: #dce5ed;
-            --muted: #8d99a6;
-
-            --border: rgba(0, 234, 255, 0.12);
-            --border-hover: rgba(0, 234, 255, 0.45);
-
-            --gradient:
-                linear-gradient(
-                    135deg,
-                    #00eaff 0%,
-                    #00a2ff 100%
-                );
-
-            --shadow:
-                0 20px 60px rgba(0, 0, 0, 0.35);
-
-            --radius: 18px;
-        }
-
 
         /* =========================================================
            RESET
@@ -67,38 +28,24 @@
 
         html {
             scroll-behavior: smooth;
-            scroll-padding-top: 90px;
         }
 
         body {
             font-family:
+                Inter,
                 "Segoe UI",
-                Tahoma,
-                Geneva,
-                Verdana,
+                Arial,
                 sans-serif;
 
-            background:
-                radial-gradient(
-                    circle at 10% 10%,
-                    rgba(0, 234, 255, 0.05),
-                    transparent 30%
-                ),
-                radial-gradient(
-                    circle at 90% 20%,
-                    rgba(0, 162, 255, 0.05),
-                    transparent 30%
-                ),
-                var(--bg);
-
-            color: var(--white);
+            background: #060b14;
+            color: #ffffff;
             line-height: 1.6;
             overflow-x: hidden;
         }
 
-        body::selection {
-            background: var(--primary);
-            color: #000;
+        img {
+            max-width: 100%;
+            display: block;
         }
 
         a {
@@ -110,9 +57,31 @@
             font-family: inherit;
         }
 
-        img {
-            max-width: 100%;
-            display: block;
+        :root {
+
+            --blue: #19bfff;
+            --blue2: #006dff;
+            --cyan: #4de7ff;
+
+            --bg: #060b14;
+            --bg2: #09111f;
+            --bg3: #0d1727;
+
+            --card: rgba(15, 27, 45, .72);
+
+            --border: rgba(77, 231, 255, .12);
+
+            --white: #ffffff;
+            --gray: #aab5c5;
+            --muted: #687589;
+
+            --gradient:
+                linear-gradient(
+                    135deg,
+                    #4de7ff,
+                    #008cff,
+                    #0055ff
+                );
         }
 
         .container {
@@ -120,57 +89,8 @@
             margin: auto;
         }
 
-
-        /* =========================================================
-           GLOBAL
-        ========================================================= */
-
         section {
             padding: 110px 0;
-            position: relative;
-        }
-
-        .section-header {
-            margin-bottom: 55px;
-            max-width: 760px;
-        }
-
-        .section-subtitle {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-
-            color: var(--primary);
-
-            font-size: 13px;
-            font-weight: 700;
-
-            letter-spacing: 2px;
-            text-transform: uppercase;
-
-            margin-bottom: 14px;
-        }
-
-        .section-subtitle::before {
-            content: "";
-            width: 28px;
-            height: 2px;
-
-            background: var(--primary);
-            border-radius: 20px;
-        }
-
-        .section-title {
-            font-size: clamp(2rem, 4vw, 3rem);
-            line-height: 1.1;
-
-            margin-bottom: 18px;
-        }
-
-        .section-desc {
-            color: var(--muted);
-            font-size: 16px;
-            max-width: 680px;
         }
 
 
@@ -178,122 +98,165 @@
            HEADER
         ========================================================= */
 
-        header {
+        .header {
+
             position: fixed;
+
             top: 0;
             left: 0;
 
             width: 100%;
-            z-index: 9999;
 
-            background: rgba(7, 9, 12, 0.72);
+            z-index: 999;
+
+            background:
+                rgba(6, 11, 20, .72);
+
             backdrop-filter: blur(18px);
-            -webkit-backdrop-filter: blur(18px);
 
-            border-bottom: 1px solid transparent;
+            border-bottom:
+                1px solid rgba(255,255,255,.05);
 
-            transition: 0.3s ease;
+            transition: .3s;
         }
 
-        header.scrolled {
-            background: rgba(7, 9, 12, 0.94);
-            border-bottom-color: var(--border);
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+        .header.scrolled {
+
+            background:
+                rgba(6, 11, 20, .95);
+
+            box-shadow:
+                0 15px 50px rgba(0,0,0,.35);
         }
 
-        .navbar {
-            height: 78px;
+        .nav {
+
+            height: 76px;
 
             display: flex;
+
             align-items: center;
+
             justify-content: space-between;
         }
 
-        .logo {
+        .brand {
+
             display: flex;
+
             align-items: center;
+
             gap: 10px;
 
             font-size: 23px;
+
             font-weight: 800;
 
-            color: var(--white);
+            letter-spacing: -.5px;
         }
 
-        .logo i {
-            width: 40px;
-            height: 40px;
+        .brand-mark {
 
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            width: 38px;
+            height: 38px;
 
             border-radius: 11px;
 
+            display: grid;
+            place-items: center;
+
             background: var(--gradient);
-            color: #000;
 
-            font-size: 19px;
-        }
+            color: #00101c;
 
-        .logo span {
-            color: var(--primary);
+            box-shadow:
+                0 0 25px rgba(25,191,255,.35);
         }
 
         .nav-links {
+
             display: flex;
+
             align-items: center;
+
             gap: 34px;
         }
 
         .nav-links a {
-            color: #b8c3cd;
+
+            color: #aeb9c9;
 
             font-size: 14px;
+
             font-weight: 600;
 
+            transition: .25s;
+
             position: relative;
-            transition: 0.3s ease;
         }
 
         .nav-links a:hover {
-            color: var(--primary);
+
+            color: var(--cyan);
         }
 
         .nav-links a::after {
+
             content: "";
 
             position: absolute;
+
             left: 0;
-            bottom: -9px;
+            bottom: -8px;
 
             width: 0;
             height: 2px;
 
-            background: var(--primary);
-            border-radius: 20px;
+            background: var(--cyan);
 
-            transition: 0.3s ease;
+            transition: .25s;
         }
 
         .nav-links a:hover::after {
+
             width: 100%;
         }
 
-        .mobile-menu-btn {
+        .nav-cta {
+
+            padding: 10px 18px;
+
+            border-radius: 9px;
+
+            background: var(--gradient);
+
+            color: #00101b !important;
+
+            font-weight: 800 !important;
+        }
+
+        .nav-cta::after {
+            display: none;
+        }
+
+        .menu-btn {
+
             display: none;
 
             width: 42px;
             height: 42px;
 
             border: 1px solid var(--border);
+
             border-radius: 10px;
 
-            background: rgba(255,255,255,0.03);
-            color: var(--white);
+            background: rgba(255,255,255,.03);
+
+            color: white;
+
+            font-size: 19px;
 
             cursor: pointer;
-            font-size: 18px;
         }
 
 
@@ -302,284 +265,471 @@
         ========================================================= */
 
         .hero {
+
             min-height: 100vh;
 
             display: flex;
+
             align-items: center;
 
-            padding-top: 130px;
+            position: relative;
+
             overflow: hidden;
+
+            padding-top: 100px;
         }
 
         .hero::before {
+
             content: "";
 
             position: absolute;
+
             width: 600px;
             height: 600px;
 
-            top: -250px;
-            left: -250px;
+            border-radius: 50%;
 
             background:
-                radial-gradient(
-                    circle,
-                    rgba(0, 234, 255, 0.12),
-                    transparent 65%
-                );
+                rgba(0,150,255,.13);
 
-            pointer-events: none;
+            filter: blur(100px);
+
+            top: -250px;
+            right: -200px;
         }
 
         .hero::after {
+
             content: "";
 
             position: absolute;
 
-            width: 600px;
-            height: 600px;
+            width: 450px;
+            height: 450px;
 
-            right: -300px;
-            bottom: -300px;
+            border-radius: 50%;
 
             background:
-                radial-gradient(
-                    circle,
-                    rgba(0, 162, 255, 0.10),
-                    transparent 65%
-                );
+                rgba(0,255,255,.07);
 
-            pointer-events: none;
+            filter: blur(100px);
+
+            bottom: -200px;
+            left: -150px;
         }
 
-        .hero-content {
+        .hero-grid {
+
             display: grid;
-            grid-template-columns: 1.05fr 0.95fr;
+
+            grid-template-columns:
+                1.15fr .85fr;
 
             align-items: center;
 
             gap: 70px;
+
+            position: relative;
+
+            z-index: 2;
         }
 
         .hero-badge {
+
             display: inline-flex;
+
             align-items: center;
+
             gap: 9px;
 
-            padding: 8px 13px;
+            padding: 7px 13px;
 
-            border: 1px solid var(--border);
             border-radius: 50px;
 
-            background: rgba(0, 234, 255, 0.04);
+            background:
+                rgba(25,191,255,.08);
 
-            color: var(--primary);
+            border:
+                1px solid rgba(25,191,255,.18);
+
+            color: var(--cyan);
 
             font-size: 12px;
+
             font-weight: 700;
 
             margin-bottom: 22px;
         }
 
-        .hero-badge span {
+        .status-dot {
+
             width: 7px;
             height: 7px;
 
-            background: var(--primary);
             border-radius: 50%;
 
+            background: #34e89e;
+
             box-shadow:
-                0 0 12px var(--primary);
+                0 0 12px #34e89e;
         }
 
         .hero h1 {
-            font-size: clamp(2.8rem, 6vw, 5rem);
-            line-height: 0.98;
 
-            letter-spacing: -2px;
+            font-size:
+                clamp(42px, 6vw, 78px);
+
+            line-height: 1.02;
+
+            letter-spacing: -3px;
+
+            max-width: 800px;
 
             margin-bottom: 24px;
         }
 
         .hero h1 span {
+
             background: var(--gradient);
+
             -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+
+            background-clip: text;
+
+            color: transparent;
         }
 
         .hero-description {
-            max-width: 650px;
 
-            color: var(--muted);
+            color: var(--gray);
+
+            max-width: 630px;
 
             font-size: 17px;
+
             line-height: 1.8;
 
             margin-bottom: 32px;
         }
 
-        .hero-buttons {
+        .hero-actions {
+
             display: flex;
-            align-items: center;
+
             gap: 12px;
 
-            margin-bottom: 38px;
+            margin-bottom: 42px;
         }
 
-        .button {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 9px;
+        .hero-btn {
 
-            min-height: 48px;
+            padding: 13px 21px;
 
-            padding: 0 22px;
+            border-radius: 10px;
 
-            border-radius: 11px;
+            border: 1px solid transparent;
+
+            font-weight: 750;
 
             font-size: 14px;
-            font-weight: 700;
 
-            transition: 0.3s ease;
-        }
+            transition: .3s;
 
-        .button-primary {
-            background: var(--gradient);
-            color: #001015;
+            display: inline-flex;
 
-            box-shadow:
-                0 10px 30px rgba(0, 234, 255, 0.14);
-        }
-
-        .button-primary:hover {
-            transform: translateY(-3px);
-            box-shadow:
-                0 15px 35px rgba(0, 234, 255, 0.25);
-        }
-
-        .button-secondary {
-            border: 1px solid var(--border-hover);
-            color: var(--primary);
-
-            background: rgba(0, 234, 255, 0.03);
-        }
-
-        .button-secondary:hover {
-            background: rgba(0, 234, 255, 0.09);
-            transform: translateY(-3px);
-        }
-
-
-        /* =========================================================
-           STATS
-        ========================================================= */
-
-        .stats {
-            display: flex;
-            gap: 12px;
-        }
-
-        .stat {
-            min-width: 125px;
-
-            padding: 15px 18px;
-
-            background: rgba(255,255,255,0.025);
-
-            border: 1px solid var(--border);
-            border-radius: 13px;
-
-            transition: 0.3s ease;
-        }
-
-        .stat:hover {
-            border-color: var(--border-hover);
-            transform: translateY(-3px);
-        }
-
-        .stat strong {
-            display: block;
-
-            color: var(--primary);
-
-            font-size: 23px;
-            line-height: 1;
-
-            margin-bottom: 7px;
-        }
-
-        .stat span {
-            color: var(--muted);
-            font-size: 12px;
-            font-weight: 600;
-        }
-
-
-        /* =========================================================
-           HERO IMAGE
-        ========================================================= */
-
-        .hero-visual {
-            position: relative;
-        }
-
-        .hero-image-box {
-            position: relative;
-
-            display: flex;
-            justify-content: center;
             align-items: center;
 
-            min-height: 430px;
+            gap: 9px;
+        }
 
-            border-radius: 28px;
+        .hero-btn-primary {
+
+            background: var(--gradient);
+
+            color: #00111c;
+
+            box-shadow:
+                0 10px 35px rgba(0,150,255,.18);
+        }
+
+        .hero-btn-primary:hover {
+
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 15px 45px rgba(0,180,255,.3);
+        }
+
+        .hero-btn-secondary {
+
+            border-color:
+                rgba(255,255,255,.1);
+
+            background:
+                rgba(255,255,255,.035);
+
+            color: white;
+        }
+
+        .hero-btn-secondary:hover {
+
+            border-color:
+                rgba(77,231,255,.3);
+
+            background:
+                rgba(77,231,255,.06);
+        }
+
+        .hero-mini-stats {
+
+            display: flex;
+
+            gap: 32px;
+        }
+
+        .mini-stat strong {
+
+            display: block;
+
+            font-size: 25px;
+
+            color: white;
+        }
+
+        .mini-stat span {
+
+            font-size: 12px;
+
+            color: var(--muted);
+        }
+
+
+        /* HERO VISUAL */
+
+        .hero-visual {
+
+            position: relative;
+
+            min-height: 470px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+        }
+
+        .visual-box {
+
+            width: 100%;
+
+            max-width: 430px;
+
+            min-height: 390px;
+
+            border-radius: 24px;
+
+            padding: 20px;
 
             background:
                 linear-gradient(
                     145deg,
-                    rgba(0,234,255,0.07),
-                    rgba(0,162,255,0.015)
+                    rgba(20,40,65,.85),
+                    rgba(7,14,25,.92)
                 );
 
-            border: 1px solid var(--border);
+            border:
+                1px solid rgba(77,231,255,.15);
 
-            overflow: hidden;
+            box-shadow:
+                0 35px 90px rgba(0,0,0,.45);
 
-            box-shadow: var(--shadow);
+            transform: rotate(2deg);
         }
 
-        .hero-image-box::before {
-            content: "";
+        .visual-top {
 
-            position: absolute;
+            display: flex;
 
-            width: 300px;
-            height: 300px;
+            align-items: center;
+
+            justify-content: space-between;
+
+            padding-bottom: 18px;
+
+            border-bottom:
+                1px solid rgba(255,255,255,.07);
+
+            margin-bottom: 22px;
+        }
+
+        .window-dots {
+
+            display: flex;
+
+            gap: 6px;
+        }
+
+        .window-dots i {
+
+            width: 8px;
+            height: 8px;
 
             border-radius: 50%;
 
-            background:
-                radial-gradient(
-                    circle,
-                    rgba(0,234,255,0.18),
-                    transparent 70%
-                );
-
-            filter: blur(5px);
+            background: #445064;
         }
 
-        .hero-image-box img {
-            position: relative;
-            z-index: 2;
+        .visual-title {
 
-            width: 90%;
-            max-width: 450px;
+            color: #8090a5;
 
-            filter:
-                drop-shadow(
-                    0 25px 40px rgba(0, 0, 0, 0.45)
+            font-size: 11px;
+
+            font-family: monospace;
+        }
+
+        .code-lines {
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 13px;
+        }
+
+        .code-line {
+
+            height: 9px;
+
+            border-radius: 10px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #1d4f72,
+                    #0f253a
                 );
+        }
+
+        .code-line.short {
+            width: 45%;
+        }
+
+        .code-line.medium {
+            width: 70%;
+        }
+
+        .code-line.long {
+            width: 90%;
+        }
+
+        .code-line.highlight {
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #00d9ff,
+                    #006eff
+                );
+
+            box-shadow:
+                0 0 15px rgba(0,200,255,.2);
+        }
+
+        .floating-card {
+
+            position: absolute;
+
+            padding: 15px 18px;
+
+            border-radius: 15px;
+
+            background:
+                rgba(11,23,39,.9);
+
+            border:
+                1px solid rgba(77,231,255,.15);
+
+            backdrop-filter: blur(15px);
+
+            box-shadow:
+                0 20px 50px rgba(0,0,0,.35);
+        }
+
+        .floating-card i {
+
+            color: var(--cyan);
+
+            margin-right: 8px;
+        }
+
+        .floating-card span {
+
+            color: #c8d1de;
+
+            font-size: 12px;
+
+            font-weight: 700;
+        }
+
+        .float-one {
+
+            top: 50px;
+            right: -15px;
+        }
+
+        .float-two {
+
+            bottom: 55px;
+            left: -30px;
+        }
+
+
+        /* =========================================================
+           SECTION HEADER
+        ========================================================= */
+
+        .section-heading {
+
+            max-width: 700px;
+
+            margin-bottom: 55px;
+        }
+
+        .eyebrow {
+
+            color: var(--cyan);
+
+            text-transform: uppercase;
+
+            letter-spacing: 2px;
+
+            font-size: 11px;
+
+            font-weight: 800;
+
+            margin-bottom: 10px;
+        }
+
+        .section-heading h2 {
+
+            font-size:
+                clamp(30px, 4vw, 48px);
+
+            line-height: 1.1;
+
+            letter-spacing: -1.5px;
+
+            margin-bottom: 15px;
+        }
+
+        .section-heading p {
+
+            color: var(--gray);
+
+            font-size: 15px;
         }
 
 
@@ -588,364 +738,446 @@
         ========================================================= */
 
         .services {
-            background: var(--bg-2);
+
+            background:
+                linear-gradient(
+                    180deg,
+                    #07101c,
+                    #060b14
+                );
         }
 
-        .services-grid {
+        .service-grid {
+
             display: grid;
 
             grid-template-columns:
                 repeat(3, 1fr);
 
-            gap: 20px;
+            gap: 18px;
         }
 
         .service-card {
+
+            position: relative;
+
             padding: 30px;
 
-            min-height: 250px;
+            min-height: 270px;
 
-            border-radius: var(--radius);
+            border-radius: 18px;
 
-            background: var(--card);
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(18,34,55,.75),
+                    rgba(10,19,32,.55)
+                );
 
-            border: 1px solid var(--border);
+            border:
+                1px solid var(--border);
 
-            transition: 0.35s ease;
+            overflow: hidden;
+
+            transition: .35s;
+        }
+
+        .service-card::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 150px;
+            height: 150px;
+
+            border-radius: 50%;
+
+            background:
+                rgba(25,191,255,.08);
+
+            filter: blur(50px);
+
+            right: -70px;
+            top: -70px;
         }
 
         .service-card:hover {
-            transform: translateY(-8px);
 
-            border-color: var(--border-hover);
+            transform:
+                translateY(-8px);
+
+            border-color:
+                rgba(77,231,255,.3);
 
             box-shadow:
-                0 20px 50px rgba(0, 234, 255, 0.07);
+                0 25px 60px rgba(0,0,0,.3);
         }
 
         .service-icon {
-            width: 55px;
-            height: 55px;
 
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            width: 52px;
+            height: 52px;
+
+            display: grid;
+
+            place-items: center;
 
             border-radius: 14px;
 
-            background: var(--gradient);
+            background:
+                rgba(25,191,255,.08);
 
-            color: #000;
+            border:
+                1px solid rgba(25,191,255,.15);
 
-            margin-bottom: 24px;
+            color: var(--cyan);
 
-            font-size: 22px;
+            font-size: 21px;
+
+            margin-bottom: 25px;
         }
 
         .service-card h3 {
+
             font-size: 20px;
+
             margin-bottom: 12px;
         }
 
         .service-card p {
-            color: var(--muted);
+
+            color: var(--gray);
+
             font-size: 14px;
+
+            line-height: 1.8;
+        }
+
+        .service-number {
+
+            position: absolute;
+
+            right: 25px;
+            bottom: 20px;
+
+            font-size: 42px;
+
+            font-weight: 900;
+
+            color:
+                rgba(255,255,255,.025);
         }
 
 
         /* =========================================================
-           PORTFOLIO
+           PROJECTS
         ========================================================= */
 
-        .portfolio-grid {
+        .projects {
+
+            background: #060b14;
+        }
+
+        .project-grid {
+
             display: grid;
 
             grid-template-columns:
                 repeat(2, 1fr);
 
-            gap: 24px;
+            gap: 22px;
         }
 
-        .portfolio-card {
-            position: relative;
-
-            min-height: 370px;
-
-            overflow: hidden;
+        .project-card {
 
             border-radius: 20px;
 
-            background: var(--card);
+            overflow: hidden;
 
-            border: 1px solid var(--border);
+            background:
+                #0a1321;
 
-            transition: 0.35s ease;
+            border:
+                1px solid rgba(255,255,255,.07);
+
+            transition: .35s;
         }
 
-        .portfolio-card:hover {
-            border-color: var(--border-hover);
+        .project-card:hover {
 
-            transform: translateY(-6px);
+            transform:
+                translateY(-7px);
+
+            border-color:
+                rgba(25,191,255,.25);
 
             box-shadow:
-                0 25px 60px rgba(0, 0, 0, 0.4);
+                0 25px 70px rgba(0,0,0,.35);
         }
 
-        .portfolio-img {
-            width: 100%;
-            height: 100%;
+        .project-image {
 
-            min-height: 370px;
+            height: 240px;
 
-            object-fit: cover;
+            position: relative;
 
-            transition: 0.5s ease;
-        }
-
-        .portfolio-card:hover .portfolio-img {
-            transform: scale(1.05);
-        }
-
-        .portfolio-overlay {
-            position: absolute;
-
-            inset: 0;
-
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-
-            padding: 28px;
+            overflow: hidden;
 
             background:
                 linear-gradient(
-                    to top,
-                    rgba(4, 7, 10, 0.98) 0%,
-                    rgba(4, 7, 10, 0.80) 45%,
-                    rgba(4, 7, 10, 0.05) 100%
+                    135deg,
+                    #10243a,
+                    #07101c
                 );
         }
 
+        .project-image img {
+
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            transition: .5s;
+        }
+
+        .project-card:hover
+        .project-image img {
+
+            transform: scale(1.05);
+        }
+
         .project-number {
+
             position: absolute;
 
-            top: 18px;
-            right: 18px;
+            top: 15px;
+            left: 15px;
 
-            width: 36px;
-            height: 36px;
+            width: 35px;
+            height: 35px;
 
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            display: grid;
+
+            place-items: center;
 
             border-radius: 10px;
 
-            background: rgba(0,0,0,0.55);
+            background:
+                rgba(5,12,22,.75);
 
-            border: 1px solid var(--border);
+            backdrop-filter: blur(10px);
 
-            color: var(--primary);
+            border:
+                1px solid rgba(255,255,255,.1);
+
+            color: var(--cyan);
 
             font-size: 12px;
+
             font-weight: 800;
         }
 
-        .portfolio-overlay h3 {
-            color: var(--white);
+        .project-content {
 
-            font-size: 22px;
-
-            margin-bottom: 9px;
+            padding: 25px;
         }
 
-        .portfolio-overlay p {
-            color: #aeb9c3;
+        .project-content h3 {
+
+            font-size: 20px;
+
+            margin-bottom: 8px;
+        }
+
+        .project-content p {
+
+            color: var(--gray);
 
             font-size: 13px;
+
             line-height: 1.7;
 
-            margin-bottom: 16px;
-
-            max-width: 520px;
+            margin-bottom: 17px;
         }
 
-        .tech-tags {
+        .project-tags {
+
             display: flex;
+
             flex-wrap: wrap;
+
             gap: 7px;
 
             margin-bottom: 20px;
         }
 
-        .tech-tag {
-            padding: 5px 10px;
+        .project-tag {
 
-            border-radius: 50px;
+            padding: 5px 9px;
 
-            background: rgba(0, 234, 255, 0.08);
+            border-radius: 6px;
 
-            border: 1px solid rgba(0,234,255,0.15);
+            background:
+                rgba(25,191,255,.06);
 
-            color: var(--primary);
+            border:
+                1px solid rgba(25,191,255,.12);
+
+            color: #83dff6;
 
             font-size: 10px;
+
             font-weight: 700;
         }
 
-        .project-button {
-            width: fit-content;
+        .project-link {
+
+            color: var(--cyan);
+
+            font-size: 13px;
+
+            font-weight: 800;
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 8px;
         }
 
+        .project-link:hover {
 
-        /* =========================================================
-           READ MORE
-        ========================================================= */
+            gap: 12px;
+        }
 
         .hidden-project {
+
             display: none;
         }
 
-        .portfolio-grid.show-all .hidden-project {
-            display: block;
+        .show-projects {
+
+            display: grid !important;
         }
 
-        .read-more-wrapper {
-            display: flex;
-            justify-content: center;
+        .projects-more {
+
+            text-align: center;
 
             margin-top: 35px;
         }
 
-        .read-more-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
+        .read-more {
 
-            padding: 13px 23px;
+            padding: 12px 24px;
 
-            border-radius: 11px;
+            border-radius: 10px;
 
-            background: rgba(0,234,255,0.05);
+            border:
+                1px solid rgba(25,191,255,.2);
 
-            border: 1px solid var(--border-hover);
+            background:
+                rgba(25,191,255,.05);
 
-            color: var(--primary);
-
-            font-weight: 700;
+            color: var(--cyan);
 
             cursor: pointer;
 
-            transition: 0.3s ease;
+            font-weight: 800;
+
+            transition: .3s;
         }
 
-        .read-more-btn:hover {
-            background: rgba(0,234,255,0.1);
-            transform: translateY(-3px);
+        .read-more:hover {
+
+            background:
+                rgba(25,191,255,.12);
+
+            transform:
+                translateY(-2px);
         }
 
 
         /* =========================================================
-           LOGO DESIGN
+           PROCESS
         ========================================================= */
 
-        .logo-design {
-            background: var(--bg-2);
+        .process {
+
+            background:
+                #08111d;
         }
 
-        .logo-process {
+        .process-grid {
+
             display: grid;
 
             grid-template-columns:
                 repeat(4, 1fr);
 
             gap: 18px;
-
-            margin-bottom: 70px;
         }
 
-        .process-step {
-            padding: 28px 20px;
+        .process-card {
 
-            text-align: center;
+            padding: 25px;
 
-            border-radius: var(--radius);
+            border-radius: 17px;
 
-            background: var(--card);
+            border:
+                1px solid rgba(255,255,255,.06);
 
-            border: 1px solid var(--border);
+            background:
+                rgba(255,255,255,.025);
 
-            transition: 0.3s ease;
+            position: relative;
         }
 
-        .process-step:hover {
-            transform: translateY(-6px);
-            border-color: var(--border-hover);
+        .process-card::after {
+
+            content: "";
+
+            position: absolute;
+
+            top: 38px;
+            right: -19px;
+
+            width: 20px;
+            height: 1px;
+
+            background:
+                rgba(77,231,255,.2);
         }
 
-        .step-number {
-            width: 48px;
-            height: 48px;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            margin: 0 auto 18px;
-
-            border-radius: 50%;
-
-            background: var(--gradient);
-
-            color: #000;
-
-            font-weight: 800;
+        .process-card:last-child::after {
+            display: none;
         }
 
-        .process-step h3 {
+        .process-number {
+
+            color: var(--cyan);
+
+            font-size: 12px;
+
+            font-weight: 900;
+
+            margin-bottom: 18px;
+        }
+
+        .process-card h3 {
+
             font-size: 17px;
-            margin-bottom: 10px;
+
+            margin-bottom: 9px;
         }
 
-        .process-step p {
-            color: var(--muted);
-            font-size: 13px;
-        }
+        .process-card p {
 
-        .logo-gallery {
-            display: grid;
+            color: var(--gray);
 
-            grid-template-columns:
-                repeat(4, 1fr);
-
-            gap: 18px;
-        }
-
-        .logo-item {
-            height: 180px;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            border-radius: var(--radius);
-
-            background: var(--card);
-
-            border: 1px solid var(--border);
-
-            transition: 0.3s ease;
-        }
-
-        .logo-item:hover {
-            border-color: var(--border-hover);
-            transform: translateY(-5px);
-        }
-
-        .logo-placeholder {
-            color: var(--primary);
-            font-size: 18px;
-            font-weight: 800;
+            font-size: 12px;
         }
 
 
@@ -953,146 +1185,172 @@
            PRICING
         ========================================================= */
 
-        .pricing-tabs {
-            width: 100%;
+        .pricing {
+
+            background: #060b14;
         }
 
-        .tab-buttons {
-            width: min(500px, 100%);
-
-            margin: 0 auto 40px;
+        .pricing-tabs {
 
             display: flex;
 
-            padding: 6px;
+            justify-content: center;
 
-            border-radius: 13px;
+            gap: 5px;
 
-            background: var(--card);
+            width: fit-content;
 
-            border: 1px solid var(--border);
+            margin: 0 auto 40px;
+
+            padding: 5px;
+
+            border-radius: 11px;
+
+            background:
+                rgba(255,255,255,.04);
+
+            border:
+                1px solid rgba(255,255,255,.06);
         }
 
-        .tab-button {
-            flex: 1;
+        .tab-btn {
 
-            padding: 13px 15px;
+            border: none;
 
-            border: 0;
-            border-radius: 9px;
+            padding: 11px 22px;
+
+            border-radius: 8px;
 
             background: transparent;
 
-            color: var(--muted);
-
-            font-weight: 700;
+            color: #8390a3;
 
             cursor: pointer;
 
-            transition: 0.3s ease;
+            font-size: 13px;
+
+            font-weight: 800;
         }
 
-        .tab-button.active {
+        .tab-btn.active {
+
             background: var(--gradient);
-            color: #000;
+
+            color: #00101b;
         }
 
-        .tab-content {
+        .pricing-content {
+
             display: none;
-        }
-
-        .tab-content.active {
-            display: block;
-        }
-
-        .pricing-grid {
-            display: grid;
 
             grid-template-columns:
                 repeat(3, 1fr);
 
-            gap: 20px;
+            gap: 18px;
         }
 
-        .pricing-card {
+        .pricing-content.active {
+
+            display: grid;
+        }
+
+        .price-card {
+
+            padding: 32px;
+
+            border-radius: 19px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #101d2d,
+                    #0a1320
+                );
+
+            border:
+                1px solid rgba(255,255,255,.07);
+
             position: relative;
-
-            padding: 32px 25px;
-
-            border-radius: var(--radius);
-
-            background: var(--card);
-
-            border: 1px solid var(--border);
-
-            text-align: center;
         }
 
-        .pricing-card.featured {
-            border-color: var(--primary);
+        .price-card.featured {
+
+            border-color:
+                rgba(25,191,255,.4);
 
             box-shadow:
-                0 20px 60px rgba(0,234,255,0.08);
+                0 25px 70px rgba(0,130,255,.12);
         }
 
-        .pricing-badge {
+        .popular {
+
             position: absolute;
 
-            top: -13px;
-            left: 50%;
+            top: 15px;
+            right: 15px;
 
-            transform: translateX(-50%);
+            padding: 5px 9px;
 
-            padding: 5px 15px;
+            border-radius: 20px;
 
-            border-radius: 50px;
+            background:
+                var(--gradient);
 
-            background: var(--gradient);
+            color: #00101b;
 
-            color: #000;
+            font-size: 9px;
 
-            font-size: 10px;
-            font-weight: 800;
+            font-weight: 900;
         }
 
-        .pricing-name {
-            font-size: 20px;
-            margin-bottom: 12px;
+        .price-card h3 {
+
+            font-size: 19px;
+
+            margin-bottom: 10px;
         }
 
-        .pricing-price {
-            color: var(--primary);
+        .price {
 
-            font-size: 36px;
-            font-weight: 800;
+            font-size: 38px;
 
-            margin-bottom: 8px;
+            font-weight: 900;
+
+            color: var(--cyan);
+
+            margin-bottom: 20px;
         }
 
-        .pricing-period {
+        .price span {
+
+            font-size: 11px;
+
             color: var(--muted);
+
+            font-weight: 500;
+        }
+
+        .features {
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 11px;
+        }
+
+        .features li {
+
+            color: var(--gray);
+
             font-size: 12px;
         }
 
-        .pricing-features {
-            margin-top: 25px;
-            text-align: left;
-        }
+        .features i {
 
-        .pricing-feature {
-            display: flex;
-            gap: 9px;
+            color: var(--cyan);
 
-            color: var(--text);
-
-            font-size: 13px;
-
-            margin-bottom: 12px;
-        }
-
-        .pricing-feature i {
-            color: var(--primary);
-            margin-top: 4px;
+            margin-right: 8px;
         }
 
 
@@ -1101,107 +1359,182 @@
         ========================================================= */
 
         .contact {
-            background: var(--bg-2);
-        }
-
-        .contact-content {
-            display: grid;
-
-            grid-template-columns: 1fr 1fr;
-
-            gap: 45px;
-        }
-
-        .contact-info {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 17px;
-
-            padding: 20px;
-
-            border-radius: 15px;
-
-            background: var(--card);
-
-            border: 1px solid var(--border);
-
-            transition: 0.3s ease;
-        }
-
-        .contact-item:hover {
-            border-color: var(--border-hover);
-            transform: translateX(5px);
-        }
-
-        .contact-icon {
-            width: 48px;
-            height: 48px;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            flex-shrink: 0;
-
-            border-radius: 13px;
-
-            background: var(--gradient);
-
-            color: #000;
-        }
-
-        .contact-details h3 {
-            font-size: 15px;
-            margin-bottom: 3px;
-        }
-
-        .contact-details a {
-            color: var(--primary);
-            font-size: 13px;
-        }
-
-        .contact-details p {
-            color: var(--muted);
-            font-size: 11px;
-            margin: 3px 0 0;
-        }
-
-        .contact-card {
-            padding: 35px;
-
-            border-radius: 20px;
 
             background:
                 linear-gradient(
-                    145deg,
-                    rgba(0,234,255,0.07),
-                    rgba(255,255,255,0.015)
+                    180deg,
+                    #08111d,
+                    #060b14
+                );
+        }
+
+        .contact-box {
+
+            padding: 55px;
+
+            border-radius: 25px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(16,37,61,.8),
+                    rgba(7,16,28,.85)
                 );
 
-            border: 1px solid var(--border);
+            border:
+                1px solid rgba(77,231,255,.12);
+
+            display: grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap: 60px;
+
+            position: relative;
+
+            overflow: hidden;
+        }
+
+        .contact-box::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 300px;
+            height: 300px;
+
+            background:
+                rgba(0,174,255,.09);
+
+            border-radius: 50%;
+
+            filter: blur(70px);
+
+            right: -100px;
+            bottom: -100px;
+        }
+
+        .contact-left {
+
+            position: relative;
+            z-index: 2;
+        }
+
+        .contact-left h2 {
+
+            font-size: 42px;
+
+            line-height: 1.1;
+
+            letter-spacing: -1px;
+
+            margin-bottom: 18px;
+        }
+
+        .contact-left p {
+
+            color: var(--gray);
+
+            font-size: 14px;
+
+            max-width: 500px;
+
+            margin-bottom: 30px;
+        }
+
+        .contact-links {
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 13px;
+        }
+
+        .contact-link {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 13px;
+
+            color: #b9c5d4;
+
+            font-size: 13px;
+        }
+
+        .contact-link i {
+
+            width: 35px;
+            height: 35px;
+
+            display: grid;
+
+            place-items: center;
+
+            border-radius: 9px;
+
+            background:
+                rgba(25,191,255,.07);
+
+            color: var(--cyan);
+        }
+
+        .contact-right {
+
+            position: relative;
+            z-index: 2;
+        }
+
+        .contact-card {
+
+            padding: 25px;
+
+            border-radius: 15px;
+
+            background:
+                rgba(0,0,0,.18);
+
+            border:
+                1px solid rgba(255,255,255,.06);
         }
 
         .contact-card h3 {
-            font-size: 25px;
-            margin-bottom: 10px;
+
+            font-size: 18px;
+
+            margin-bottom: 7px;
         }
 
         .contact-card p {
-            color: var(--muted);
-            font-size: 14px;
-            margin-bottom: 25px;
+
+            color: var(--gray);
+
+            font-size: 13px;
+
+            margin-bottom: 20px;
         }
 
-        .contact-cta {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
+        .contact-btn {
+
+            width: 100%;
+
+            padding: 13px;
+
+            border-radius: 9px;
+
+            border: none;
+
+            background: var(--gradient);
+
+            color: #00101b;
+
+            font-weight: 900;
+
+            cursor: pointer;
         }
 
 
@@ -1210,97 +1543,88 @@
         ========================================================= */
 
         footer {
-            padding: 45px 0;
 
-            background: #040608;
+            padding: 35px 0;
 
-            border-top: 1px solid rgba(255,255,255,0.05);
+            border-top:
+                1px solid rgba(255,255,255,.05);
+
+            background:
+                #040810;
         }
 
-        .footer-content {
+        .footer-row {
+
             display: flex;
 
             align-items: center;
-            justify-content: space-between;
 
-            gap: 25px;
+            justify-content: space-between;
         }
 
-        .footer-brand p {
-            color: var(--muted);
+        .footer-copy {
+
+            color: #687589;
 
             font-size: 12px;
-
-            margin-top: 8px;
         }
 
-        .social-links {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .social-link {
-            width: 42px;
-            height: 42px;
+        .footer-social {
 
             display: flex;
-            align-items: center;
-            justify-content: center;
 
-            border-radius: 11px;
-
-            background: rgba(255,255,255,0.04);
-
-            border: 1px solid rgba(255,255,255,0.05);
-
-            color: var(--text);
-
-            transition: 0.3s ease;
+            gap: 8px;
         }
 
-        .social-link:hover {
-            color: #000;
-            background: var(--primary);
+        .footer-social a {
 
-            transform: translateY(-4px);
+            width: 36px;
+            height: 36px;
+
+            display: grid;
+
+            place-items: center;
+
+            border-radius: 9px;
+
+            background:
+                rgba(255,255,255,.04);
+
+            color: #8b98aa;
+
+            transition: .25s;
         }
 
-        .copyright {
-            color: #68737e;
-            font-size: 11px;
+        .footer-social a:hover {
+
+            color: var(--cyan);
+
+            background:
+                rgba(25,191,255,.08);
         }
 
 
         /* =========================================================
-           ANIMATIONS
+           ANIMATION
         ========================================================= */
 
-        .animate {
-            opacity: 0;
-            transform: translateY(25px);
-
-            animation:
-                fadeUp 0.7s ease forwards;
-        }
-
-        .delay-1 {
-            animation-delay: 0.12s;
-        }
-
-        .delay-2 {
-            animation-delay: 0.24s;
-        }
-
-        .delay-3 {
-            animation-delay: 0.36s;
-        }
-
         @keyframes fadeUp {
+
+            from {
+                opacity: 0;
+                transform: translateY(25px);
+            }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
             }
+        }
+
+        .animate {
+
+            animation:
+                fadeUp .8s ease both;
         }
 
 
@@ -1308,282 +1632,336 @@
            TABLET
         ========================================================= */
 
-        @media (max-width: 1000px) {
+        @media(max-width: 992px) {
 
-            .hero-content {
+            .hero-grid {
+
                 grid-template-columns: 1fr;
-                gap: 40px;
-            }
 
-            .hero-text {
                 text-align: center;
             }
 
             .hero-description {
+
                 margin-left: auto;
                 margin-right: auto;
             }
 
-            .hero-buttons,
-            .stats {
+            .hero-actions,
+            .hero-mini-stats {
+
                 justify-content: center;
             }
 
             .hero-visual {
-                max-width: 650px;
-                width: 100%;
-                margin: auto;
+
+                min-height: 400px;
             }
 
-            .services-grid {
+            .service-grid {
+
                 grid-template-columns:
-                    repeat(2, 1fr);
+                    repeat(2,1fr);
             }
 
-            .logo-process {
+            .process-grid {
+
                 grid-template-columns:
-                    repeat(2, 1fr);
+                    repeat(2,1fr);
             }
 
-            .logo-gallery {
+            .pricing-content {
+
                 grid-template-columns:
-                    repeat(2, 1fr);
+                    repeat(2,1fr);
             }
 
-            .pricing-grid {
-                grid-template-columns:
-                    repeat(2, 1fr);
-            }
+            .contact-box {
 
-            .contact-content {
                 grid-template-columns: 1fr;
             }
         }
 
 
         /* =========================================================
-           MOBILE NAVIGATION
+           MOBILE
         ========================================================= */
 
-        @media (max-width: 768px) {
+        @media(max-width: 768px) {
 
             .container {
-                width: min(
-                    100% - 28px,
-                    1180px
-                );
+
+                width:
+                    min(100% - 28px, 1180px);
             }
 
             section {
+
                 padding: 75px 0;
             }
 
-            .navbar {
-                height: 70px;
-            }
+            .nav {
 
-            .mobile-menu-btn {
-                display: flex;
-                align-items: center;
-                justify-content: center;
+                height: 68px;
             }
 
             .nav-links {
+
                 position: fixed;
 
-                top: 70px;
+                top: 68px;
                 right: -100%;
 
-                width: min(310px, 85%);
+                width: 82%;
 
                 height:
-                    calc(100vh - 70px);
-
-                padding: 35px 25px;
-
-                flex-direction: column;
-                align-items: stretch;
-
-                gap: 5px;
+                    calc(100vh - 68px);
 
                 background:
-                    rgba(7,9,12,0.98);
+                    rgba(5,11,20,.97);
 
-                backdrop-filter: blur(20px);
+                backdrop-filter:
+                    blur(20px);
+
+                flex-direction: column;
+
+                justify-content: flex-start;
+
+                align-items: center;
+
+                padding-top: 55px;
+
+                gap: 28px;
+
+                transition: .35s;
 
                 border-left:
-                    1px solid var(--border);
-
-                transition: 0.35s ease;
+                    1px solid rgba(77,231,255,.1);
             }
 
             .nav-links.active {
+
                 right: 0;
             }
 
-            .nav-links a {
-                display: block;
+            .menu-btn {
 
-                padding: 15px;
+                display: grid;
 
-                border-radius: 10px;
+                place-items: center;
             }
 
-            .nav-links a:hover {
-                background:
-                    rgba(0,234,255,0.05);
-            }
+            .nav-cta {
 
-            .nav-links a::after {
-                display: none;
+                padding:
+                    10px 25px;
             }
 
             .hero {
-                padding-top: 105px;
+
+                min-height: auto;
+
+                padding-top: 125px;
+
+                padding-bottom: 80px;
+            }
+
+            .hero-grid {
+
+                gap: 35px;
             }
 
             .hero h1 {
-                font-size: clamp(
-                    2.5rem,
-                    11vw,
-                    3.5rem
-                );
 
-                letter-spacing: -1.5px;
+                font-size:
+                    clamp(39px, 12vw, 58px);
+
+                letter-spacing: -2px;
             }
 
             .hero-description {
-                font-size: 15px;
+
+                font-size: 14px;
             }
 
             /* BUTTONS SIDE BY SIDE */
 
-            .hero-buttons {
-                width: 100%;
+            .hero-actions {
 
                 display: grid;
-                grid-template-columns: 1fr 1fr;
+
+                grid-template-columns:
+                    1fr 1fr;
 
                 gap: 9px;
+
+                width: 100%;
             }
 
-            .hero-buttons .button {
-                width: 100%;
-                padding: 0 10px;
+            .hero-btn {
 
-                min-height: 46px;
+                justify-content: center;
+
+                padding:
+                    12px 8px;
 
                 font-size: 12px;
+
+                white-space: nowrap;
             }
 
             /* STATS SIDE BY SIDE */
 
-            .stats {
+            .hero-mini-stats {
+
                 display: grid;
 
                 grid-template-columns:
                     repeat(3, 1fr);
 
-                gap: 7px;
+                gap: 8px;
 
                 width: 100%;
             }
 
-            .stat {
-                min-width: 0;
+            .mini-stat {
 
-                padding: 13px 7px;
+                padding:
+                    13px 5px;
 
-                text-align: center;
+                border-radius: 10px;
+
+                background:
+                    rgba(255,255,255,.025);
+
+                border:
+                    1px solid rgba(255,255,255,.05);
             }
 
-            .stat strong {
-                font-size: 19px;
+            .mini-stat strong {
+
+                font-size: 20px;
             }
 
-            .stat span {
+            .mini-stat span {
+
                 font-size: 9px;
             }
 
-            .hero-image-box {
-                min-height: 300px;
-                border-radius: 20px;
+            .hero-visual {
+
+                min-height: 350px;
             }
 
-            .services-grid {
+            .visual-box {
+
+                min-height: 310px;
+
+                transform: none;
+            }
+
+            .float-one {
+
+                right: -5px;
+                top: 25px;
+            }
+
+            .float-two {
+
+                left: -5px;
+                bottom: 20px;
+            }
+
+            .section-heading {
+
+                margin-bottom: 35px;
+            }
+
+            .section-heading h2 {
+
+                font-size: 31px;
+            }
+
+            .service-grid {
+
                 grid-template-columns: 1fr;
+
+                gap: 12px;
             }
 
-            .portfolio-grid {
+            .service-card {
+
+                min-height: 220px;
+
+                padding: 24px;
+            }
+
+            .project-grid {
+
                 grid-template-columns: 1fr;
+
+                gap: 15px;
             }
 
-            .portfolio-card {
-                min-height: 330px;
+            .project-image {
+
+                height: 210px;
             }
 
-            .portfolio-img {
-                min-height: 330px;
-            }
+            .process-grid {
 
-            .logo-process {
-                grid-template-columns:
-                    repeat(2, 1fr);
-
-                gap: 10px;
-            }
-
-            .logo-gallery {
-                grid-template-columns:
-                    repeat(2, 1fr);
-
-                gap: 10px;
-            }
-
-            .logo-item {
-                height: 140px;
-            }
-
-            .pricing-grid {
                 grid-template-columns: 1fr;
+
+                gap: 12px;
             }
 
-            .tab-buttons {
-                margin-bottom: 30px;
+            .process-card::after {
+
+                display: none;
             }
 
-            .tab-button {
+            .pricing-tabs {
+
+                width: 100%;
+            }
+
+            .tab-btn {
+
+                flex: 1;
+
+                padding:
+                    10px 8px;
+
                 font-size: 11px;
-                padding: 11px 7px;
             }
 
-            .contact-card {
+            .pricing-content.active {
+
+                grid-template-columns: 1fr;
+            }
+
+            .price-card {
+
                 padding: 25px;
             }
 
-            .footer-content {
+            .contact-box {
+
+                padding: 30px 22px;
+
+                gap: 35px;
+            }
+
+            .contact-left h2 {
+
+                font-size: 32px;
+            }
+
+            .footer-row {
+
                 flex-direction: column;
-                text-align: center;
-            }
 
-            /* SOCIAL CARDS SIDE BY SIDE */
-
-            .social-links {
-                width: 100%;
-
-                display: grid;
-
-                grid-template-columns:
-                    repeat(3, 1fr);
-
-                gap: 7px;
-            }
-
-            .social-link {
-                width: 100%;
-                height: 46px;
-
-                border-radius: 10px;
+                gap: 20px;
             }
         }
 
@@ -1592,97 +1970,32 @@
            SMALL MOBILE
         ========================================================= */
 
-        @media (max-width: 480px) {
+        @media(max-width: 400px) {
 
-            .logo {
-                font-size: 20px;
+            .hero-actions {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
             }
 
-            .logo i {
-                width: 36px;
-                height: 36px;
-            }
+            .hero-btn {
 
-            .section-header {
-                margin-bottom: 35px;
-            }
-
-            .section-title {
-                font-size: 1.9rem;
-            }
-
-            .section-desc {
-                font-size: 13px;
-            }
-
-            .hero-buttons .button {
                 font-size: 11px;
             }
 
-            .hero-buttons .button i {
-                font-size: 10px;
-            }
+            .hero-mini-stats {
 
-            .stats {
                 gap: 5px;
             }
 
-            .stat {
-                padding: 11px 4px;
+            .mini-stat strong {
+
+                font-size: 18px;
             }
 
-            .stat strong {
-                font-size: 17px;
-            }
+            .project-content {
 
-            .stat span {
-                font-size: 8px;
-            }
-
-            .portfolio-card {
-                min-height: 310px;
-            }
-
-            .portfolio-img {
-                min-height: 310px;
-            }
-
-            .portfolio-overlay {
                 padding: 20px;
-            }
-
-            .portfolio-overlay h3 {
-                font-size: 19px;
-            }
-
-            .portfolio-overlay p {
-                font-size: 11px;
-            }
-
-            .tech-tag {
-                font-size: 9px;
-                padding: 4px 8px;
-            }
-
-            .logo-process {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .process-step {
-                padding: 20px 12px;
-            }
-
-            .process-step p {
-                font-size: 11px;
-            }
-
-            .contact-item {
-                padding: 15px;
-            }
-
-            .contact-icon {
-                width: 42px;
-                height: 42px;
             }
         }
 
@@ -1697,46 +2010,43 @@
      HEADER
 ========================================================= -->
 
-<header id="header">
+<header class="header" id="header">
 
     <div class="container">
 
-        <nav class="navbar">
+        <nav class="nav">
 
-            <a href="#home" class="logo">
-                <i class="fas fa-code"></i>
-                Code<span>Solo</span>
+            <a href="#home" class="brand">
+
+                <span class="brand-mark">
+                    <i class="fas fa-code"></i>
+                </span>
+
+                CodeSolo
+
             </a>
 
 
-            <ul class="nav-links" id="navLinks">
+            <div class="nav-links" id="navLinks">
 
-                <li>
-                    <a href="#home">Home</a>
-                </li>
+                <a href="#home">Home</a>
 
-                <li>
-                    <a href="#services">Services</a>
-                </li>
+                <a href="#services">Services</a>
 
-                <li>
-                    <a href="#portfolio">Projects</a>
-                </li>
+                <a href="#projects">Projects</a>
 
-                <li>
-                    <a href="#pricing">Pricing</a>
-                </li>
+                <a href="#pricing">Pricing</a>
 
-                <li>
-                    <a href="#contact">Contact</a>
-                </li>
+                <a href="#contact" class="nav-cta">
+                    Start a Project
+                </a>
 
-            </ul>
+            </div>
 
 
             <button
-                class="mobile-menu-btn"
-                id="mobileMenuBtn"
+                class="menu-btn"
+                id="menuBtn"
                 aria-label="Open menu"
             >
                 <i class="fas fa-bars"></i>
@@ -1758,90 +2068,91 @@
 
     <div class="container">
 
-        <div class="hero-content">
+        <div class="hero-grid">
 
 
-            <div class="hero-text">
+            <div class="hero-content">
 
-                <div class="hero-badge">
-                    <span></span>
+                <div class="hero-badge animate">
+
+                    <span class="status-dot"></span>
+
                     Sri Lankan Software Development
+
                 </div>
 
 
-                <h1>
+                <h1 class="animate">
+
                     We Build
-                    <span>Digital</span>
-                    Solutions.
+                    <span>Digital Products</span>
+                    That Matter.
+
                 </h1>
 
 
-                <p class="hero-description">
+                <p class="hero-description animate">
 
-                    CodeSolo creates modern websites, web applications,
-                    AI-powered solutions and digital products designed
-                    to help businesses grow online.
+                    CodeSolo helps businesses turn ideas into
+                    modern websites, powerful web applications,
+                    AI solutions and automation systems.
 
                 </p>
 
 
-                <div class="hero-buttons">
+                <div class="hero-actions">
 
                     <a
-                        href="#portfolio"
-                        class="button button-primary"
+                        href="#projects"
+                        class="hero-btn hero-btn-primary"
                     >
-                        <i class="fas fa-layer-group"></i>
+
                         Explore Projects
+
+                        <i class="fas fa-arrow-right"></i>
+
                     </a>
 
 
                     <a
-                        href="https://www.linkedin.com/in/shahan-iresh-374218374/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="button button-secondary"
+                        href="#contact"
+                        class="hero-btn hero-btn-secondary"
                     >
-                        <i class="fab fa-linkedin-in"></i>
-                        LinkedIn
+
+                        Let's Talk
+
+                        <i class="fas fa-paper-plane"></i>
+
                     </a>
 
                 </div>
 
 
-                <!-- STATS -->
+                <div class="hero-mini-stats">
 
-                <div class="stats">
+                    <div class="mini-stat">
 
-                    <div class="stat">
+                        <strong>04+</strong>
 
-                        <strong>05+</strong>
-
-                        <span>
-                            Projects
-                        </span>
+                        <span>Projects</span>
 
                     </div>
 
 
-                    <div class="stat">
+                    <div class="mini-stat">
 
                         <strong>03</strong>
 
-                        <span>
-                            Services
-                        </span>
+                        <span>Services</span>
 
                     </div>
 
 
-                    <div class="stat">
+                    <div class="mini-stat">
 
                         <strong>∞</strong>
 
-                        <span>
-                            Ideas
-                        </span>
+                        <span>Ideas</span>
 
                     </div>
 
@@ -1851,16 +2162,70 @@
 
 
 
-            <!-- HERO IMAGE -->
-
             <div class="hero-visual">
 
-                <div class="hero-image-box">
+                <div class="visual-box">
 
-                    <img
-                        src="https://github.com/7oSkaaa/7oSkaaa/blob/main/Images/Right_Side.gif?raw=true"
-                        alt="Software Development"
-                    >
+                    <div class="visual-top">
+
+                        <div class="window-dots">
+
+                            <i></i>
+                            <i></i>
+                            <i></i>
+
+                        </div>
+
+                        <span class="visual-title">
+                            codesolo.dev
+                        </span>
+
+                    </div>
+
+
+                    <div class="code-lines">
+
+                        <div class="code-line short"></div>
+
+                        <div class="code-line long highlight"></div>
+
+                        <div class="code-line medium"></div>
+
+                        <div class="code-line short"></div>
+
+                        <div class="code-line long"></div>
+
+                        <div class="code-line medium highlight"></div>
+
+                        <div class="code-line long"></div>
+
+                        <div class="code-line short"></div>
+
+                        <div class="code-line medium"></div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="floating-card float-one">
+
+                    <i class="fas fa-bolt"></i>
+
+                    <span>
+                        Fast & Scalable
+                    </span>
+
+                </div>
+
+
+                <div class="floating-card float-two">
+
+                    <i class="fas fa-shield-halved"></i>
+
+                    <span>
+                        Modern Solutions
+                    </span>
 
                 </div>
 
@@ -1879,38 +2244,39 @@
      SERVICES
 ========================================================= -->
 
-<section
-    class="services"
-    id="services"
->
+<section class="services" id="services">
 
     <div class="container">
 
-        <div class="section-header">
+        <div class="section-heading">
 
-            <span class="section-subtitle">
+            <div class="eyebrow">
                 What We Do
-            </span>
+            </div>
 
-            <h2 class="section-title">
-                Our Services
+            <h2>
+                Solutions built around
+                your business.
             </h2>
 
-            <p class="section-desc">
-                Practical digital solutions built around your
-                business goals, users and technology needs.
+            <p>
+                From simple business websites to advanced
+                digital platforms, we build solutions designed
+                to perform.
             </p>
 
         </div>
 
 
-        <div class="services-grid">
+        <div class="service-grid">
 
 
             <div class="service-card">
 
                 <div class="service-icon">
-                    <i class="fas fa-laptop-code"></i>
+
+                    <i class="fas fa-globe"></i>
+
                 </div>
 
                 <h3>
@@ -1918,10 +2284,14 @@
                 </h3>
 
                 <p>
-                    Modern, responsive and high-performance
-                    websites and web applications for businesses,
-                    organizations and personal brands.
+                    Fast, responsive and modern websites
+                    designed to create a strong digital
+                    presence for your business.
                 </p>
+
+                <span class="service-number">
+                    01
+                </span>
 
             </div>
 
@@ -1930,7 +2300,9 @@
             <div class="service-card">
 
                 <div class="service-icon">
-                    <i class="fas fa-robot"></i>
+
+                    <i class="fas fa-brain"></i>
+
                 </div>
 
                 <h3>
@@ -1938,10 +2310,14 @@
                 </h3>
 
                 <p>
-                    Smart automation and AI-powered solutions
-                    designed to reduce repetitive work and
-                    improve digital workflows.
+                    Smart automation systems and AI-powered
+                    solutions that reduce repetitive work
+                    and improve productivity.
                 </p>
+
+                <span class="service-number">
+                    02
+                </span>
 
             </div>
 
@@ -1950,18 +2326,24 @@
             <div class="service-card">
 
                 <div class="service-icon">
-                    <i class="fas fa-palette"></i>
+
+                    <i class="fas fa-pen-ruler"></i>
+
                 </div>
 
                 <h3>
-                    Logo & Design
+                    Branding & Design
                 </h3>
 
                 <p>
-                    Clean and memorable visual identities,
-                    logos and digital design solutions that
-                    help brands stand out.
+                    Clean and memorable visual identities
+                    including logos and digital branding
+                    for modern businesses.
                 </p>
+
+                <span class="service-number">
+                    03
+                </span>
 
             </div>
 
@@ -1975,56 +2357,52 @@
 
 
 <!-- =========================================================
-     PORTFOLIO
+     PROJECTS
 ========================================================= -->
 
-<section
-    class="portfolio"
-    id="portfolio"
->
+<section class="projects" id="projects">
 
     <div class="container">
 
-        <div class="section-header">
+        <div class="section-heading">
 
-            <span class="section-subtitle">
+            <div class="eyebrow">
                 Selected Work
-            </span>
+            </div>
 
-            <h2 class="section-title">
-                Featured Projects
+            <h2>
+                Projects we've built.
             </h2>
 
-            <p class="section-desc">
-                A selection of websites and digital products
-                developed by CodeSolo.
+            <p>
+                A selection of digital products and platforms
+                developed with modern technologies.
             </p>
 
         </div>
 
 
-
-        <div
-            class="portfolio-grid"
-            id="portfolioGrid"
-        >
+        <div class="project-grid" id="projectGrid">
 
 
             <!-- PROJECT 01 -->
 
-            <div class="portfolio-card">
+            <article class="project-card">
 
-                <img
-                    src="photos/aplapiedu.png"
-                    alt="ALapi Education Website"
-                    class="portfolio-img"
-                >
+                <div class="project-image">
 
-                <div class="portfolio-overlay">
+                    <img
+                        src="photos/aplapiedu.png"
+                        alt="ALapi Education"
+                    >
 
-                    <div class="project-number">
+                    <span class="project-number">
                         01
-                    </div>
+                    </span>
+
+                </div>
+
+                <div class="project-content">
 
                     <h3>
                         ALapi Education
@@ -2036,308 +2414,319 @@
                         school papers and resources.
                     </p>
 
-                    <div class="tech-tags">
+                    <div class="project-tags">
 
-                        <span class="tech-tag">PHP</span>
-                        <span class="tech-tag">MySQL</span>
-                        <span class="tech-tag">HTML</span>
-                        <span class="tech-tag">CSS</span>
-                        <span class="tech-tag">JavaScript</span>
+                        <span class="project-tag">PHP</span>
+                        <span class="project-tag">MySQL</span>
+                        <span class="project-tag">JavaScript</span>
+                        <span class="project-tag">CSS</span>
 
                     </div>
 
                     <a
                         href="https://alapiedu.com/home"
                         target="_blank"
-                        class="button button-primary project-button"
+                        class="project-link"
                     >
-                        Visit Website
-                        <i class="fas fa-arrow-up-right-from-square"></i>
+
+                        View Project
+
+                        <i class="fas fa-arrow-right"></i>
+
                     </a>
 
                 </div>
 
-            </div>
+            </article>
 
 
 
             <!-- PROJECT 02 -->
 
-            <div class="portfolio-card">
+            <article class="project-card">
 
-                <img
-                    src="photos/olapiedu.png"
-                    alt="OLapi Education Website"
-                    class="portfolio-img"
-                >
+                <div class="project-image">
 
-                <div class="portfolio-overlay">
+                    <img
+                        src="photos/olapiedu.png"
+                        alt="OLapi Education"
+                    >
 
-                    <div class="project-number">
+                    <span class="project-number">
                         02
-                    </div>
+                    </span>
+
+                </div>
+
+                <div class="project-content">
 
                     <h3>
                         OLapi Education
                     </h3>
 
                     <p>
-                        O/L educational resource platform with
-                        past papers, school papers, model papers
-                        and marking schemes.
+                        O/L educational platform providing
+                        past papers, marking schemes, school
+                        papers and model papers.
                     </p>
 
-                    <div class="tech-tags">
+                    <div class="project-tags">
 
-                        <span class="tech-tag">PHP</span>
-                        <span class="tech-tag">MySQL</span>
-                        <span class="tech-tag">HTML</span>
-                        <span class="tech-tag">CSS</span>
-                        <span class="tech-tag">JavaScript</span>
+                        <span class="project-tag">PHP</span>
+                        <span class="project-tag">MySQL</span>
+                        <span class="project-tag">HTML</span>
+                        <span class="project-tag">JavaScript</span>
 
                     </div>
 
                     <a
                         href="https://olapiedum.com/home"
                         target="_blank"
-                        class="button button-primary project-button"
+                        class="project-link"
                     >
-                        Visit Website
-                        <i class="fas fa-arrow-up-right-from-square"></i>
+
+                        View Project
+
+                        <i class="fas fa-arrow-right"></i>
+
                     </a>
 
                 </div>
 
-            </div>
+            </article>
 
 
 
             <!-- PROJECT 03 -->
 
-            <div class="portfolio-card">
+            <article class="project-card">
 
-                <img
-                    src="photos/lionscric.png"
-                    alt="LionsCric Cricket Website"
-                    class="portfolio-img"
-                >
+                <div class="project-image">
 
-                <div class="portfolio-overlay">
+                    <img
+                        src="photos/lionscric.png"
+                        alt="LionsCric"
+                    >
 
-                    <div class="project-number">
+                    <span class="project-number">
                         03
-                    </div>
+                    </span>
+
+                </div>
+
+                <div class="project-content">
 
                     <h3>
                         LionsCric
                     </h3>
 
                     <p>
-                        Cricket platform featuring scores,
-                        schedules, series information, player
-                        statistics and cricket updates.
+                        Cricket platform with schedules,
+                        live scores, series information and
+                        player statistics.
                     </p>
 
-                    <div class="tech-tags">
+                    <div class="project-tags">
 
-                        <span class="tech-tag">PHP</span>
-                        <span class="tech-tag">MySQL</span>
-                        <span class="tech-tag">JavaScript</span>
-                        <span class="tech-tag">API</span>
+                        <span class="project-tag">PHP</span>
+                        <span class="project-tag">MySQL</span>
+                        <span class="project-tag">API</span>
+                        <span class="project-tag">JavaScript</span>
 
                     </div>
 
                     <a
                         href="https://lionscric.com/home"
                         target="_blank"
-                        class="button button-primary project-button"
+                        class="project-link"
                     >
-                        Visit Website
-                        <i class="fas fa-arrow-up-right-from-square"></i>
+
+                        View Project
+
+                        <i class="fas fa-arrow-right"></i>
+
                     </a>
 
                 </div>
 
-            </div>
+            </article>
 
 
 
             <!-- PROJECT 04 -->
 
-            <div class="portfolio-card">
+            <article class="project-card">
 
-                <img
-                    src="photos/tecshop.png"
-                    alt="TecShop Website"
-                    class="portfolio-img"
-                >
+                <div class="project-image">
 
-                <div class="portfolio-overlay">
+                    <img
+                        src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1200&q=80"
+                        alt="TECShop"
+                    >
 
-                    <div class="project-number">
+                    <span class="project-number">
                         04
-                    </div>
+                    </span>
+
+                </div>
+
+                <div class="project-content">
 
                     <h3>
-                        TecShop
+                        TECShop
                     </h3>
 
                     <p>
-                        Modern technology shopping platform
-                        designed to provide users with a clean
-                        and convenient online shopping experience.
+                        Modern e-commerce concept designed
+                        for browsing products, managing
+                        categories and creating a smooth
+                        online shopping experience.
                     </p>
 
-                    <div class="tech-tags">
+                    <div class="project-tags">
 
-                        <span class="tech-tag">PHP</span>
-                        <span class="tech-tag">MySQL</span>
-                        <span class="tech-tag">HTML</span>
-                        <span class="tech-tag">CSS</span>
-                        <span class="tech-tag">JavaScript</span>
+                        <span class="project-tag">PHP</span>
+                        <span class="project-tag">MySQL</span>
+                        <span class="project-tag">HTML</span>
+                        <span class="project-tag">CSS</span>
 
                     </div>
 
                     <a
-                        href="https://tecshop.com"
-                        target="_blank"
-                        class="button button-primary project-button"
+                        href="#"
+                        class="project-link"
                     >
-                        Visit Website
-                        <i class="fas fa-arrow-up-right-from-square"></i>
+
+                        View Project
+
+                        <i class="fas fa-arrow-right"></i>
+
                     </a>
 
                 </div>
 
-            </div>
+            </article>
 
 
 
-            <!-- =================================================
-                 PROJECT 05
-                 Initially hidden
-            ================================================== -->
+            <!-- PROJECT 05 -->
 
-            <div class="portfolio-card hidden-project">
+            <article class="project-card hidden-project">
 
-                <img
-                    src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80"
-                    alt="Analytics Dashboard"
-                    class="portfolio-img"
-                >
+                <div class="project-image">
 
-                <div class="portfolio-overlay">
+                    <img
+                        src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80"
+                        alt="Analytics Dashboard"
+                    >
 
-                    <div class="project-number">
+                    <span class="project-number">
                         05
-                    </div>
+                    </span>
+
+                </div>
+
+                <div class="project-content">
 
                     <h3>
-                        ML Analytics Dashboard
+                        Analytics Dashboard
                     </h3>
 
                     <p>
-                        Data visualization and predictive analytics
-                        dashboard designed for machine learning
-                        workflows.
+                        Data visualization dashboard designed
+                        for monitoring business information
+                        and analytics.
                     </p>
 
-                    <div class="tech-tags">
+                    <div class="project-tags">
 
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">Machine Learning</span>
-                        <span class="tech-tag">D3.js</span>
+                        <span class="project-tag">Python</span>
+                        <span class="project-tag">Data</span>
+                        <span class="project-tag">JavaScript</span>
 
                     </div>
 
-                    <a
-                        href="#"
-                        class="button button-primary project-button"
-                    >
-                        View Details
+                    <a href="#" class="project-link">
+
+                        View Project
+
+                        <i class="fas fa-arrow-right"></i>
+
                     </a>
 
                 </div>
 
-            </div>
+            </article>
 
 
 
-            <!-- =================================================
-                 PROJECT 06
-                 Initially hidden
-            ================================================== -->
+            <!-- PROJECT 06 -->
 
-            <div class="portfolio-card hidden-project">
+            <article class="project-card hidden-project">
 
-                <img
-                    src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&fit=crop&w=1200&q=80"
-                    alt="Automation Project"
-                    class="portfolio-img"
-                >
+                <div class="project-image">
 
-                <div class="portfolio-overlay">
+                    <img
+                        src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=80"
+                        alt="Automation System"
+                    >
 
-                    <div class="project-number">
+                    <span class="project-number">
                         06
-                    </div>
+                    </span>
+
+                </div>
+
+                <div class="project-content">
 
                     <h3>
-                        Automation Platform
+                        Automation System
                     </h3>
 
                     <p>
-                        A digital automation concept designed
-                        to simplify repetitive workflows and
-                        improve productivity.
+                        Automated digital workflow system
+                        designed to reduce repetitive business
+                        tasks.
                     </p>
 
-                    <div class="tech-tags">
+                    <div class="project-tags">
 
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">AI</span>
-                        <span class="tech-tag">Automation</span>
+                        <span class="project-tag">PHP</span>
+                        <span class="project-tag">API</span>
+                        <span class="project-tag">Automation</span>
 
                     </div>
 
-                    <a
-                        href="#"
-                        class="button button-primary project-button"
-                    >
-                        View Details
+                    <a href="#" class="project-link">
+
+                        View Project
+
+                        <i class="fas fa-arrow-right"></i>
+
                     </a>
 
                 </div>
 
-            </div>
+            </article>
 
 
         </div>
 
 
-
-        <!-- READ MORE -->
-
-        <div
-            class="read-more-wrapper"
-            id="readMoreWrapper"
-        >
+        <div class="projects-more">
 
             <button
-                class="read-more-btn"
+                class="read-more"
                 id="readMoreBtn"
             >
 
-                <span>
-                    Read More Projects
-                </span>
+                <span>Read More Projects</span>
 
                 <i class="fas fa-chevron-down"></i>
 
             </button>
 
         </div>
-
 
     </div>
 
@@ -2346,156 +2735,104 @@
 
 
 <!-- =========================================================
-     LOGO DESIGN
+     PROCESS
 ========================================================= -->
 
-<section
-    class="logo-design"
-    id="logo-design"
->
+<section class="process">
 
     <div class="container">
 
-        <div class="section-header">
+        <div class="section-heading">
 
-            <span class="section-subtitle">
-                Brand Identity
-            </span>
+            <div class="eyebrow">
+                How We Work
+            </div>
 
-            <h2 class="section-title">
-                Logo & Brand Design
+            <h2>
+                Simple process.
+                Serious results.
             </h2>
 
-            <p class="section-desc">
-                Simple, modern and memorable branding
-                designed around your business identity.
-            </p>
-
         </div>
 
 
+        <div class="process-grid">
 
-        <div class="logo-process">
 
+            <div class="process-card">
 
-            <div class="process-step">
-
-                <div class="step-number">
-                    1
+                <div class="process-number">
+                    STEP 01
                 </div>
 
                 <h3>
-                    Consultation
+                    Discover
                 </h3>
 
                 <p>
-                    Understand your brand,
-                    audience and requirements.
+                    We understand your idea, business
+                    requirements and goals.
                 </p>
 
             </div>
 
 
 
-            <div class="process-step">
+            <div class="process-card">
 
-                <div class="step-number">
-                    2
+                <div class="process-number">
+                    STEP 02
                 </div>
 
                 <h3>
-                    Concept
+                    Plan
                 </h3>
 
                 <p>
-                    Create initial concepts
-                    based on your vision.
+                    We create the technical direction,
+                    structure and project roadmap.
                 </p>
 
             </div>
 
 
 
-            <div class="process-step">
+            <div class="process-card">
 
-                <div class="step-number">
-                    3
+                <div class="process-number">
+                    STEP 03
                 </div>
 
                 <h3>
-                    Refinement
+                    Build
                 </h3>
 
                 <p>
-                    Improve the selected design
-                    with your feedback.
+                    Development begins using modern
+                    technologies and clean code.
                 </p>
 
             </div>
 
 
 
-            <div class="process-step">
+            <div class="process-card">
 
-                <div class="step-number">
-                    4
+                <div class="process-number">
+                    STEP 04
                 </div>
 
                 <h3>
-                    Delivery
+                    Launch
                 </h3>
 
                 <p>
-                    Receive final files suitable
-                    for digital and print use.
+                    We test, optimise and deliver the
+                    final digital product.
                 </p>
 
             </div>
 
-
-        </div>
-
-
-
-        <div class="section-header">
-
-            <h2 class="section-title">
-                Logo Portfolio
-            </h2>
-
-            <p class="section-desc">
-                Selected branding concepts.
-            </p>
-
-        </div>
-
-
-
-        <div class="logo-gallery">
-
-            <div class="logo-item">
-                <div class="logo-placeholder">
-                    Your Logo
-                </div>
-            </div>
-
-            <div class="logo-item">
-                <div class="logo-placeholder">
-                    Your Logo
-                </div>
-            </div>
-
-            <div class="logo-item">
-                <div class="logo-placeholder">
-                    Your Logo
-                </div>
-            </div>
-
-            <div class="logo-item">
-                <div class="logo-placeholder">
-                    Your Logo
-                </div>
-            </div>
 
         </div>
 
@@ -2509,318 +2846,297 @@
      PRICING
 ========================================================= -->
 
-<section
-    class="pricing"
-    id="pricing"
->
+<section class="pricing" id="pricing">
 
     <div class="container">
 
-        <div class="section-header">
+        <div class="section-heading">
 
-            <span class="section-subtitle">
-                Simple Pricing
-            </span>
+            <div class="eyebrow">
+                Pricing
+            </div>
 
-            <h2 class="section-title">
-                Choose Your Plan
+            <h2>
+                Plans that fit your project.
             </h2>
 
-            <p class="section-desc">
-                Flexible solutions for different project
-                sizes and requirements.
+            <p>
+                Flexible packages for businesses,
+                startups and individuals.
             </p>
 
         </div>
 
 
-
         <div class="pricing-tabs">
 
-
-            <div class="tab-buttons">
-
-                <button
-                    class="tab-button active"
-                    data-tab="website"
-                >
-                    Website Development
-                </button>
-
-                <button
-                    class="tab-button"
-                    data-tab="logo"
-                >
-                    Logo Design
-                </button>
-
-            </div>
-
-
-
-            <!-- WEBSITE -->
-
-            <div
-                class="tab-content active"
-                id="website-tab"
+            <button
+                class="tab-btn active"
+                data-tab="website"
             >
+                Website
+            </button>
 
-                <div class="pricing-grid">
+            <button
+                class="tab-btn"
+                data-tab="logo"
+            >
+                Logo Design
+            </button>
 
-
-                    <div class="pricing-card">
-
-                        <h3 class="pricing-name">
-                            Basic
-                        </h3>
-
-                        <div class="pricing-price">
-                            Custom
-                        </div>
-
-                        <div class="pricing-period">
-                            Starting price
-                        </div>
-
-                        <div class="pricing-features">
-
-                            <div class="pricing-feature">
-                                <i class="fas fa-check"></i>
-                                Responsive Design
-                            </div>
-
-                            <div class="pricing-feature">
-                                <i class="fas fa-check"></i>
-                                Basic Pages
-                            </div>
-
-                            <div class="pricing-feature">
-                                <i class="fas fa-check"></i>
-                                Mobile Friendly
-                            </div>
-
-                        </div>
-
-                    </div>
+        </div>
 
 
+        <!-- WEBSITE -->
 
-                    <div class="pricing-card featured">
+        <div
+            class="pricing-content active"
+            id="website"
+        >
 
-                        <div class="pricing-badge">
-                            POPULAR
-                        </div>
+            <div class="price-card">
 
-                        <h3 class="pricing-name">
-                            Professional
-                        </h3>
+                <h3>
+                    Starter
+                </h3>
 
-                        <div class="pricing-price">
-                            Custom
-                        </div>
-
-                        <div class="pricing-period">
-                            Based on requirements
-                        </div>
-
-                        <div class="pricing-features">
-
-                            <div class="pricing-feature">
-                                <i class="fas fa-check"></i>
-                                Modern UI/UX
-                            </div>
-
-                            <div class="pricing-feature">
-                                <i class="fas fa-check"></i>
-                                Database Integration
-                            </div>
-
-                            <div class="pricing-feature">
-                                <i class="fas fa-check"></i>
-                                Admin Panel
-                            </div>
-
-                            <div class="pricing-feature">
-                                <i class="fas fa-check"></i>
-                                API Integration
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
-
-                    <div class="pricing-card">
-
-                        <h3 class="pricing-name">
-                            Advanced
-                        </h3>
-
-                        <div class="pricing-price">
-                            Custom
-                        </div>
-
-                        <div class="pricing-period">
-                            For advanced systems
-                        </div>
-
-                        <div class="pricing-features">
-
-                            <div class="pricing-feature">
-                                <i class="fas fa-check"></i>
-                                Advanced Web App
-                            </div>
-
-                            <div class="pricing-feature">
-                                <i class="fas fa-check"></i>
-                                Custom Backend
-                            </div>
-
-                            <div class="pricing-feature">
-                                <i class="fas fa-check"></i>
-                                Automation
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
+                <div class="price">
+                    Custom
+                    <span>/ project</span>
                 </div>
 
+                <ul class="features">
+
+                    <li>
+                        <i class="fas fa-check"></i>
+                        Responsive website
+                    </li>
+
+                    <li>
+                        <i class="fas fa-check"></i>
+                        Up to 5 pages
+                    </li>
+
+                    <li>
+                        <i class="fas fa-check"></i>
+                        Mobile friendly
+                    </li>
+
+                    <li>
+                        <i class="fas fa-check"></i>
+                        Basic SEO
+                    </li>
+
+                </ul>
+
             </div>
 
 
 
-            <!-- LOGO -->
+            <div class="price-card featured">
 
-            <div
-                class="tab-content"
-                id="logo-tab"
-            >
+                <span class="popular">
+                    POPULAR
+                </span>
 
-                <div class="pricing-grid">
+                <h3>
+                    Business
+                </h3>
 
-
-                    <div class="pricing-card">
-
-                        <h3 class="pricing-name">
-                            Basic Logo
-                        </h3>
-
-                        <div class="pricing-price">
-                            Custom
-                        </div>
-
-                        <div class="pricing-period">
-                            Simple logo concept
-                        </div>
-
-                        <div class="pricing-features">
-
-                            <div class="pricing-feature">
-                                <i class="fas fa-check"></i>
-                                1 Concept
-                            </div>
-
-                            <div class="pricing-feature">
-                                <i class="fas fa-check"></i>
-                                PNG / JPG
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
-
-                    <div class="pricing-card featured">
-
-                        <div class="pricing-badge">
-                            POPULAR
-                        </div>
-
-                        <h3 class="pricing-name">
-                            Professional Logo
-                        </h3>
-
-                        <div class="pricing-price">
-                            Custom
-                        </div>
-
-                        <div class="pricing-period">
-                            Complete branding
-                        </div>
-
-                        <div class="pricing-features">
-
-                            <div class="pricing-feature">
-                                <i class="fas fa-check"></i>
-                                Multiple Concepts
-                            </div>
-
-                            <div class="pricing-feature">
-                                <i class="fas fa-check"></i>
-                                Revisions
-                            </div>
-
-                            <div class="pricing-feature">
-                                <i class="fas fa-check"></i>
-                                Transparent PNG
-                            </div>
-
-                            <div class="pricing-feature">
-                                <i class="fas fa-check"></i>
-                                Vector File
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
-
-                    <div class="pricing-card">
-
-                        <h3 class="pricing-name">
-                            Brand Pack
-                        </h3>
-
-                        <div class="pricing-price">
-                            Custom
-                        </div>
-
-                        <div class="pricing-period">
-                            Full identity package
-                        </div>
-
-                        <div class="pricing-features">
-
-                            <div class="pricing-feature">
-                                <i class="fas fa-check"></i>
-                                Logo
-                            </div>
-
-                            <div class="pricing-feature">
-                                <i class="fas fa-check"></i>
-                                Color Palette
-                            </div>
-
-                            <div class="pricing-feature">
-                                <i class="fas fa-check"></i>
-                                Brand Assets
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
+                <div class="price">
+                    Custom
+                    <span>/ project</span>
                 </div>
 
+                <ul class="features">
+
+                    <li>
+                        <i class="fas fa-check"></i>
+                        Modern UI/UX
+                    </li>
+
+                    <li>
+                        <i class="fas fa-check"></i>
+                        Dynamic website
+                    </li>
+
+                    <li>
+                        <i class="fas fa-check"></i>
+                        Database integration
+                    </li>
+
+                    <li>
+                        <i class="fas fa-check"></i>
+                        Admin panel
+                    </li>
+
+                    <li>
+                        <i class="fas fa-check"></i>
+                        Deployment support
+                    </li>
+
+                </ul>
+
             </div>
 
+
+
+            <div class="price-card">
+
+                <h3>
+                    Custom
+                </h3>
+
+                <div class="price">
+                    Let's Talk
+                </div>
+
+                <ul class="features">
+
+                    <li>
+                        <i class="fas fa-check"></i>
+                        Advanced web applications
+                    </li>
+
+                    <li>
+                        <i class="fas fa-check"></i>
+                        API integrations
+                    </li>
+
+                    <li>
+                        <i class="fas fa-check"></i>
+                        Automation
+                    </li>
+
+                    <li>
+                        <i class="fas fa-check"></i>
+                        Custom requirements
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+
+        <!-- LOGO -->
+
+        <div
+            class="pricing-content"
+            id="logo"
+        >
+
+            <div class="price-card">
+
+                <h3>
+                    Basic
+                </h3>
+
+                <div class="price">
+                    Custom
+                </div>
+
+                <ul class="features">
+
+                    <li>
+                        <i class="fas fa-check"></i>
+                        1 Logo Concept
+                    </li>
+
+                    <li>
+                        <i class="fas fa-check"></i>
+                        PNG & JPG
+                    </li>
+
+                    <li>
+                        <i class="fas fa-check"></i>
+                        Basic revision
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+
+            <div class="price-card featured">
+
+                <span class="popular">
+                    POPULAR
+                </span>
+
+                <h3>
+                    Professional
+                </h3>
+
+                <div class="price">
+                    Custom
+                </div>
+
+                <ul class="features">
+
+                    <li>
+                        <i class="fas fa-check"></i>
+                        Multiple concepts
+                    </li>
+
+                    <li>
+                        <i class="fas fa-check"></i>
+                        Unlimited revisions
+                    </li>
+
+                    <li>
+                        <i class="fas fa-check"></i>
+                        PNG / JPG / SVG
+                    </li>
+
+                    <li>
+                        <i class="fas fa-check"></i>
+                        Transparent version
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+
+            <div class="price-card">
+
+                <h3>
+                    Brand Pack
+                </h3>
+
+                <div class="price">
+                    Custom
+                </div>
+
+                <ul class="features">
+
+                    <li>
+                        <i class="fas fa-check"></i>
+                        Logo
+                    </li>
+
+                    <li>
+                        <i class="fas fa-check"></i>
+                        Brand colours
+                    </li>
+
+                    <li>
+                        <i class="fas fa-check"></i>
+                        Typography
+                    </li>
+
+                    <li>
+                        <i class="fas fa-check"></i>
+                        Brand assets
+                    </li>
+
+                </ul>
+
+            </div>
 
         </div>
 
@@ -2834,186 +3150,99 @@
      CONTACT
 ========================================================= -->
 
-<section
-    class="contact"
-    id="contact"
->
+<section class="contact" id="contact">
 
     <div class="container">
 
-        <div class="section-header">
-
-            <span class="section-subtitle">
-                Let's Talk
-            </span>
-
-            <h2 class="section-title">
-                Let's Build Something Amazing
-            </h2>
-
-            <p class="section-desc">
-                Have an idea, website or digital product in mind?
-                Let's discuss it.
-            </p>
-
-        </div>
+        <div class="contact-box">
 
 
+            <div class="contact-left">
 
-        <div class="contact-content">
-
-
-            <div class="contact-info">
-
-
-                <div class="contact-item">
-
-                    <div class="contact-icon">
-                        <i class="fas fa-envelope"></i>
-                    </div>
-
-                    <div class="contact-details">
-
-                        <h3>
-                            Email
-                        </h3>
-
-                        <a href="mailto:codesolo.dev@gmail.com">
-                            codesolo.dev@gmail.com
-                        </a>
-
-                        <p>
-                            Business inquiries
-                        </p>
-
-                    </div>
-
+                <div class="eyebrow">
+                    Let's Work Together
                 </div>
 
-
-
-                <div class="contact-item">
-
-                    <div class="contact-icon">
-                        <i class="fab fa-whatsapp"></i>
-                    </div>
-
-                    <div class="contact-details">
-
-                        <h3>
-                            WhatsApp
-                        </h3>
-
-                        <a
-                            href="https://wa.me/94723032829"
-                            target="_blank"
-                        >
-                            +94 72 303 2829
-                        </a>
-
-                        <p>
-                            Direct contact
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-
-                <div class="contact-item">
-
-                    <div class="contact-icon">
-                        <i class="fab fa-telegram"></i>
-                    </div>
-
-                    <div class="contact-details">
-
-                        <h3>
-                            Telegram
-                        </h3>
-
-                        <a
-                            href="https://t.me/"
-                            target="_blank"
-                        >
-                            Open Telegram
-                        </a>
-
-                        <p>
-                            Quick communication
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-
-                <div class="contact-item">
-
-                    <div class="contact-icon">
-                        <i class="fas fa-location-dot"></i>
-                    </div>
-
-                    <div class="contact-details">
-
-                        <h3>
-                            Location
-                        </h3>
-
-                        <span
-                            style="
-                            color:var(--text);
-                            font-size:13px;
-                            "
-                        >
-                            Colombo, Sri Lanka
-                        </span>
-
-                        <p>
-                            Serving clients worldwide
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-            </div>
-
-
-
-            <div class="contact-card">
-
-                <h3>
-                    Have a project in mind?
-                </h3>
+                <h2>
+                    Have an idea?
+                    Let's build it.
+                </h2>
 
                 <p>
-                    Tell us what you want to build and
-                    we'll discuss the best solution for you.
+                    Tell us about your project and we'll
+                    discuss how CodeSolo can turn your idea
+                    into a real digital product.
                 </p>
 
 
-                <div class="contact-cta">
+                <div class="contact-links">
 
                     <a
                         href="mailto:codesolo.dev@gmail.com"
-                        class="button button-primary"
+                        class="contact-link"
                     >
+
                         <i class="fas fa-envelope"></i>
-                        Email Us
+
+                        codesolo.dev@gmail.com
+
                     </a>
 
 
                     <a
                         href="https://wa.me/94723032829"
                         target="_blank"
-                        class="button button-secondary"
+                        class="contact-link"
                     >
+
                         <i class="fab fa-whatsapp"></i>
-                        WhatsApp
+
+                        +94 72 303 2829
+
+                    </a>
+
+
+                    <span class="contact-link">
+
+                        <i class="fas fa-location-dot"></i>
+
+                        Colombo, Sri Lanka
+
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="contact-right">
+
+                <div class="contact-card">
+
+                    <h3>
+                        Start a conversation
+                    </h3>
+
+                    <p>
+                        Contact us directly and tell us
+                        what you want to build.
+                    </p>
+
+
+                    <a
+                        href="mailto:codesolo.dev@gmail.com"
+                        class="contact-btn"
+                        style="
+                            display:block;
+                            text-align:center;
+                        "
+                    >
+
+                        Contact CodeSolo
+
+                        <i class="fas fa-arrow-right"></i>
+
                     </a>
 
                 </div>
@@ -3037,69 +3266,56 @@
 
     <div class="container">
 
-        <div class="footer-content">
+        <div class="footer-row">
 
 
-            <div class="footer-brand">
+            <div>
 
-                <a href="#home" class="logo">
+                <a href="#home" class="brand">
 
-                    <i class="fas fa-code"></i>
+                    <span class="brand-mark">
 
-                    Code<span>Solo</span>
+                        <i class="fas fa-code"></i>
+
+                    </span>
+
+                    CodeSolo
 
                 </a>
 
-                <p>
-                    Building digital solutions from Sri Lanka.
-                </p>
+                <div class="footer-copy">
+
+                    © 2026 CodeSolo. All rights reserved.
+
+                </div>
 
             </div>
 
 
-
-            <div class="social-links">
-
-
-                <a
-                    href="https://www.linkedin.com/in/shahan-iresh-374218374/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="social-link"
-                    aria-label="LinkedIn"
-                >
-                    <i class="fab fa-linkedin-in"></i>
-                </a>
-
+            <div class="footer-social">
 
                 <a
                     href="https://github.com/codesolo7"
                     target="_blank"
-                    rel="noopener noreferrer"
-                    class="social-link"
                     aria-label="GitHub"
                 >
                     <i class="fab fa-github"></i>
                 </a>
 
-
                 <a
                     href="mailto:codesolo.dev@gmail.com"
-                    class="social-link"
                     aria-label="Email"
                 >
                     <i class="fas fa-envelope"></i>
                 </a>
 
-
-            </div>
-
-
-
-            <div class="copyright">
-
-                © 2026 CodeSolo.
-                All Rights Reserved.
+                <a
+                    href="https://wa.me/94723032829"
+                    target="_blank"
+                    aria-label="WhatsApp"
+                >
+                    <i class="fab fa-whatsapp"></i>
+                </a>
 
             </div>
 
@@ -3112,231 +3328,198 @@
 
 
 
-<!-- =========================================================
-     JAVASCRIPT
-========================================================= -->
-
 <script>
 
 
-    /* =========================================================
-       MOBILE MENU
-    ========================================================= */
+/* =========================================================
+   MOBILE MENU
+========================================================= */
 
-    const mobileMenuBtn =
-        document.getElementById("mobileMenuBtn");
+const menuBtn =
+    document.getElementById("menuBtn");
 
-    const navLinks =
-        document.getElementById("navLinks");
+const navLinks =
+    document.getElementById("navLinks");
 
 
-    mobileMenuBtn.addEventListener(
-        "click",
-        function () {
+menuBtn.addEventListener("click", () => {
 
-            navLinks.classList.toggle("active");
+    navLinks.classList.toggle("active");
+
+    const icon =
+        menuBtn.querySelector("i");
+
+    if (
+        navLinks.classList.contains("active")
+    ) {
+
+        icon.classList.remove("fa-bars");
+
+        icon.classList.add("fa-xmark");
+
+    } else {
+
+        icon.classList.remove("fa-xmark");
+
+        icon.classList.add("fa-bars");
+
+    }
+
+});
+
+
+document
+    .querySelectorAll(".nav-links a")
+    .forEach(link => {
+
+        link.addEventListener("click", () => {
+
+            navLinks.classList.remove("active");
 
             const icon =
-                mobileMenuBtn.querySelector("i");
+                menuBtn.querySelector("i");
+
+            icon.classList.remove("fa-xmark");
+
+            icon.classList.add("fa-bars");
+
+        });
+
+    });
 
 
-            if (navLinks.classList.contains("active")) {
 
-                icon.classList.remove("fa-bars");
+/* =========================================================
+   HEADER SCROLL
+========================================================= */
 
-                icon.classList.add("fa-xmark");
+const header =
+    document.getElementById("header");
 
-            } else {
+window.addEventListener("scroll", () => {
 
-                icon.classList.remove("fa-xmark");
+    if (window.scrollY > 30) {
 
-                icon.classList.add("fa-bars");
+        header.classList.add("scrolled");
 
-            }
+    } else {
 
-        }
-    );
+        header.classList.remove("scrolled");
+
+    }
+
+});
 
 
-    /* Close mobile menu */
 
-    document
-        .querySelectorAll(".nav-links a")
-        .forEach(function (link) {
+/* =========================================================
+   PROJECT READ MORE
+========================================================= */
 
-            link.addEventListener(
-                "click",
-                function () {
+const readMoreBtn =
+    document.getElementById("readMoreBtn");
 
-                    navLinks.classList.remove("active");
+const hiddenProjects =
+    document.querySelectorAll(".hidden-project");
 
-                    const icon =
-                        mobileMenuBtn.querySelector("i");
 
-                    icon.classList.remove("fa-xmark");
+readMoreBtn.addEventListener("click", () => {
 
-                    icon.classList.add("fa-bars");
+    hiddenProjects.forEach(project => {
 
-                }
-            );
+        project.classList.toggle("show-projects");
+
+    });
+
+
+    if (
+        readMoreBtn
+            .querySelector("span")
+            .textContent
+            .includes("Read More")
+    ) {
+
+        readMoreBtn
+            .querySelector("span")
+            .textContent =
+            "Show Less Projects";
+
+        readMoreBtn
+            .querySelector("i")
+            .classList
+            .remove("fa-chevron-down");
+
+        readMoreBtn
+            .querySelector("i")
+            .classList
+            .add("fa-chevron-up");
+
+    } else {
+
+        readMoreBtn
+            .querySelector("span")
+            .textContent =
+            "Read More Projects";
+
+        readMoreBtn
+            .querySelector("i")
+            .classList
+            .remove("fa-chevron-up");
+
+        readMoreBtn
+            .querySelector("i")
+            .classList
+            .add("fa-chevron-down");
+
+    }
+
+});
+
+
+
+/* =========================================================
+   PRICING TABS
+========================================================= */
+
+const tabButtons =
+    document.querySelectorAll(".tab-btn");
+
+const pricingContents =
+    document.querySelectorAll(".pricing-content");
+
+
+tabButtons.forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        const target =
+            button.dataset.tab;
+
+
+        tabButtons.forEach(btn => {
+
+            btn.classList.remove("active");
 
         });
 
 
+        pricingContents.forEach(content => {
 
-    /* =========================================================
-       HEADER SCROLL
-    ========================================================= */
+            content.classList.remove("active");
 
-    const header =
-        document.getElementById("header");
+        });
 
 
-    window.addEventListener(
-        "scroll",
-        function () {
-
-            if (window.scrollY > 30) {
-
-                header.classList.add("scrolled");
-
-            } else {
-
-                header.classList.remove("scrolled");
-
-            }
-
-        }
-    );
+        button.classList.add("active");
 
 
+        document
+            .getElementById(target)
+            .classList.add("active");
 
-    /* =========================================================
-       READ MORE PROJECTS
-    ========================================================= */
+    });
 
-    const portfolioGrid =
-        document.getElementById("portfolioGrid");
-
-    const readMoreBtn =
-        document.getElementById("readMoreBtn");
-
-    const readMoreWrapper =
-        document.getElementById("readMoreWrapper");
-
-
-    const hiddenProjects =
-        document.querySelectorAll(".hidden-project");
-
-
-    /* Hide Read More if there are no hidden projects */
-
-    if (hiddenProjects.length === 0) {
-
-        readMoreWrapper.style.display = "none";
-
-    }
-
-
-    readMoreBtn.addEventListener(
-        "click",
-        function () {
-
-            portfolioGrid.classList.toggle("show-all");
-
-
-            if (
-                portfolioGrid.classList.contains("show-all")
-            ) {
-
-                readMoreBtn.innerHTML = `
-                    <span>Show Less</span>
-                    <i class="fas fa-chevron-up"></i>
-                `;
-
-            } else {
-
-                readMoreBtn.innerHTML = `
-                    <span>Read More Projects</span>
-                    <i class="fas fa-chevron-down"></i>
-                `;
-
-
-                /* Scroll back to portfolio */
-
-                document
-                    .getElementById("portfolio")
-                    .scrollIntoView({
-                        behavior: "smooth"
-                    });
-
-            }
-
-        }
-    );
-
-
-
-    /* =========================================================
-       PRICING TABS
-    ========================================================= */
-
-    const tabButtons =
-        document.querySelectorAll(".tab-button");
-
-    const tabContents =
-        document.querySelectorAll(".tab-content");
-
-
-    tabButtons.forEach(
-        function (button) {
-
-            button.addEventListener(
-                "click",
-                function () {
-
-                    tabButtons.forEach(
-                        function (btn) {
-
-                            btn.classList.remove("active");
-
-                        }
-                    );
-
-
-                    tabContents.forEach(
-                        function (content) {
-
-                            content.classList.remove("active");
-
-                        }
-                    );
-
-
-                    button.classList.add("active");
-
-
-                    const tabName =
-                        button.getAttribute("data-tab");
-
-
-                    const target =
-                        document.getElementById(
-                            tabName + "-tab"
-                        );
-
-
-                    if (target) {
-
-                        target.classList.add("active");
-
-                    }
-
-                }
-            );
-
-        }
-    );
+});
 
 
 </script>

@@ -4,28 +4,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>CodeSolo — Software Development</title>
+    <title>CodeSolo - Software Development</title>
 
     <meta name="description"
-          content="CodeSolo is a Sri Lankan software development company creating modern websites, AI solutions, automation systems and digital experiences.">
-
-    <link rel="icon" type="image/png" href="favicon/favicon-96x96.png" sizes="96x96">
-    <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg">
-    <link rel="shortcut icon" href="favicon/favicon.ico">
-    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
-    <meta name="apple-mobile-web-app-title" content="CodeSolo">
-    <link rel="manifest" href="favicon/site.webmanifest">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-          rel="stylesheet">
+          content="CodeSolo is a Sri Lankan software development team creating modern websites, web applications, AI solutions and digital products.">
 
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon/favicon-96x96.png">
+    <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg">
+    <link rel="shortcut icon" href="favicon/favicon.ico">
+    <link rel="apple-touch-icon" href="favicon/apple-touch-icon.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+
     <style>
+
+        /* =========================================================
+           ROOT
+        ========================================================= */
+
+        :root {
+            --primary: #00eaff;
+            --primary-2: #00a2ff;
+
+            --bg: #07090c;
+            --bg-2: #0d1117;
+            --card: rgba(17, 23, 31, 0.78);
+            --card-2: rgba(20, 27, 36, 0.92);
+
+            --white: #ffffff;
+            --text: #dce5ed;
+            --muted: #8d99a6;
+
+            --border: rgba(0, 234, 255, 0.12);
+            --border-hover: rgba(0, 234, 255, 0.45);
+
+            --gradient:
+                linear-gradient(
+                    135deg,
+                    #00eaff 0%,
+                    #00a2ff 100%
+                );
+
+            --shadow:
+                0 20px 60px rgba(0, 0, 0, 0.35);
+
+            --radius: 18px;
+        }
+
 
         /* =========================================================
            RESET
@@ -43,11 +71,34 @@
         }
 
         body {
-            font-family: "Inter", sans-serif;
-            background: #070b10;
-            color: #ffffff;
+            font-family:
+                "Segoe UI",
+                Tahoma,
+                Geneva,
+                Verdana,
+                sans-serif;
+
+            background:
+                radial-gradient(
+                    circle at 10% 10%,
+                    rgba(0, 234, 255, 0.05),
+                    transparent 30%
+                ),
+                radial-gradient(
+                    circle at 90% 20%,
+                    rgba(0, 162, 255, 0.05),
+                    transparent 30%
+                ),
+                var(--bg);
+
+            color: var(--white);
             line-height: 1.6;
             overflow-x: hidden;
+        }
+
+        body::selection {
+            background: var(--primary);
+            color: #000;
         }
 
         a {
@@ -55,9 +106,7 @@
             color: inherit;
         }
 
-        button,
-        input,
-        textarea {
+        button {
             font-family: inherit;
         }
 
@@ -66,27 +115,9 @@
             display: block;
         }
 
-        :root {
-            --cyan: #00e5ff;
-            --blue: #168cff;
-            --cyan-soft: rgba(0, 229, 255, .12);
-
-            --bg: #070b10;
-            --bg-2: #0b1118;
-            --card: rgba(15, 23, 32, .72);
-
-            --border: rgba(255,255,255,.08);
-            --border-cyan: rgba(0,229,255,.20);
-
-            --white: #ffffff;
-            --gray: #aab4c0;
-            --gray-2: #73808e;
-
-            --gradient: linear-gradient(
-                135deg,
-                #00e5ff 0%,
-                #168cff 100%
-            );
+        .container {
+            width: min(1180px, calc(100% - 40px));
+            margin: auto;
         }
 
 
@@ -94,95 +125,52 @@
            GLOBAL
         ========================================================= */
 
-        .container {
-            width: min(1180px, calc(100% - 40px));
-            margin: auto;
-        }
-
         section {
-            position: relative;
             padding: 110px 0;
+            position: relative;
         }
 
         .section-header {
-            max-width: 700px;
             margin-bottom: 55px;
+            max-width: 760px;
         }
 
-        .section-header.center {
-            text-align: center;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .section-label {
+        .section-subtitle {
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            color: var(--cyan);
+
+            color: var(--primary);
+
             font-size: 13px;
             font-weight: 700;
-            letter-spacing: 1.5px;
+
+            letter-spacing: 2px;
             text-transform: uppercase;
+
             margin-bottom: 14px;
         }
 
-        .section-label::before {
+        .section-subtitle::before {
             content: "";
-            width: 24px;
+            width: 28px;
             height: 2px;
-            background: var(--cyan);
+
+            background: var(--primary);
+            border-radius: 20px;
         }
 
         .section-title {
-            font-size: clamp(32px, 4vw, 48px);
+            font-size: clamp(2rem, 4vw, 3rem);
             line-height: 1.1;
-            letter-spacing: -1.5px;
+
             margin-bottom: 18px;
         }
 
-        .section-description {
-            color: var(--gray);
+        .section-desc {
+            color: var(--muted);
             font-size: 16px;
-            max-width: 650px;
-        }
-
-
-        /* =========================================================
-           BACKGROUND EFFECTS
-        ========================================================= */
-
-        .page-glow {
-            position: fixed;
-            width: 600px;
-            height: 600px;
-            border-radius: 50%;
-            background: rgba(0,229,255,.045);
-            filter: blur(100px);
-            pointer-events: none;
-            z-index: -2;
-        }
-
-        .glow-one {
-            top: -250px;
-            left: -250px;
-        }
-
-        .glow-two {
-            right: -300px;
-            top: 800px;
-        }
-
-        .grid-bg {
-            position: absolute;
-            inset: 0;
-            opacity: .25;
-            pointer-events: none;
-            background-image:
-                linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
-            background-size: 50px 50px;
-            mask-image: linear-gradient(to bottom, black, transparent 90%);
+            max-width: 680px;
         }
 
 
@@ -194,21 +182,28 @@
             position: fixed;
             top: 0;
             left: 0;
+
             width: 100%;
-            z-index: 1000;
-            background: rgba(7,11,16,.72);
+            z-index: 9999;
+
+            background: rgba(7, 9, 12, 0.72);
             backdrop-filter: blur(18px);
-            border-bottom: 1px solid rgba(255,255,255,.05);
-            transition: .3s ease;
+            -webkit-backdrop-filter: blur(18px);
+
+            border-bottom: 1px solid transparent;
+
+            transition: 0.3s ease;
         }
 
         header.scrolled {
-            background: rgba(7,11,16,.94);
-            box-shadow: 0 10px 40px rgba(0,0,0,.25);
+            background: rgba(7, 9, 12, 0.94);
+            border-bottom-color: var(--border);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
         }
 
         .navbar {
-            min-height: 76px;
+            height: 78px;
+
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -218,86 +213,87 @@
             display: flex;
             align-items: center;
             gap: 10px;
-            font-size: 21px;
+
+            font-size: 23px;
             font-weight: 800;
-            letter-spacing: -.5px;
+
+            color: var(--white);
         }
 
-        .logo-icon {
-            width: 38px;
-            height: 38px;
-            display: grid;
-            place-items: center;
-            border-radius: 10px;
+        .logo i {
+            width: 40px;
+            height: 40px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 11px;
+
             background: var(--gradient);
-            color: #031018;
-            box-shadow: 0 0 25px rgba(0,229,255,.18);
+            color: #000;
+
+            font-size: 19px;
         }
 
         .logo span {
-            color: var(--cyan);
+            color: var(--primary);
         }
 
         .nav-links {
             display: flex;
             align-items: center;
             gap: 34px;
-            list-style: none;
         }
 
         .nav-links a {
-            position: relative;
-            color: #b8c2ce;
+            color: #b8c3cd;
+
             font-size: 14px;
             font-weight: 600;
-            transition: .25s ease;
+
+            position: relative;
+            transition: 0.3s ease;
         }
 
         .nav-links a:hover {
-            color: var(--white);
+            color: var(--primary);
         }
 
         .nav-links a::after {
             content: "";
+
             position: absolute;
             left: 0;
-            bottom: -8px;
+            bottom: -9px;
+
             width: 0;
             height: 2px;
-            border-radius: 5px;
-            background: var(--cyan);
-            transition: .25s ease;
+
+            background: var(--primary);
+            border-radius: 20px;
+
+            transition: 0.3s ease;
         }
 
         .nav-links a:hover::after {
             width: 100%;
         }
 
-        .nav-contact {
-            padding: 10px 17px !important;
-            border: 1px solid var(--border-cyan);
-            border-radius: 8px;
-            color: var(--cyan) !important;
-        }
-
-        .nav-contact::after {
+        .mobile-menu-btn {
             display: none;
-        }
 
-        .nav-contact:hover {
-            background: var(--cyan-soft);
-        }
-
-        .mobile-menu {
-            display: none;
             width: 42px;
             height: 42px;
+
             border: 1px solid var(--border);
-            background: rgba(255,255,255,.04);
-            color: white;
-            border-radius: 9px;
-            font-size: 18px;
+            border-radius: 10px;
+
+            background: rgba(255,255,255,0.03);
+            color: var(--white);
+
             cursor: pointer;
+            font-size: 18px;
         }
 
 
@@ -307,65 +303,118 @@
 
         .hero {
             min-height: 100vh;
+
             display: flex;
             align-items: center;
-            padding-top: 110px;
+
+            padding-top: 130px;
             overflow: hidden;
         }
 
-        .hero .grid-bg {
-            mask-image: linear-gradient(to bottom, black 20%, transparent 100%);
+        .hero::before {
+            content: "";
+
+            position: absolute;
+            width: 600px;
+            height: 600px;
+
+            top: -250px;
+            left: -250px;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(0, 234, 255, 0.12),
+                    transparent 65%
+                );
+
+            pointer-events: none;
+        }
+
+        .hero::after {
+            content: "";
+
+            position: absolute;
+
+            width: 600px;
+            height: 600px;
+
+            right: -300px;
+            bottom: -300px;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(0, 162, 255, 0.10),
+                    transparent 65%
+                );
+
+            pointer-events: none;
         }
 
         .hero-content {
             display: grid;
-            grid-template-columns: 1.1fr .9fr;
-            gap: 70px;
+            grid-template-columns: 1.05fr 0.95fr;
+
             align-items: center;
+
+            gap: 70px;
         }
 
         .hero-badge {
             display: inline-flex;
             align-items: center;
             gap: 9px;
+
             padding: 8px 13px;
-            border-radius: 100px;
-            background: rgba(0,229,255,.06);
-            border: 1px solid rgba(0,229,255,.16);
-            color: #b9f8ff;
+
+            border: 1px solid var(--border);
+            border-radius: 50px;
+
+            background: rgba(0, 234, 255, 0.04);
+
+            color: var(--primary);
+
             font-size: 12px;
-            font-weight: 600;
-            margin-bottom: 25px;
+            font-weight: 700;
+
+            margin-bottom: 22px;
         }
 
-        .status-dot {
+        .hero-badge span {
             width: 7px;
             height: 7px;
+
+            background: var(--primary);
             border-radius: 50%;
-            background: #00e5ff;
-            box-shadow: 0 0 12px #00e5ff;
+
+            box-shadow:
+                0 0 12px var(--primary);
         }
 
         .hero h1 {
-            max-width: 760px;
-            font-size: clamp(45px, 6vw, 76px);
-            line-height: .98;
-            letter-spacing: -4px;
-            margin-bottom: 25px;
+            font-size: clamp(2.8rem, 6vw, 5rem);
+            line-height: 0.98;
+
+            letter-spacing: -2px;
+
+            margin-bottom: 24px;
         }
 
-        .gradient-text {
+        .hero h1 span {
             background: var(--gradient);
             -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
+            -webkit-text-fill-color: transparent;
         }
 
         .hero-description {
-            color: var(--gray);
             max-width: 650px;
+
+            color: var(--muted);
+
             font-size: 17px;
             line-height: 1.8;
+
             margin-bottom: 32px;
         }
 
@@ -373,158 +422,164 @@
             display: flex;
             align-items: center;
             gap: 12px;
-            margin-bottom: 40px;
+
+            margin-bottom: 38px;
         }
 
-        .hero-btn {
+        .button {
             display: inline-flex;
             align-items: center;
             justify-content: center;
             gap: 9px;
+
             min-height: 48px;
-            padding: 0 20px;
-            border-radius: 9px;
+
+            padding: 0 22px;
+
+            border-radius: 11px;
+
             font-size: 14px;
             font-weight: 700;
-            transition: .3s ease;
+
+            transition: 0.3s ease;
         }
 
-        .hero-btn.primary {
+        .button-primary {
             background: var(--gradient);
-            color: #031018;
-            box-shadow: 0 10px 30px rgba(0,229,255,.12);
+            color: #001015;
+
+            box-shadow:
+                0 10px 30px rgba(0, 234, 255, 0.14);
         }
 
-        .hero-btn.primary:hover {
+        .button-primary:hover {
             transform: translateY(-3px);
-            box-shadow: 0 15px 35px rgba(0,229,255,.22);
+            box-shadow:
+                0 15px 35px rgba(0, 234, 255, 0.25);
         }
 
-        .hero-btn.secondary {
-            border: 1px solid var(--border);
-            background: rgba(255,255,255,.035);
-            color: white;
+        .button-secondary {
+            border: 1px solid var(--border-hover);
+            color: var(--primary);
+
+            background: rgba(0, 234, 255, 0.03);
         }
 
-        .hero-btn.secondary:hover {
-            border-color: var(--border-cyan);
-            color: var(--cyan);
+        .button-secondary:hover {
+            background: rgba(0, 234, 255, 0.09);
             transform: translateY(-3px);
         }
 
-        .hero-stats {
+
+        /* =========================================================
+           STATS
+        ========================================================= */
+
+        .stats {
             display: flex;
-            gap: 38px;
+            gap: 12px;
         }
 
-        .hero-stat strong {
+        .stat {
+            min-width: 125px;
+
+            padding: 15px 18px;
+
+            background: rgba(255,255,255,0.025);
+
+            border: 1px solid var(--border);
+            border-radius: 13px;
+
+            transition: 0.3s ease;
+        }
+
+        .stat:hover {
+            border-color: var(--border-hover);
+            transform: translateY(-3px);
+        }
+
+        .stat strong {
             display: block;
-            font-size: 25px;
+
+            color: var(--primary);
+
+            font-size: 23px;
             line-height: 1;
-            margin-bottom: 5px;
+
+            margin-bottom: 7px;
         }
 
-        .hero-stat span {
-            color: var(--gray-2);
+        .stat span {
+            color: var(--muted);
             font-size: 12px;
+            font-weight: 600;
         }
+
+
+        /* =========================================================
+           HERO IMAGE
+        ========================================================= */
 
         .hero-visual {
             position: relative;
-            display: flex;
-            justify-content: center;
-        }
-
-        .hero-image-wrap {
-            width: min(430px, 100%);
-            aspect-ratio: 1;
-            position: relative;
-            display: grid;
-            place-items: center;
-        }
-
-        .hero-ring {
-            position: absolute;
-            inset: 5%;
-            border: 1px solid rgba(0,229,255,.13);
-            border-radius: 50%;
-            animation: rotate 18s linear infinite;
-        }
-
-        .hero-ring::before {
-            content: "";
-            position: absolute;
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background: var(--cyan);
-            top: 18px;
-            left: 50%;
-            box-shadow: 0 0 20px var(--cyan);
         }
 
         .hero-image-box {
             position: relative;
-            width: 75%;
-            height: 75%;
-            border-radius: 25px;
-            padding: 10px;
-            background: linear-gradient(
-                135deg,
-                rgba(0,229,255,.18),
-                rgba(22,140,255,.04)
-            );
-            border: 1px solid rgba(0,229,255,.15);
-            box-shadow: 0 30px 80px rgba(0,0,0,.4);
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            min-height: 430px;
+
+            border-radius: 28px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(0,234,255,0.07),
+                    rgba(0,162,255,0.015)
+                );
+
+            border: 1px solid var(--border);
+
+            overflow: hidden;
+
+            box-shadow: var(--shadow);
+        }
+
+        .hero-image-box::before {
+            content: "";
+
+            position: absolute;
+
+            width: 300px;
+            height: 300px;
+
+            border-radius: 50%;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(0,234,255,0.18),
+                    transparent 70%
+                );
+
+            filter: blur(5px);
         }
 
         .hero-image-box img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            border-radius: 18px;
-            background: #0a1017;
-        }
+            position: relative;
+            z-index: 2;
 
-        .floating-card {
-            position: absolute;
-            padding: 12px 15px;
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            background: rgba(10,16,23,.85);
-            backdrop-filter: blur(15px);
-            box-shadow: 0 15px 35px rgba(0,0,0,.25);
-        }
+            width: 90%;
+            max-width: 450px;
 
-        .floating-card i {
-            color: var(--cyan);
-            margin-right: 6px;
-        }
-
-        .floating-card span {
-            font-size: 12px;
-            color: #dce3e9;
-            font-weight: 600;
-        }
-
-        .floating-one {
-            left: 0;
-            top: 28%;
-        }
-
-        .floating-two {
-            right: 0;
-            bottom: 25%;
-        }
-
-        @keyframes rotate {
-            from {
-                transform: rotate(0);
-            }
-
-            to {
-                transform: rotate(360deg);
-            }
+            filter:
+                drop-shadow(
+                    0 25px 40px rgba(0, 0, 0, 0.45)
+                );
         }
 
 
@@ -533,81 +588,68 @@
         ========================================================= */
 
         .services {
-            background: #090f16;
-            border-top: 1px solid rgba(255,255,255,.04);
-            border-bottom: 1px solid rgba(255,255,255,.04);
+            background: var(--bg-2);
         }
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 18px;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 20px;
         }
 
         .service-card {
-            position: relative;
-            padding: 32px;
-            min-height: 280px;
-            border-radius: 17px;
-            background: linear-gradient(
-                145deg,
-                rgba(255,255,255,.045),
-                rgba(255,255,255,.018)
-            );
-            border: 1px solid var(--border);
-            transition: .35s ease;
-            overflow: hidden;
-        }
+            padding: 30px;
 
-        .service-card::before {
-            content: "";
-            position: absolute;
-            width: 130px;
-            height: 130px;
-            right: -70px;
-            top: -70px;
-            background: rgba(0,229,255,.1);
-            filter: blur(30px);
-            border-radius: 50%;
+            min-height: 250px;
+
+            border-radius: var(--radius);
+
+            background: var(--card);
+
+            border: 1px solid var(--border);
+
+            transition: 0.35s ease;
         }
 
         .service-card:hover {
-            transform: translateY(-7px);
-            border-color: var(--border-cyan);
-            box-shadow: 0 20px 50px rgba(0,0,0,.25);
+            transform: translateY(-8px);
+
+            border-color: var(--border-hover);
+
+            box-shadow:
+                0 20px 50px rgba(0, 234, 255, 0.07);
         }
 
         .service-icon {
             width: 55px;
             height: 55px;
-            display: grid;
-            place-items: center;
-            border-radius: 13px;
-            background: rgba(0,229,255,.08);
-            border: 1px solid rgba(0,229,255,.12);
-            color: var(--cyan);
-            font-size: 21px;
-            margin-bottom: 28px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 14px;
+
+            background: var(--gradient);
+
+            color: #000;
+
+            margin-bottom: 24px;
+
+            font-size: 22px;
         }
 
         .service-card h3 {
-            font-size: 19px;
+            font-size: 20px;
             margin-bottom: 12px;
         }
 
         .service-card p {
-            color: var(--gray);
+            color: var(--muted);
             font-size: 14px;
-            line-height: 1.8;
-        }
-
-        .service-number {
-            position: absolute;
-            right: 25px;
-            bottom: 20px;
-            color: rgba(255,255,255,.06);
-            font-size: 55px;
-            font-weight: 800;
         }
 
 
@@ -617,154 +659,293 @@
 
         .portfolio-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 22px;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 24px;
         }
 
         .portfolio-card {
             position: relative;
-            height: 360px;
-            border-radius: 18px;
+
+            min-height: 370px;
+
             overflow: hidden;
+
+            border-radius: 20px;
+
+            background: var(--card);
+
             border: 1px solid var(--border);
-            background: #0c131b;
+
+            transition: 0.35s ease;
+        }
+
+        .portfolio-card:hover {
+            border-color: var(--border-hover);
+
+            transform: translateY(-6px);
+
+            box-shadow:
+                0 25px 60px rgba(0, 0, 0, 0.4);
         }
 
         .portfolio-img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
-            transition: .6s ease;
-        }
 
-        .portfolio-card::after {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(
-                to top,
-                rgba(5,9,13,.98) 0%,
-                rgba(5,9,13,.65) 35%,
-                transparent 75%
-            );
+            min-height: 370px;
+
+            object-fit: cover;
+
+            transition: 0.5s ease;
         }
 
         .portfolio-card:hover .portfolio-img {
-            transform: scale(1.06);
+            transform: scale(1.05);
         }
 
-        .portfolio-content {
+        .portfolio-overlay {
             position: absolute;
-            z-index: 2;
-            left: 25px;
-            right: 25px;
-            bottom: 23px;
+
+            inset: 0;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+
+            padding: 28px;
+
+            background:
+                linear-gradient(
+                    to top,
+                    rgba(4, 7, 10, 0.98) 0%,
+                    rgba(4, 7, 10, 0.80) 45%,
+                    rgba(4, 7, 10, 0.05) 100%
+                );
         }
 
-        .project-category {
-            color: var(--cyan);
-            font-size: 11px;
-            font-weight: 700;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            margin-bottom: 7px;
-        }
+        .project-number {
+            position: absolute;
 
-        .portfolio-content h3 {
-            font-size: 22px;
-            margin-bottom: 7px;
-        }
+            top: 18px;
+            right: 18px;
 
-        .portfolio-content p {
-            color: #aeb8c3;
-            font-size: 13px;
-            max-width: 580px;
-            margin-bottom: 15px;
-        }
+            width: 36px;
+            height: 36px;
 
-        .portfolio-bottom {
             display: flex;
             align-items: center;
-            justify-content: space-between;
-            gap: 15px;
+            justify-content: center;
+
+            border-radius: 10px;
+
+            background: rgba(0,0,0,0.55);
+
+            border: 1px solid var(--border);
+
+            color: var(--primary);
+
+            font-size: 12px;
+            font-weight: 800;
         }
 
-        .tags {
+        .portfolio-overlay h3 {
+            color: var(--white);
+
+            font-size: 22px;
+
+            margin-bottom: 9px;
+        }
+
+        .portfolio-overlay p {
+            color: #aeb9c3;
+
+            font-size: 13px;
+            line-height: 1.7;
+
+            margin-bottom: 16px;
+
+            max-width: 520px;
+        }
+
+        .tech-tags {
             display: flex;
             flex-wrap: wrap;
-            gap: 6px;
+            gap: 7px;
+
+            margin-bottom: 20px;
         }
 
-        .tag {
-            padding: 5px 9px;
-            border-radius: 6px;
-            background: rgba(255,255,255,.08);
-            color: #dce4eb;
+        .tech-tag {
+            padding: 5px 10px;
+
+            border-radius: 50px;
+
+            background: rgba(0, 234, 255, 0.08);
+
+            border: 1px solid rgba(0,234,255,0.15);
+
+            color: var(--primary);
+
             font-size: 10px;
-            border: 1px solid rgba(255,255,255,.06);
+            font-weight: 700;
         }
 
-        .project-link {
-            flex-shrink: 0;
-            width: 38px;
-            height: 38px;
-            display: grid;
-            place-items: center;
-            border-radius: 8px;
-            background: var(--gradient);
-            color: #031018;
-            transition: .25s ease;
+        .project-button {
+            width: fit-content;
         }
 
-        .project-link:hover {
+
+        /* =========================================================
+           READ MORE
+        ========================================================= */
+
+        .hidden-project {
+            display: none;
+        }
+
+        .portfolio-grid.show-all .hidden-project {
+            display: block;
+        }
+
+        .read-more-wrapper {
+            display: flex;
+            justify-content: center;
+
+            margin-top: 35px;
+        }
+
+        .read-more-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+
+            padding: 13px 23px;
+
+            border-radius: 11px;
+
+            background: rgba(0,234,255,0.05);
+
+            border: 1px solid var(--border-hover);
+
+            color: var(--primary);
+
+            font-weight: 700;
+
+            cursor: pointer;
+
+            transition: 0.3s ease;
+        }
+
+        .read-more-btn:hover {
+            background: rgba(0,234,255,0.1);
             transform: translateY(-3px);
         }
 
 
         /* =========================================================
-           PROCESS
+           LOGO DESIGN
         ========================================================= */
 
-        .process-section {
-            background: #090f16;
-            border-top: 1px solid rgba(255,255,255,.04);
-            border-bottom: 1px solid rgba(255,255,255,.04);
+        .logo-design {
+            background: var(--bg-2);
         }
 
-        .process-grid {
+        .logo-process {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 18px;
+
+            margin-bottom: 70px;
+        }
+
+        .process-step {
+            padding: 28px 20px;
+
+            text-align: center;
+
+            border-radius: var(--radius);
+
+            background: var(--card);
+
+            border: 1px solid var(--border);
+
+            transition: 0.3s ease;
+        }
+
+        .process-step:hover {
+            transform: translateY(-6px);
+            border-color: var(--border-hover);
+        }
+
+        .step-number {
+            width: 48px;
+            height: 48px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            margin: 0 auto 18px;
+
+            border-radius: 50%;
+
+            background: var(--gradient);
+
+            color: #000;
+
+            font-weight: 800;
+        }
+
+        .process-step h3 {
+            font-size: 17px;
+            margin-bottom: 10px;
+        }
+
+        .process-step p {
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        .logo-gallery {
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
             gap: 18px;
         }
 
-        .process-card {
-            padding: 30px 24px;
+        .logo-item {
+            height: 180px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: var(--radius);
+
+            background: var(--card);
+
             border: 1px solid var(--border);
-            border-radius: 16px;
-            background: rgba(255,255,255,.025);
+
+            transition: 0.3s ease;
         }
 
-        .process-number {
-            width: 42px;
-            height: 42px;
-            display: grid;
-            place-items: center;
-            border-radius: 50%;
-            background: var(--gradient);
-            color: #031018;
+        .logo-item:hover {
+            border-color: var(--border-hover);
+            transform: translateY(-5px);
+        }
+
+        .logo-placeholder {
+            color: var(--primary);
+            font-size: 18px;
             font-weight: 800;
-            font-size: 14px;
-            margin-bottom: 25px;
-        }
-
-        .process-card h3 {
-            font-size: 17px;
-            margin-bottom: 9px;
-        }
-
-        .process-card p {
-            color: var(--gray);
-            font-size: 13px;
         }
 
 
@@ -773,31 +954,47 @@
         ========================================================= */
 
         .pricing-tabs {
-            max-width: 520px;
-            margin: 0 auto 45px;
-            padding: 5px;
+            width: 100%;
+        }
+
+        .tab-buttons {
+            width: min(500px, 100%);
+
+            margin: 0 auto 40px;
+
             display: flex;
-            background: rgba(255,255,255,.035);
+
+            padding: 6px;
+
+            border-radius: 13px;
+
+            background: var(--card);
+
             border: 1px solid var(--border);
-            border-radius: 11px;
         }
 
         .tab-button {
             flex: 1;
-            padding: 12px;
-            background: transparent;
-            color: var(--gray);
+
+            padding: 13px 15px;
+
             border: 0;
-            border-radius: 8px;
-            font-size: 13px;
+            border-radius: 9px;
+
+            background: transparent;
+
+            color: var(--muted);
+
             font-weight: 700;
+
             cursor: pointer;
-            transition: .25s ease;
+
+            transition: 0.3s ease;
         }
 
         .tab-button.active {
-            color: #031018;
             background: var(--gradient);
+            color: #000;
         }
 
         .tab-content {
@@ -810,93 +1007,92 @@
 
         .pricing-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
             gap: 20px;
         }
 
         .pricing-card {
             position: relative;
-            padding: 32px;
-            border-radius: 17px;
-            background: linear-gradient(
-                145deg,
-                rgba(255,255,255,.045),
-                rgba(255,255,255,.015)
-            );
+
+            padding: 32px 25px;
+
+            border-radius: var(--radius);
+
+            background: var(--card);
+
             border: 1px solid var(--border);
+
+            text-align: center;
         }
 
         .pricing-card.featured {
-            border-color: rgba(0,229,255,.35);
-            box-shadow: 0 20px 60px rgba(0,229,255,.06);
+            border-color: var(--primary);
+
+            box-shadow:
+                0 20px 60px rgba(0,234,255,0.08);
         }
 
-        .popular {
+        .pricing-badge {
             position: absolute;
-            right: 20px;
-            top: 20px;
-            padding: 5px 9px;
-            border-radius: 5px;
+
+            top: -13px;
+            left: 50%;
+
+            transform: translateX(-50%);
+
+            padding: 5px 15px;
+
+            border-radius: 50px;
+
             background: var(--gradient);
-            color: #031018;
-            font-size: 9px;
+
+            color: #000;
+
+            font-size: 10px;
             font-weight: 800;
-            text-transform: uppercase;
         }
 
-        .pricing-card h3 {
-            font-size: 19px;
+        .pricing-name {
+            font-size: 20px;
+            margin-bottom: 12px;
+        }
+
+        .pricing-price {
+            color: var(--primary);
+
+            font-size: 36px;
+            font-weight: 800;
+
             margin-bottom: 8px;
         }
 
-        .price {
-            font-size: 34px;
-            font-weight: 800;
-            margin-bottom: 4px;
-            color: var(--cyan);
+        .pricing-period {
+            color: var(--muted);
+            font-size: 12px;
         }
 
-        .price-note {
-            color: var(--gray-2);
-            font-size: 11px;
-            margin-bottom: 25px;
+        .pricing-features {
+            margin-top: 25px;
+            text-align: left;
         }
 
-        .features {
+        .pricing-feature {
             display: flex;
-            flex-direction: column;
-            gap: 12px;
-            margin-bottom: 25px;
-        }
+            gap: 9px;
 
-        .features li {
-            color: #aeb8c3;
+            color: var(--text);
+
             font-size: 13px;
+
+            margin-bottom: 12px;
         }
 
-        .features i {
-            color: var(--cyan);
-            margin-right: 8px;
-        }
-
-        .pricing-btn {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 44px;
-            border-radius: 8px;
-            border: 1px solid var(--border);
-            color: white;
-            font-size: 13px;
-            font-weight: 700;
-            transition: .25s ease;
-        }
-
-        .pricing-btn:hover,
-        .pricing-card.featured .pricing-btn {
-            background: var(--gradient);
-            color: #031018;
-            border-color: transparent;
+        .pricing-feature i {
+            color: var(--primary);
+            margin-top: 4px;
         }
 
 
@@ -905,136 +1101,107 @@
         ========================================================= */
 
         .contact {
-            background: #090f16;
-            border-top: 1px solid rgba(255,255,255,.04);
+            background: var(--bg-2);
         }
 
-        .contact-layout {
+        .contact-content {
             display: grid;
-            grid-template-columns: .8fr 1.2fr;
-            gap: 70px;
-            align-items: start;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 45px;
         }
 
-        .contact-text h2 {
-            font-size: clamp(32px, 4vw, 47px);
-            line-height: 1.1;
-            margin-bottom: 18px;
-        }
-
-        .contact-text > p {
-            color: var(--gray);
-            font-size: 15px;
-            line-height: 1.8;
-            margin-bottom: 30px;
-        }
-
-        .contact-list {
+        .contact-info {
             display: flex;
             flex-direction: column;
-            gap: 16px;
+            gap: 15px;
         }
 
         .contact-item {
             display: flex;
             align-items: center;
-            gap: 14px;
-            padding: 14px;
+            gap: 17px;
+
+            padding: 20px;
+
+            border-radius: 15px;
+
+            background: var(--card);
+
             border: 1px solid var(--border);
-            border-radius: 11px;
-            background: rgba(255,255,255,.025);
+
+            transition: 0.3s ease;
+        }
+
+        .contact-item:hover {
+            border-color: var(--border-hover);
+            transform: translateX(5px);
         }
 
         .contact-icon {
-            width: 40px;
-            height: 40px;
-            display: grid;
-            place-items: center;
+            width: 48px;
+            height: 48px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
             flex-shrink: 0;
-            border-radius: 9px;
-            color: var(--cyan);
-            background: rgba(0,229,255,.07);
+
+            border-radius: 13px;
+
+            background: var(--gradient);
+
+            color: #000;
         }
 
-        .contact-item small {
-            display: block;
-            color: var(--gray-2);
-            font-size: 10px;
-            margin-bottom: 2px;
+        .contact-details h3 {
+            font-size: 15px;
+            margin-bottom: 3px;
         }
 
-        .contact-item span {
-            color: #dbe2e8;
+        .contact-details a {
+            color: var(--primary);
             font-size: 13px;
+        }
+
+        .contact-details p {
+            color: var(--muted);
+            font-size: 11px;
+            margin: 3px 0 0;
         }
 
         .contact-card {
-            padding: 32px;
-            border-radius: 18px;
+            padding: 35px;
+
+            border-radius: 20px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(0,234,255,0.07),
+                    rgba(255,255,255,0.015)
+                );
+
             border: 1px solid var(--border);
-            background: rgba(255,255,255,.025);
         }
 
         .contact-card h3 {
-            font-size: 20px;
-            margin-bottom: 22px;
+            font-size: 25px;
+            margin-bottom: 10px;
         }
 
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 14px;
+        .contact-card p {
+            color: var(--muted);
+            font-size: 14px;
+            margin-bottom: 25px;
         }
 
-        .form-group {
-            margin-bottom: 15px;
-        }
-
-        .form-group label {
-            display: block;
-            color: #aeb8c3;
-            font-size: 12px;
-            font-weight: 600;
-            margin-bottom: 7px;
-        }
-
-        .form-control {
-            width: 100%;
-            padding: 13px 14px;
-            background: rgba(0,0,0,.22);
-            border: 1px solid var(--border);
-            color: white;
-            border-radius: 8px;
-            outline: none;
-            font-size: 13px;
-            transition: .25s ease;
-        }
-
-        .form-control:focus {
-            border-color: rgba(0,229,255,.4);
-            box-shadow: 0 0 0 3px rgba(0,229,255,.06);
-        }
-
-        textarea.form-control {
-            min-height: 130px;
-            resize: vertical;
-        }
-
-        .submit-btn {
-            width: 100%;
-            min-height: 47px;
-            border: 0;
-            border-radius: 8px;
-            background: var(--gradient);
-            color: #031018;
-            font-weight: 800;
-            cursor: pointer;
-            transition: .25s ease;
-        }
-
-        .submit-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 12px 30px rgba(0,229,255,.16);
+        .contact-cta {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
         }
 
 
@@ -1043,71 +1210,97 @@
         ========================================================= */
 
         footer {
-            padding: 30px 0;
-            background: #05080c;
-            border-top: 1px solid rgba(255,255,255,.05);
+            padding: 45px 0;
+
+            background: #040608;
+
+            border-top: 1px solid rgba(255,255,255,0.05);
         }
 
         .footer-content {
             display: flex;
+
             align-items: center;
             justify-content: space-between;
+
             gap: 25px;
         }
 
-        .footer-logo {
+        .footer-brand p {
+            color: var(--muted);
+
+            font-size: 12px;
+
+            margin-top: 8px;
+        }
+
+        .social-links {
             display: flex;
             align-items: center;
-            gap: 9px;
-            font-weight: 800;
+            gap: 10px;
         }
 
-        .footer-logo i {
-            color: var(--cyan);
-        }
+        .social-link {
+            width: 42px;
+            height: 42px;
 
-        .footer-socials {
             display: flex;
-            gap: 8px;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 11px;
+
+            background: rgba(255,255,255,0.04);
+
+            border: 1px solid rgba(255,255,255,0.05);
+
+            color: var(--text);
+
+            transition: 0.3s ease;
         }
 
-        .footer-socials a {
-            width: 38px;
-            height: 38px;
-            display: grid;
-            place-items: center;
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            color: #aeb8c3;
-            transition: .25s ease;
-        }
+        .social-link:hover {
+            color: #000;
+            background: var(--primary);
 
-        .footer-socials a:hover {
-            color: #031018;
-            background: var(--gradient);
-            border-color: transparent;
-            transform: translateY(-2px);
+            transform: translateY(-4px);
         }
 
         .copyright {
-            color: var(--gray-2);
+            color: #68737e;
             font-size: 11px;
         }
 
 
         /* =========================================================
-           ANIMATION
+           ANIMATIONS
         ========================================================= */
 
-        .reveal {
+        .animate {
             opacity: 0;
             transform: translateY(25px);
-            transition: .7s ease;
+
+            animation:
+                fadeUp 0.7s ease forwards;
         }
 
-        .reveal.show {
-            opacity: 1;
-            transform: translateY(0);
+        .delay-1 {
+            animation-delay: 0.12s;
+        }
+
+        .delay-2 {
+            animation-delay: 0.24s;
+        }
+
+        .delay-3 {
+            animation-delay: 0.36s;
+        }
+
+        @keyframes fadeUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
 
@@ -1119,6 +1312,10 @@
 
             .hero-content {
                 grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .hero-text {
                 text-align: center;
             }
 
@@ -1128,41 +1325,53 @@
             }
 
             .hero-buttons,
-            .hero-stats {
+            .stats {
                 justify-content: center;
             }
 
             .hero-visual {
-                order: -1;
-            }
-
-            .hero-image-wrap {
-                width: 350px;
+                max-width: 650px;
+                width: 100%;
+                margin: auto;
             }
 
             .services-grid {
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns:
+                    repeat(2, 1fr);
             }
 
-            .process-grid {
-                grid-template-columns: repeat(2, 1fr);
+            .logo-process {
+                grid-template-columns:
+                    repeat(2, 1fr);
             }
 
-            .contact-layout {
+            .logo-gallery {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .pricing-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .contact-content {
                 grid-template-columns: 1fr;
-                gap: 40px;
             }
         }
 
 
         /* =========================================================
-           MOBILE
+           MOBILE NAVIGATION
         ========================================================= */
 
         @media (max-width: 768px) {
 
             .container {
-                width: min(100% - 28px, 600px);
+                width: min(
+                    100% - 28px,
+                    1180px
+                );
             }
 
             section {
@@ -1170,32 +1379,42 @@
             }
 
             .navbar {
-                min-height: 68px;
+                height: 70px;
             }
 
-            .mobile-menu {
-                display: grid;
-                place-items: center;
+            .mobile-menu-btn {
+                display: flex;
+                align-items: center;
+                justify-content: center;
             }
 
             .nav-links {
                 position: fixed;
-                top: 68px;
-                right: -100%;
-                width: 100%;
-                height: calc(100vh - 68px);
 
-                padding: 45px 25px;
+                top: 70px;
+                right: -100%;
+
+                width: min(310px, 85%);
+
+                height:
+                    calc(100vh - 70px);
+
+                padding: 35px 25px;
 
                 flex-direction: column;
-                align-items: center;
-                justify-content: flex-start;
-                gap: 25px;
+                align-items: stretch;
 
-                background: rgba(7,11,16,.97);
+                gap: 5px;
+
+                background:
+                    rgba(7,9,12,0.98);
+
                 backdrop-filter: blur(20px);
 
-                transition: right .3s ease;
+                border-left:
+                    1px solid var(--border);
+
+                transition: 0.35s ease;
             }
 
             .nav-links.active {
@@ -1203,134 +1422,168 @@
             }
 
             .nav-links a {
-                font-size: 16px;
+                display: block;
+
+                padding: 15px;
+
+                border-radius: 10px;
+            }
+
+            .nav-links a:hover {
+                background:
+                    rgba(0,234,255,0.05);
+            }
+
+            .nav-links a::after {
+                display: none;
             }
 
             .hero {
-                min-height: auto;
-                padding-top: 110px;
-                padding-bottom: 80px;
+                padding-top: 105px;
             }
 
             .hero h1 {
-                font-size: clamp(39px, 11vw, 58px);
-                letter-spacing: -2.5px;
+                font-size: clamp(
+                    2.5rem,
+                    11vw,
+                    3.5rem
+                );
+
+                letter-spacing: -1.5px;
             }
 
             .hero-description {
-                font-size: 14px;
+                font-size: 15px;
             }
 
-            /*
-                MOBILE HERO BUTTONS
-                [button] [button]
-            */
+            /* BUTTONS SIDE BY SIDE */
 
             .hero-buttons {
+                width: 100%;
+
                 display: grid;
                 grid-template-columns: 1fr 1fr;
+
                 gap: 9px;
             }
 
-            .hero-btn {
+            .hero-buttons .button {
                 width: 100%;
+                padding: 0 10px;
+
                 min-height: 46px;
-                padding: 0 8px;
+
                 font-size: 12px;
             }
 
-            /*
-                MOBILE STATS
-                [stat] [stat] [stat]
-            */
+            /* STATS SIDE BY SIDE */
 
-            .hero-stats {
+            .stats {
                 display: grid;
-                grid-template-columns: repeat(3, 1fr);
-                gap: 8px;
+
+                grid-template-columns:
+                    repeat(3, 1fr);
+
+                gap: 7px;
+
                 width: 100%;
             }
 
-            .hero-stat {
-                padding: 12px 5px;
-                border: 1px solid var(--border);
-                border-radius: 9px;
-                background: rgba(255,255,255,.025);
+            .stat {
+                min-width: 0;
+
+                padding: 13px 7px;
+
+                text-align: center;
             }
 
-            .hero-stat strong {
-                font-size: 20px;
+            .stat strong {
+                font-size: 19px;
             }
 
-            .hero-stat span {
+            .stat span {
                 font-size: 9px;
             }
 
-            .hero-image-wrap {
-                width: 280px;
+            .hero-image-box {
+                min-height: 300px;
+                border-radius: 20px;
             }
 
-            .floating-card {
-                padding: 9px 11px;
+            .services-grid {
+                grid-template-columns: 1fr;
             }
 
-            .floating-card span {
-                font-size: 9px;
+            .portfolio-grid {
+                grid-template-columns: 1fr;
             }
 
-            .floating-one {
-                left: -5px;
+            .portfolio-card {
+                min-height: 330px;
             }
 
-            .floating-two {
-                right: -5px;
+            .portfolio-img {
+                min-height: 330px;
             }
 
-            .section-header {
-                margin-bottom: 35px;
+            .logo-process {
+                grid-template-columns:
+                    repeat(2, 1fr);
+
+                gap: 10px;
             }
 
-            .section-title {
-                font-size: 31px;
+            .logo-gallery {
+                grid-template-columns:
+                    repeat(2, 1fr);
+
+                gap: 10px;
             }
 
-            .services-grid,
-            .portfolio-grid,
+            .logo-item {
+                height: 140px;
+            }
+
             .pricing-grid {
                 grid-template-columns: 1fr;
             }
 
-            .service-card {
-                min-height: 230px;
-            }
-
-            .portfolio-card {
-                height: 330px;
-            }
-
-            .process-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .pricing-tabs {
-                width: 100%;
+            .tab-buttons {
+                margin-bottom: 30px;
             }
 
             .tab-button {
                 font-size: 11px;
+                padding: 11px 7px;
             }
 
             .contact-card {
-                padding: 22px;
-            }
-
-            .form-row {
-                grid-template-columns: 1fr;
+                padding: 25px;
             }
 
             .footer-content {
                 flex-direction: column;
                 text-align: center;
+            }
+
+            /* SOCIAL CARDS SIDE BY SIDE */
+
+            .social-links {
+                width: 100%;
+
+                display: grid;
+
+                grid-template-columns:
+                    repeat(3, 1fr);
+
+                gap: 7px;
+            }
+
+            .social-link {
+                width: 100%;
+                height: 46px;
+
+                border-radius: 10px;
             }
         }
 
@@ -1342,280 +1595,253 @@
         @media (max-width: 480px) {
 
             .logo {
-                font-size: 18px;
+                font-size: 20px;
             }
 
-            .logo-icon {
-                width: 34px;
-                height: 34px;
+            .logo i {
+                width: 36px;
+                height: 36px;
             }
 
-            .hero h1 {
-                font-size: 38px;
+            .section-header {
+                margin-bottom: 35px;
             }
 
-            .hero-image-wrap {
-                width: 245px;
+            .section-title {
+                font-size: 1.9rem;
             }
 
-            .floating-one {
-                left: -15px;
+            .section-desc {
+                font-size: 13px;
             }
 
-            .floating-two {
-                right: -15px;
+            .hero-buttons .button {
+                font-size: 11px;
             }
 
-            /*
-                Services remain clean one-by-one
-            */
-
-            .services-grid {
-                grid-template-columns: 1fr;
+            .hero-buttons .button i {
+                font-size: 10px;
             }
 
-            /*
-                Portfolio one card per row
-            */
+            .stats {
+                gap: 5px;
+            }
+
+            .stat {
+                padding: 11px 4px;
+            }
+
+            .stat strong {
+                font-size: 17px;
+            }
+
+            .stat span {
+                font-size: 8px;
+            }
 
             .portfolio-card {
-                height: 300px;
+                min-height: 310px;
             }
 
-            /*
-                Process
-            */
-
-            .process-grid {
-                grid-template-columns: 1fr;
+            .portfolio-img {
+                min-height: 310px;
             }
 
-            /*
-                Footer
-            */
+            .portfolio-overlay {
+                padding: 20px;
+            }
 
-            .footer-socials {
-                width: 100%;
-                justify-content: center;
+            .portfolio-overlay h3 {
+                font-size: 19px;
+            }
+
+            .portfolio-overlay p {
+                font-size: 11px;
+            }
+
+            .tech-tag {
+                font-size: 9px;
+                padding: 4px 8px;
+            }
+
+            .logo-process {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .process-step {
+                padding: 20px 12px;
+            }
+
+            .process-step p {
+                font-size: 11px;
+            }
+
+            .contact-item {
+                padding: 15px;
+            }
+
+            .contact-icon {
+                width: 42px;
+                height: 42px;
             }
         }
 
     </style>
 </head>
 
+
 <body>
 
-    <div class="page-glow glow-one"></div>
-    <div class="page-glow glow-two"></div>
+
+<!-- =========================================================
+     HEADER
+========================================================= -->
+
+<header id="header">
+
+    <div class="container">
+
+        <nav class="navbar">
+
+            <a href="#home" class="logo">
+                <i class="fas fa-code"></i>
+                Code<span>Solo</span>
+            </a>
 
 
-    <!-- =========================================================
-         HEADER
-    ========================================================= -->
+            <ul class="nav-links" id="navLinks">
 
-    <header id="header">
+                <li>
+                    <a href="#home">Home</a>
+                </li>
 
-        <div class="container">
+                <li>
+                    <a href="#services">Services</a>
+                </li>
 
-            <nav class="navbar">
+                <li>
+                    <a href="#portfolio">Projects</a>
+                </li>
 
-                <a href="#home" class="logo">
+                <li>
+                    <a href="#pricing">Pricing</a>
+                </li>
 
-                    <div class="logo-icon">
-                        <i class="fas fa-code"></i>
-                    </div>
+                <li>
+                    <a href="#contact">Contact</a>
+                </li>
 
-                    Code<span>Solo</span>
-
-                </a>
-
-
-                <ul class="nav-links" id="navLinks">
-
-                    <li>
-                        <a href="#home">Home</a>
-                    </li>
-
-                    <li>
-                        <a href="#services">Services</a>
-                    </li>
-
-                    <li>
-                        <a href="#portfolio">Portfolio</a>
-                    </li>
-
-                    <li>
-                        <a href="#pricing">Pricing</a>
-                    </li>
-
-                    <li>
-                        <a href="#contact" class="nav-contact">
-                            Contact
-                        </a>
-                    </li>
-
-                </ul>
+            </ul>
 
 
-                <button class="mobile-menu" id="mobileMenu">
-                    <i class="fas fa-bars"></i>
-                </button>
+            <button
+                class="mobile-menu-btn"
+                id="mobileMenuBtn"
+                aria-label="Open menu"
+            >
+                <i class="fas fa-bars"></i>
+            </button>
 
-            </nav>
+        </nav>
 
-        </div>
+    </div>
 
-    </header>
+</header>
 
 
 
-    <!-- =========================================================
-         HERO
-    ========================================================= -->
+<!-- =========================================================
+     HERO
+========================================================= -->
 
-    <section class="hero" id="home">
+<section class="hero" id="home">
 
-        <div class="grid-bg"></div>
+    <div class="container">
 
-        <div class="container">
-
-            <div class="hero-content">
+        <div class="hero-content">
 
 
-                <div class="hero-text reveal">
+            <div class="hero-text">
 
-                    <div class="hero-badge">
-
-                        <span class="status-dot"></span>
-
-                        Sri Lankan Software Development
-
-                    </div>
+                <div class="hero-badge">
+                    <span></span>
+                    Sri Lankan Software Development
+                </div>
 
 
-                    <h1>
+                <h1>
+                    We Build
+                    <span>Digital</span>
+                    Solutions.
+                </h1>
 
-                        We Build
-                        <span class="gradient-text">
-                            Digital
+
+                <p class="hero-description">
+
+                    CodeSolo creates modern websites, web applications,
+                    AI-powered solutions and digital products designed
+                    to help businesses grow online.
+
+                </p>
+
+
+                <div class="hero-buttons">
+
+                    <a
+                        href="#portfolio"
+                        class="button button-primary"
+                    >
+                        <i class="fas fa-layer-group"></i>
+                        Explore Projects
+                    </a>
+
+
+                    <a
+                        href="https://www.linkedin.com/in/shahan-iresh-374218374/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="button button-secondary"
+                    >
+                        <i class="fab fa-linkedin-in"></i>
+                        LinkedIn
+                    </a>
+
+                </div>
+
+
+                <!-- STATS -->
+
+                <div class="stats">
+
+                    <div class="stat">
+
+                        <strong>05+</strong>
+
+                        <span>
+                            Projects
                         </span>
-                        Experiences.
-
-                    </h1>
-
-
-                    <p class="hero-description">
-
-                        CodeSolo creates modern websites, intelligent
-                        automation solutions and digital products designed
-                        to help businesses grow.
-
-                    </p>
-
-
-                    <div class="hero-buttons">
-
-                        <a href="#contact"
-                           class="hero-btn primary">
-
-                            <i class="fas fa-arrow-right"></i>
-
-                            Start a Project
-
-                        </a>
-
-
-                        <a href="#portfolio"
-                           class="hero-btn secondary">
-
-                            <i class="fas fa-layer-group"></i>
-
-                            View Work
-
-                        </a>
 
                     </div>
 
 
-                    <!-- STATS -->
+                    <div class="stat">
 
-                    <div class="hero-stats">
+                        <strong>03</strong>
 
-                        <div class="hero-stat">
-
-                            <strong>04+</strong>
-
-                            <span>
-                                Projects
-                            </span>
-
-                        </div>
-
-
-                        <div class="hero-stat">
-
-                            <strong>03</strong>
-
-                            <span>
-                                Work Roles
-                            </span>
-
-                        </div>
-
-
-                        <div class="hero-stat">
-
-                            <strong>∞</strong>
-
-                            <span>
-                                Ideas
-                            </span>
-
-                        </div>
+                        <span>
+                            Services
+                        </span>
 
                     </div>
 
-                </div>
 
+                    <div class="stat">
 
+                        <strong>∞</strong>
 
-                <div class="hero-visual reveal">
-
-                    <div class="hero-image-wrap">
-
-                        <div class="hero-ring"></div>
-
-
-                        <div class="hero-image-box">
-
-                            <img
-                                src="https://github.com/7oSkaaa/7oSkaaa/blob/main/Images/Right_Side.gif?raw=true"
-                                alt="CodeSolo Software Development"
-                            >
-
-                        </div>
-
-
-                        <div class="floating-card floating-one">
-
-                            <i class="fas fa-code"></i>
-
-                            <span>
-                                Clean Code
-                            </span>
-
-                        </div>
-
-
-                        <div class="floating-card floating-two">
-
-                            <i class="fas fa-bolt"></i>
-
-                            <span>
-                                Fast & Modern
-                            </span>
-
-                        </div>
+                        <span>
+                            Ideas
+                        </span>
 
                     </div>
 
@@ -1623,551 +1849,696 @@
 
             </div>
 
+
+
+            <!-- HERO IMAGE -->
+
+            <div class="hero-visual">
+
+                <div class="hero-image-box">
+
+                    <img
+                        src="https://github.com/7oSkaaa/7oSkaaa/blob/main/Images/Right_Side.gif?raw=true"
+                        alt="Software Development"
+                    >
+
+                </div>
+
+            </div>
+
+
         </div>
 
-    </section>
+    </div>
+
+</section>
 
 
 
-    <!-- =========================================================
-         SERVICES
-    ========================================================= -->
+<!-- =========================================================
+     SERVICES
+========================================================= -->
 
-    <section class="services" id="services">
+<section
+    class="services"
+    id="services"
+>
 
-        <div class="container">
+    <div class="container">
 
-            <div class="section-header reveal">
+        <div class="section-header">
 
-                <span class="section-label">
-                    What We Do
-                </span>
+            <span class="section-subtitle">
+                What We Do
+            </span>
 
-                <h2 class="section-title">
-                    Solutions built for
-                    <span class="gradient-text">
-                        real needs.
-                    </span>
-                </h2>
+            <h2 class="section-title">
+                Our Services
+            </h2>
 
-                <p class="section-description">
+            <p class="section-desc">
+                Practical digital solutions built around your
+                business goals, users and technology needs.
+            </p>
 
-                    From business websites to intelligent automation,
-                    CodeSolo provides practical digital solutions
-                    focused on performance and usability.
+        </div>
 
+
+        <div class="services-grid">
+
+
+            <div class="service-card">
+
+                <div class="service-icon">
+                    <i class="fas fa-laptop-code"></i>
+                </div>
+
+                <h3>
+                    Website Development
+                </h3>
+
+                <p>
+                    Modern, responsive and high-performance
+                    websites and web applications for businesses,
+                    organizations and personal brands.
                 </p>
 
             </div>
 
 
-            <div class="services-grid">
 
+            <div class="service-card">
 
-                <div class="service-card reveal">
-
-                    <div class="service-icon">
-                        <i class="fas fa-laptop-code"></i>
-                    </div>
-
-                    <h3>
-                        Website Development
-                    </h3>
-
-                    <p>
-
-                        Modern, responsive and high-performance
-                        websites designed to represent your brand
-                        professionally.
-
-                    </p>
-
-                    <span class="service-number">
-                        01
-                    </span>
-
+                <div class="service-icon">
+                    <i class="fas fa-robot"></i>
                 </div>
 
+                <h3>
+                    AI & Automation
+                </h3>
 
-                <div class="service-card reveal">
-
-                    <div class="service-icon">
-                        <i class="fas fa-robot"></i>
-                    </div>
-
-                    <h3>
-                        AI & Automation
-                    </h3>
-
-                    <p>
-
-                        Smart automation systems and AI-powered
-                        solutions that reduce repetitive work
-                        and improve productivity.
-
-                    </p>
-
-                    <span class="service-number">
-                        02
-                    </span>
-
-                </div>
-
-
-                <div class="service-card reveal">
-
-                    <div class="service-icon">
-                        <i class="fas fa-palette"></i>
-                    </div>
-
-                    <h3>
-                        Logo & Brand Design
-                    </h3>
-
-                    <p>
-
-                        Clean and memorable visual identities
-                        designed to help businesses build a
-                        strong digital presence.
-
-                    </p>
-
-                    <span class="service-number">
-                        03
-                    </span>
-
-                </div>
-
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =========================================================
-         PORTFOLIO
-    ========================================================= -->
-
-    <section class="portfolio" id="portfolio">
-
-        <div class="container">
-
-            <div class="section-header reveal">
-
-                <span class="section-label">
-                    Selected Work
-                </span>
-
-                <h2 class="section-title">
-                    Projects we've
-                    <span class="gradient-text">
-                        built.
-                    </span>
-                </h2>
-
-                <p class="section-description">
-
-                    A selection of digital projects developed
-                    using modern technologies and practical
-                    problem-solving.
-
+                <p>
+                    Smart automation and AI-powered solutions
+                    designed to reduce repetitive work and
+                    improve digital workflows.
                 </p>
 
             </div>
 
 
-            <div class="portfolio-grid">
 
+            <div class="service-card">
 
-                <!-- ALAPI -->
-
-                <div class="portfolio-card reveal">
-
-                    <img
-                        src="photos/aplapiedu.png"
-                        alt="ALapi Education Website"
-                        class="portfolio-img"
-                    >
-
-                    <div class="portfolio-content">
-
-                        <div class="project-category">
-                            Education Platform
-                        </div>
-
-                        <h3>
-                            ALapi Education
-                        </h3>
-
-                        <p>
-
-                            A platform for A/L past papers,
-                            model papers and school papers
-                            with search and filtering.
-
-                        </p>
-
-                        <div class="portfolio-bottom">
-
-                            <div class="tags">
-
-                                <span class="tag">PHP</span>
-                                <span class="tag">MySQL</span>
-                                <span class="tag">JavaScript</span>
-
-                            </div>
-
-                            <a
-                                href="https://alapiedu.com/home"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                class="project-link"
-                            >
-
-                                <i class="fas fa-arrow-up-right-from-square"></i>
-
-                            </a>
-
-                        </div>
-
-                    </div>
-
+                <div class="service-icon">
+                    <i class="fas fa-palette"></i>
                 </div>
 
-
-
-                <!-- OLAPI -->
-
-                <div class="portfolio-card reveal">
-
-                    <img
-                        src="photos/olapiedu.png"
-                        alt="OLapi Education Website"
-                        class="portfolio-img"
-                    >
-
-                    <div class="portfolio-content">
-
-                        <div class="project-category">
-                            Education Platform
-                        </div>
-
-                        <h3>
-                            OLapi Education
-                        </h3>
-
-                        <p>
-
-                            A dedicated O/L resource platform
-                            for students featuring papers,
-                            marking schemes and model papers.
-
-                        </p>
-
-                        <div class="portfolio-bottom">
-
-                            <div class="tags">
-
-                                <span class="tag">PHP</span>
-                                <span class="tag">MySQL</span>
-                                <span class="tag">CSS</span>
-
-                            </div>
-
-                            <a
-                                href="https://olapiedum.com/home"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                class="project-link"
-                            >
-
-                                <i class="fas fa-arrow-up-right-from-square"></i>
-
-                            </a>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-
-                <!-- LIONSCRIC -->
-
-                <div class="portfolio-card reveal">
-
-                    <img
-                        src="photos/lionscric.png"
-                        alt="LionsCric Cricket Website"
-                        class="portfolio-img"
-                    >
-
-                    <div class="portfolio-content">
-
-                        <div class="project-category">
-                            Sports Platform
-                        </div>
-
-                        <h3>
-                            LionsCric
-                        </h3>
-
-                        <p>
-
-                            A cricket platform featuring
-                            live scores, schedules, series
-                            information and player statistics.
-
-                        </p>
-
-                        <div class="portfolio-bottom">
-
-                            <div class="tags">
-
-                                <span class="tag">PHP</span>
-                                <span class="tag">MySQL</span>
-                                <span class="tag">API</span>
-
-                            </div>
-
-                            <a
-                                href="https://lionscric.com/home"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                class="project-link"
-                            >
-
-                                <i class="fas fa-arrow-up-right-from-square"></i>
-
-                            </a>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-
-                <!-- AI PROJECT -->
-
-                <div class="portfolio-card reveal">
-
-                    <img
-                        src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80"
-                        alt="Machine Learning Analytics Dashboard"
-                        class="portfolio-img"
-                    >
-
-                    <div class="portfolio-content">
-
-                        <div class="project-category">
-                            Data & AI
-                        </div>
-
-                        <h3>
-                            ML Analytics Dashboard
-                        </h3>
-
-                        <p>
-
-                            A data visualization concept
-                            designed for predictive analytics
-                            and machine learning workflows.
-
-                        </p>
-
-                        <div class="portfolio-bottom">
-
-                            <div class="tags">
-
-                                <span class="tag">Python</span>
-                                <span class="tag">ML</span>
-                                <span class="tag">Analytics</span>
-
-                            </div>
-
-                            <a href="#contact"
-                               class="project-link">
-
-                                <i class="fas fa-arrow-right"></i>
-
-                            </a>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =========================================================
-         PROCESS
-    ========================================================= -->
-
-    <section class="process-section">
-
-        <div class="container">
-
-            <div class="section-header center reveal">
-
-                <span class="section-label">
-                    Our Process
-                </span>
-
-                <h2 class="section-title">
-                    Simple.
-                    <span class="gradient-text">
-                        Clear.
-                    </span>
-                    Effective.
-                </h2>
-
-                <p class="section-description">
-
-                    We keep the development process simple
-                    so you always know what's happening.
-
+                <h3>
+                    Logo & Design
+                </h3>
+
+                <p>
+                    Clean and memorable visual identities,
+                    logos and digital design solutions that
+                    help brands stand out.
                 </p>
 
             </div>
 
 
-            <div class="process-grid">
+        </div>
+
+    </div>
+
+</section>
 
 
-                <div class="process-card reveal">
 
-                    <div class="process-number">
+<!-- =========================================================
+     PORTFOLIO
+========================================================= -->
+
+<section
+    class="portfolio"
+    id="portfolio"
+>
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <span class="section-subtitle">
+                Selected Work
+            </span>
+
+            <h2 class="section-title">
+                Featured Projects
+            </h2>
+
+            <p class="section-desc">
+                A selection of websites and digital products
+                developed by CodeSolo.
+            </p>
+
+        </div>
+
+
+
+        <div
+            class="portfolio-grid"
+            id="portfolioGrid"
+        >
+
+
+            <!-- PROJECT 01 -->
+
+            <div class="portfolio-card">
+
+                <img
+                    src="photos/aplapiedu.png"
+                    alt="ALapi Education Website"
+                    class="portfolio-img"
+                >
+
+                <div class="portfolio-overlay">
+
+                    <div class="project-number">
                         01
                     </div>
 
                     <h3>
-                        Discover
+                        ALapi Education
                     </h3>
 
                     <p>
-
-                        We understand your idea,
-                        goals and requirements.
-
+                        Educational platform for A/L students
+                        featuring past papers, model papers,
+                        school papers and resources.
                     </p>
+
+                    <div class="tech-tags">
+
+                        <span class="tech-tag">PHP</span>
+                        <span class="tech-tag">MySQL</span>
+                        <span class="tech-tag">HTML</span>
+                        <span class="tech-tag">CSS</span>
+                        <span class="tech-tag">JavaScript</span>
+
+                    </div>
+
+                    <a
+                        href="https://alapiedu.com/home"
+                        target="_blank"
+                        class="button button-primary project-button"
+                    >
+                        Visit Website
+                        <i class="fas fa-arrow-up-right-from-square"></i>
+                    </a>
 
                 </div>
 
+            </div>
 
-                <div class="process-card reveal">
 
-                    <div class="process-number">
+
+            <!-- PROJECT 02 -->
+
+            <div class="portfolio-card">
+
+                <img
+                    src="photos/olapiedu.png"
+                    alt="OLapi Education Website"
+                    class="portfolio-img"
+                >
+
+                <div class="portfolio-overlay">
+
+                    <div class="project-number">
                         02
                     </div>
 
                     <h3>
-                        Design
+                        OLapi Education
                     </h3>
 
                     <p>
-
-                        We create a clean interface
-                        and user experience.
-
+                        O/L educational resource platform with
+                        past papers, school papers, model papers
+                        and marking schemes.
                     </p>
+
+                    <div class="tech-tags">
+
+                        <span class="tech-tag">PHP</span>
+                        <span class="tech-tag">MySQL</span>
+                        <span class="tech-tag">HTML</span>
+                        <span class="tech-tag">CSS</span>
+                        <span class="tech-tag">JavaScript</span>
+
+                    </div>
+
+                    <a
+                        href="https://olapiedum.com/home"
+                        target="_blank"
+                        class="button button-primary project-button"
+                    >
+                        Visit Website
+                        <i class="fas fa-arrow-up-right-from-square"></i>
+                    </a>
 
                 </div>
 
+            </div>
 
-                <div class="process-card reveal">
 
-                    <div class="process-number">
+
+            <!-- PROJECT 03 -->
+
+            <div class="portfolio-card">
+
+                <img
+                    src="photos/lionscric.png"
+                    alt="LionsCric Cricket Website"
+                    class="portfolio-img"
+                >
+
+                <div class="portfolio-overlay">
+
+                    <div class="project-number">
                         03
                     </div>
 
                     <h3>
-                        Develop
+                        LionsCric
                     </h3>
 
                     <p>
-
-                        We build the solution using
-                        suitable technologies.
-
+                        Cricket platform featuring scores,
+                        schedules, series information, player
+                        statistics and cricket updates.
                     </p>
+
+                    <div class="tech-tags">
+
+                        <span class="tech-tag">PHP</span>
+                        <span class="tech-tag">MySQL</span>
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">API</span>
+
+                    </div>
+
+                    <a
+                        href="https://lionscric.com/home"
+                        target="_blank"
+                        class="button button-primary project-button"
+                    >
+                        Visit Website
+                        <i class="fas fa-arrow-up-right-from-square"></i>
+                    </a>
 
                 </div>
 
+            </div>
 
-                <div class="process-card reveal">
 
-                    <div class="process-number">
+
+            <!-- PROJECT 04 -->
+
+            <div class="portfolio-card">
+
+                <img
+                    src="photos/tecshop.png"
+                    alt="TecShop Website"
+                    class="portfolio-img"
+                >
+
+                <div class="portfolio-overlay">
+
+                    <div class="project-number">
                         04
                     </div>
 
                     <h3>
-                        Launch
+                        TecShop
                     </h3>
 
                     <p>
-
-                        We test, optimize and
-                        prepare your project for launch.
-
+                        Modern technology shopping platform
+                        designed to provide users with a clean
+                        and convenient online shopping experience.
                     </p>
+
+                    <div class="tech-tags">
+
+                        <span class="tech-tag">PHP</span>
+                        <span class="tech-tag">MySQL</span>
+                        <span class="tech-tag">HTML</span>
+                        <span class="tech-tag">CSS</span>
+                        <span class="tech-tag">JavaScript</span>
+
+                    </div>
+
+                    <a
+                        href="https://tecshop.com"
+                        target="_blank"
+                        class="button button-primary project-button"
+                    >
+                        Visit Website
+                        <i class="fas fa-arrow-up-right-from-square"></i>
+                    </a>
 
                 </div>
 
+            </div>
+
+
+
+            <!-- =================================================
+                 PROJECT 05
+                 Initially hidden
+            ================================================== -->
+
+            <div class="portfolio-card hidden-project">
+
+                <img
+                    src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80"
+                    alt="Analytics Dashboard"
+                    class="portfolio-img"
+                >
+
+                <div class="portfolio-overlay">
+
+                    <div class="project-number">
+                        05
+                    </div>
+
+                    <h3>
+                        ML Analytics Dashboard
+                    </h3>
+
+                    <p>
+                        Data visualization and predictive analytics
+                        dashboard designed for machine learning
+                        workflows.
+                    </p>
+
+                    <div class="tech-tags">
+
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Machine Learning</span>
+                        <span class="tech-tag">D3.js</span>
+
+                    </div>
+
+                    <a
+                        href="#"
+                        class="button button-primary project-button"
+                    >
+                        View Details
+                    </a>
+
+                </div>
 
             </div>
 
+
+
+            <!-- =================================================
+                 PROJECT 06
+                 Initially hidden
+            ================================================== -->
+
+            <div class="portfolio-card hidden-project">
+
+                <img
+                    src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&fit=crop&w=1200&q=80"
+                    alt="Automation Project"
+                    class="portfolio-img"
+                >
+
+                <div class="portfolio-overlay">
+
+                    <div class="project-number">
+                        06
+                    </div>
+
+                    <h3>
+                        Automation Platform
+                    </h3>
+
+                    <p>
+                        A digital automation concept designed
+                        to simplify repetitive workflows and
+                        improve productivity.
+                    </p>
+
+                    <div class="tech-tags">
+
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">AI</span>
+                        <span class="tech-tag">Automation</span>
+
+                    </div>
+
+                    <a
+                        href="#"
+                        class="button button-primary project-button"
+                    >
+                        View Details
+                    </a>
+
+                </div>
+
+            </div>
+
+
         </div>
 
-    </section>
 
 
+        <!-- READ MORE -->
 
-    <!-- =========================================================
-         PRICING
-    ========================================================= -->
+        <div
+            class="read-more-wrapper"
+            id="readMoreWrapper"
+        >
 
-    <section class="pricing" id="pricing">
+            <button
+                class="read-more-btn"
+                id="readMoreBtn"
+            >
 
-        <div class="container">
-
-            <div class="section-header center reveal">
-
-                <span class="section-label">
-                    Pricing
+                <span>
+                    Read More Projects
                 </span>
 
-                <h2 class="section-title">
-                    Flexible plans for
-                    <span class="gradient-text">
-                        every project.
-                    </span>
-                </h2>
+                <i class="fas fa-chevron-down"></i>
 
-                <p class="section-description">
+            </button>
 
-                    Starting prices are shown below.
-                    Final pricing depends on project requirements.
+        </div>
 
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     LOGO DESIGN
+========================================================= -->
+
+<section
+    class="logo-design"
+    id="logo-design"
+>
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <span class="section-subtitle">
+                Brand Identity
+            </span>
+
+            <h2 class="section-title">
+                Logo & Brand Design
+            </h2>
+
+            <p class="section-desc">
+                Simple, modern and memorable branding
+                designed around your business identity.
+            </p>
+
+        </div>
+
+
+
+        <div class="logo-process">
+
+
+            <div class="process-step">
+
+                <div class="step-number">
+                    1
+                </div>
+
+                <h3>
+                    Consultation
+                </h3>
+
+                <p>
+                    Understand your brand,
+                    audience and requirements.
                 </p>
 
             </div>
 
 
-            <div class="pricing-tabs">
+
+            <div class="process-step">
+
+                <div class="step-number">
+                    2
+                </div>
+
+                <h3>
+                    Concept
+                </h3>
+
+                <p>
+                    Create initial concepts
+                    based on your vision.
+                </p>
+
+            </div>
+
+
+
+            <div class="process-step">
+
+                <div class="step-number">
+                    3
+                </div>
+
+                <h3>
+                    Refinement
+                </h3>
+
+                <p>
+                    Improve the selected design
+                    with your feedback.
+                </p>
+
+            </div>
+
+
+
+            <div class="process-step">
+
+                <div class="step-number">
+                    4
+                </div>
+
+                <h3>
+                    Delivery
+                </h3>
+
+                <p>
+                    Receive final files suitable
+                    for digital and print use.
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+
+        <div class="section-header">
+
+            <h2 class="section-title">
+                Logo Portfolio
+            </h2>
+
+            <p class="section-desc">
+                Selected branding concepts.
+            </p>
+
+        </div>
+
+
+
+        <div class="logo-gallery">
+
+            <div class="logo-item">
+                <div class="logo-placeholder">
+                    Your Logo
+                </div>
+            </div>
+
+            <div class="logo-item">
+                <div class="logo-placeholder">
+                    Your Logo
+                </div>
+            </div>
+
+            <div class="logo-item">
+                <div class="logo-placeholder">
+                    Your Logo
+                </div>
+            </div>
+
+            <div class="logo-item">
+                <div class="logo-placeholder">
+                    Your Logo
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     PRICING
+========================================================= -->
+
+<section
+    class="pricing"
+    id="pricing"
+>
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <span class="section-subtitle">
+                Simple Pricing
+            </span>
+
+            <h2 class="section-title">
+                Choose Your Plan
+            </h2>
+
+            <p class="section-desc">
+                Flexible solutions for different project
+                sizes and requirements.
+            </p>
+
+        </div>
+
+
+
+        <div class="pricing-tabs">
+
+
+            <div class="tab-buttons">
 
                 <button
                     class="tab-button active"
@@ -2186,6 +2557,7 @@
             </div>
 
 
+
             <!-- WEBSITE -->
 
             <div
@@ -2196,157 +2568,121 @@
                 <div class="pricing-grid">
 
 
-                    <div class="pricing-card reveal">
+                    <div class="pricing-card">
 
-                        <h3>
-                            Starter
+                        <h3 class="pricing-name">
+                            Basic
                         </h3>
 
-                        <div class="price">
-                            Rs. 15K+
+                        <div class="pricing-price">
+                            Custom
                         </div>
 
-                        <div class="price-note">
+                        <div class="pricing-period">
                             Starting price
                         </div>
 
-                        <ul class="features">
+                        <div class="pricing-features">
 
-                            <li>
+                            <div class="pricing-feature">
                                 <i class="fas fa-check"></i>
-                                Responsive website
-                            </li>
+                                Responsive Design
+                            </div>
 
-                            <li>
+                            <div class="pricing-feature">
                                 <i class="fas fa-check"></i>
-                                Up to 5 pages
-                            </li>
+                                Basic Pages
+                            </div>
 
-                            <li>
+                            <div class="pricing-feature">
                                 <i class="fas fa-check"></i>
-                                Mobile friendly
-                            </li>
+                                Mobile Friendly
+                            </div>
 
-                            <li>
-                                <i class="fas fa-check"></i>
-                                Basic SEO
-                            </li>
-
-                        </ul>
-
-                        <a
-                            href="#contact"
-                            class="pricing-btn"
-                        >
-                            Get Started
-                        </a>
+                        </div>
 
                     </div>
 
 
 
-                    <div class="pricing-card featured reveal">
+                    <div class="pricing-card featured">
 
-                        <span class="popular">
-                            Popular
-                        </span>
+                        <div class="pricing-badge">
+                            POPULAR
+                        </div>
 
-                        <h3>
+                        <h3 class="pricing-name">
                             Professional
                         </h3>
 
-                        <div class="price">
-                            Rs. 30K+
+                        <div class="pricing-price">
+                            Custom
                         </div>
 
-                        <div class="price-note">
-                            Starting price
+                        <div class="pricing-period">
+                            Based on requirements
                         </div>
 
-                        <ul class="features">
+                        <div class="pricing-features">
 
-                            <li>
+                            <div class="pricing-feature">
                                 <i class="fas fa-check"></i>
-                                Custom website
-                            </li>
+                                Modern UI/UX
+                            </div>
 
-                            <li>
+                            <div class="pricing-feature">
                                 <i class="fas fa-check"></i>
-                                Advanced UI/UX
-                            </li>
+                                Database Integration
+                            </div>
 
-                            <li>
+                            <div class="pricing-feature">
                                 <i class="fas fa-check"></i>
-                                Database integration
-                            </li>
+                                Admin Panel
+                            </div>
 
-                            <li>
+                            <div class="pricing-feature">
                                 <i class="fas fa-check"></i>
-                                Admin functionality
-                            </li>
+                                API Integration
+                            </div>
 
-                            <li>
-                                <i class="fas fa-check"></i>
-                                SEO optimization
-                            </li>
-
-                        </ul>
-
-                        <a
-                            href="#contact"
-                            class="pricing-btn"
-                        >
-                            Start Project
-                        </a>
+                        </div>
 
                     </div>
 
 
 
-                    <div class="pricing-card reveal">
+                    <div class="pricing-card">
 
-                        <h3>
-                            Custom
+                        <h3 class="pricing-name">
+                            Advanced
                         </h3>
 
-                        <div class="price">
-                            Let's Talk
+                        <div class="pricing-price">
+                            Custom
                         </div>
 
-                        <div class="price-note">
-                            Based on requirements
+                        <div class="pricing-period">
+                            For advanced systems
                         </div>
 
-                        <ul class="features">
+                        <div class="pricing-features">
 
-                            <li>
+                            <div class="pricing-feature">
                                 <i class="fas fa-check"></i>
-                                Custom systems
-                            </li>
+                                Advanced Web App
+                            </div>
 
-                            <li>
+                            <div class="pricing-feature">
                                 <i class="fas fa-check"></i>
-                                APIs & integrations
-                            </li>
+                                Custom Backend
+                            </div>
 
-                            <li>
+                            <div class="pricing-feature">
                                 <i class="fas fa-check"></i>
                                 Automation
-                            </li>
+                            </div>
 
-                            <li>
-                                <i class="fas fa-check"></i>
-                                Advanced functionality
-                            </li>
-
-                        </ul>
-
-                        <a
-                            href="#contact"
-                            class="pricing-btn"
-                        >
-                            Discuss Project
-                        </a>
+                        </div>
 
                     </div>
 
@@ -2367,147 +2703,116 @@
                 <div class="pricing-grid">
 
 
-                    <div class="pricing-card reveal">
+                    <div class="pricing-card">
 
-                        <h3>
+                        <h3 class="pricing-name">
                             Basic Logo
                         </h3>
 
-                        <div class="price">
-                            Rs. 3K+
+                        <div class="pricing-price">
+                            Custom
                         </div>
 
-                        <div class="price-note">
-                            Starting price
+                        <div class="pricing-period">
+                            Simple logo concept
                         </div>
 
-                        <ul class="features">
+                        <div class="pricing-features">
 
-                            <li>
+                            <div class="pricing-feature">
                                 <i class="fas fa-check"></i>
-                                1 concept
-                            </li>
+                                1 Concept
+                            </div>
 
-                            <li>
+                            <div class="pricing-feature">
                                 <i class="fas fa-check"></i>
-                                PNG & JPG
-                            </li>
+                                PNG / JPG
+                            </div>
 
-                            <li>
-                                <i class="fas fa-check"></i>
-                                Basic revisions
-                            </li>
-
-                        </ul>
-
-                        <a
-                            href="#contact"
-                            class="pricing-btn"
-                        >
-                            Order Logo
-                        </a>
+                        </div>
 
                     </div>
 
 
 
-                    <div class="pricing-card featured reveal">
+                    <div class="pricing-card featured">
 
-                        <span class="popular">
-                            Recommended
-                        </span>
+                        <div class="pricing-badge">
+                            POPULAR
+                        </div>
 
-                        <h3>
-                            Professional
+                        <h3 class="pricing-name">
+                            Professional Logo
                         </h3>
 
-                        <div class="price">
-                            Rs. 6K+
+                        <div class="pricing-price">
+                            Custom
                         </div>
 
-                        <div class="price-note">
-                            Starting price
+                        <div class="pricing-period">
+                            Complete branding
                         </div>
 
-                        <ul class="features">
+                        <div class="pricing-features">
 
-                            <li>
+                            <div class="pricing-feature">
                                 <i class="fas fa-check"></i>
-                                Multiple concepts
-                            </li>
+                                Multiple Concepts
+                            </div>
 
-                            <li>
+                            <div class="pricing-feature">
                                 <i class="fas fa-check"></i>
-                                Unlimited revisions
-                            </li>
+                                Revisions
+                            </div>
 
-                            <li>
+                            <div class="pricing-feature">
                                 <i class="fas fa-check"></i>
-                                PNG, JPG & SVG
-                            </li>
+                                Transparent PNG
+                            </div>
 
-                            <li>
+                            <div class="pricing-feature">
                                 <i class="fas fa-check"></i>
-                                Transparent logo
-                            </li>
+                                Vector File
+                            </div>
 
-                        </ul>
-
-                        <a
-                            href="#contact"
-                            class="pricing-btn"
-                        >
-                            Choose Plan
-                        </a>
+                        </div>
 
                     </div>
 
 
 
-                    <div class="pricing-card reveal">
+                    <div class="pricing-card">
 
-                        <h3>
-                            Brand Package
+                        <h3 class="pricing-name">
+                            Brand Pack
                         </h3>
 
-                        <div class="price">
-                            Rs. 10K+
+                        <div class="pricing-price">
+                            Custom
                         </div>
 
-                        <div class="price-note">
-                            Starting price
+                        <div class="pricing-period">
+                            Full identity package
                         </div>
 
-                        <ul class="features">
+                        <div class="pricing-features">
 
-                            <li>
+                            <div class="pricing-feature">
                                 <i class="fas fa-check"></i>
-                                Logo design
-                            </li>
+                                Logo
+                            </div>
 
-                            <li>
+                            <div class="pricing-feature">
                                 <i class="fas fa-check"></i>
-                                Color palette
-                            </li>
+                                Color Palette
+                            </div>
 
-                            <li>
+                            <div class="pricing-feature">
                                 <i class="fas fa-check"></i>
-                                Typography
-                            </li>
+                                Brand Assets
+                            </div>
 
-                            <li>
-                                <i class="fas fa-check"></i>
-                                Brand guidelines
-                            </li>
-
-                        </ul>
-
-                        <a
-                            href="#contact"
-                            class="pricing-btn"
-                        >
-                            Build Brand
-                        </a>
+                        </div>
 
                     </div>
 
@@ -2516,144 +2821,99 @@
 
             </div>
 
+
         </div>
 
-    </section>
+    </div>
+
+</section>
 
 
 
-    <!-- =========================================================
-         CONTACT
-    ========================================================= -->
+<!-- =========================================================
+     CONTACT
+========================================================= -->
 
-    <section class="contact" id="contact">
+<section
+    class="contact"
+    id="contact"
+>
 
-        <div class="container">
+    <div class="container">
 
-            <div class="contact-layout">
+        <div class="section-header">
 
+            <span class="section-subtitle">
+                Let's Talk
+            </span>
 
-                <div class="contact-text reveal">
+            <h2 class="section-title">
+                Let's Build Something Amazing
+            </h2>
 
-                    <span class="section-label">
-                        Get In Touch
-                    </span>
+            <p class="section-desc">
+                Have an idea, website or digital product in mind?
+                Let's discuss it.
+            </p>
 
-                    <h2>
-                        Have an idea?
-                        <span class="gradient-text">
-                            Let's build it.
-                        </span>
-                    </h2>
-
-                    <p>
-
-                        Tell us about your project and we'll
-                        discuss the best way to turn your idea
-                        into a working digital solution.
-
-                    </p>
+        </div>
 
 
-                    <div class="contact-list">
+
+        <div class="contact-content">
 
 
-                        <a
-                            href="mailto:codesolo.dev@gmail.com"
-                            class="contact-item"
-                        >
+            <div class="contact-info">
 
-                            <div class="contact-icon">
-                                <i class="fas fa-envelope"></i>
-                            </div>
 
-                            <div>
+                <div class="contact-item">
 
-                                <small>
-                                    Email
-                                </small>
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
 
-                                <span>
-                                    codesolo.dev@gmail.com
-                                </span>
+                    <div class="contact-details">
 
-                            </div>
+                        <h3>
+                            Email
+                        </h3>
 
+                        <a href="mailto:codesolo.dev@gmail.com">
+                            codesolo.dev@gmail.com
                         </a>
 
+                        <p>
+                            Business inquiries
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="contact-item">
+
+                    <div class="contact-icon">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+
+                    <div class="contact-details">
+
+                        <h3>
+                            WhatsApp
+                        </h3>
 
                         <a
                             href="https://wa.me/94723032829"
                             target="_blank"
-                            rel="noopener noreferrer"
-                            class="contact-item"
                         >
-
-                            <div class="contact-icon">
-                                <i class="fab fa-whatsapp"></i>
-                            </div>
-
-                            <div>
-
-                                <small>
-                                    WhatsApp
-                                </small>
-
-                                <span>
-                                    +94 72 303 2829
-                                </span>
-
-                            </div>
-
+                            +94 72 303 2829
                         </a>
 
-
-                        <a
-                            href="https://t.me/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="contact-item"
-                        >
-
-                            <div class="contact-icon">
-                                <i class="fab fa-telegram"></i>
-                            </div>
-
-                            <div>
-
-                                <small>
-                                    Telegram
-                                </small>
-
-                                <span>
-                                    Open Telegram
-                                </span>
-
-                            </div>
-
-                        </a>
-
-
-                        <div class="contact-item">
-
-                            <div class="contact-icon">
-                                <i class="fas fa-location-dot"></i>
-                            </div>
-
-                            <div>
-
-                                <small>
-                                    Location
-                                </small>
-
-                                <span>
-                                    Colombo, Sri Lanka
-                                </span>
-
-                            </div>
-
-                        </div>
-
+                        <p>
+                            Direct contact
+                        </p>
 
                     </div>
 
@@ -2661,264 +2921,280 @@
 
 
 
-                <div class="contact-card reveal">
+                <div class="contact-item">
 
-                    <h3>
-                        Start a conversation
-                    </h3>
+                    <div class="contact-icon">
+                        <i class="fab fa-telegram"></i>
+                    </div>
 
-                    <form
-                        action="mailto:codesolo.dev@gmail.com"
-                        method="post"
-                        enctype="text/plain"
-                    >
+                    <div class="contact-details">
 
-                        <div class="form-row">
+                        <h3>
+                            Telegram
+                        </h3>
 
-                            <div class="form-group">
-
-                                <label>
-                                    Your Name
-                                </label>
-
-                                <input
-                                    type="text"
-                                    name="name"
-                                    class="form-control"
-                                    placeholder="John Doe"
-                                    required
-                                >
-
-                            </div>
-
-
-                            <div class="form-group">
-
-                                <label>
-                                    Email
-                                </label>
-
-                                <input
-                                    type="email"
-                                    name="email"
-                                    class="form-control"
-                                    placeholder="john@example.com"
-                                    required
-                                >
-
-                            </div>
-
-                        </div>
-
-
-                        <div class="form-group">
-
-                            <label>
-                                Project Type
-                            </label>
-
-                            <input
-                                type="text"
-                                name="project"
-                                class="form-control"
-                                placeholder="Website / AI / Logo / Other"
-                            >
-
-                        </div>
-
-
-                        <div class="form-group">
-
-                            <label>
-                                Message
-                            </label>
-
-                            <textarea
-                                name="message"
-                                class="form-control"
-                                placeholder="Tell us about your project..."
-                                required
-                            ></textarea>
-
-                        </div>
-
-
-                        <button
-                            type="submit"
-                            class="submit-btn"
+                        <a
+                            href="https://t.me/"
+                            target="_blank"
                         >
+                            Open Telegram
+                        </a>
 
-                            Send Message
+                        <p>
+                            Quick communication
+                        </p>
 
-                            <i class="fas fa-paper-plane"
-                               style="margin-left:7px;">
-                            </i>
+                    </div>
 
-                        </button>
+                </div>
 
-                    </form>
+
+
+                <div class="contact-item">
+
+                    <div class="contact-icon">
+                        <i class="fas fa-location-dot"></i>
+                    </div>
+
+                    <div class="contact-details">
+
+                        <h3>
+                            Location
+                        </h3>
+
+                        <span
+                            style="
+                            color:var(--text);
+                            font-size:13px;
+                            "
+                        >
+                            Colombo, Sri Lanka
+                        </span>
+
+                        <p>
+                            Serving clients worldwide
+                        </p>
+
+                    </div>
 
                 </div>
 
 
             </div>
 
-        </div>
-
-    </section>
 
 
+            <div class="contact-card">
 
-    <!-- =========================================================
-         FOOTER
-    ========================================================= -->
+                <h3>
+                    Have a project in mind?
+                </h3>
 
-    <footer>
-
-        <div class="container">
-
-            <div class="footer-content">
-
-
-                <div class="footer-logo">
-
-                    <i class="fas fa-code"></i>
-
-                    CodeSolo
-
-                </div>
+                <p>
+                    Tell us what you want to build and
+                    we'll discuss the best solution for you.
+                </p>
 
 
-                <!-- MOBILE
-                     [card][card][card]
-                -->
-
-                <div class="footer-socials">
-
-                    <a
-                        href="#"
-                        aria-label="Facebook"
-                    >
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
-
+                <div class="contact-cta">
 
                     <a
                         href="mailto:codesolo.dev@gmail.com"
-                        aria-label="Email"
+                        class="button button-primary"
                     >
                         <i class="fas fa-envelope"></i>
+                        Email Us
                     </a>
 
 
                     <a
                         href="https://wa.me/94723032829"
                         target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="WhatsApp"
+                        class="button button-secondary"
                     >
                         <i class="fab fa-whatsapp"></i>
-                    </a>
-
-
-                    <a
-                        href="https://github.com/codesolo7"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="GitHub"
-                    >
-                        <i class="fab fa-github"></i>
+                        WhatsApp
                     </a>
 
                 </div>
 
+            </div>
 
-                <div class="copyright">
 
-                    © 2026 CodeSolo.
-                    All Rights Reserved.
+        </div>
 
-                </div>
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer>
+
+    <div class="container">
+
+        <div class="footer-content">
+
+
+            <div class="footer-brand">
+
+                <a href="#home" class="logo">
+
+                    <i class="fas fa-code"></i>
+
+                    Code<span>Solo</span>
+
+                </a>
+
+                <p>
+                    Building digital solutions from Sri Lanka.
+                </p>
+
+            </div>
+
+
+
+            <div class="social-links">
+
+
+                <a
+                    href="https://www.linkedin.com/in/shahan-iresh-374218374/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="social-link"
+                    aria-label="LinkedIn"
+                >
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+
+
+                <a
+                    href="https://github.com/codesolo7"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="social-link"
+                    aria-label="GitHub"
+                >
+                    <i class="fab fa-github"></i>
+                </a>
+
+
+                <a
+                    href="mailto:codesolo.dev@gmail.com"
+                    class="social-link"
+                    aria-label="Email"
+                >
+                    <i class="fas fa-envelope"></i>
+                </a>
 
 
             </div>
 
+
+
+            <div class="copyright">
+
+                © 2026 CodeSolo.
+                All Rights Reserved.
+
+            </div>
+
+
         </div>
 
-    </footer>
+    </div>
+
+</footer>
 
 
 
-    <!-- =========================================================
-         JAVASCRIPT
-    ========================================================= -->
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
 
-    <script>
-
-        /* =====================================================
-           MOBILE MENU
-        ===================================================== */
-
-        const mobileMenu =
-            document.getElementById("mobileMenu");
-
-        const navLinks =
-            document.getElementById("navLinks");
-
-        const menuIcon =
-            mobileMenu.querySelector("i");
+<script>
 
 
-        mobileMenu.addEventListener("click", () => {
+    /* =========================================================
+       MOBILE MENU
+    ========================================================= */
+
+    const mobileMenuBtn =
+        document.getElementById("mobileMenuBtn");
+
+    const navLinks =
+        document.getElementById("navLinks");
+
+
+    mobileMenuBtn.addEventListener(
+        "click",
+        function () {
 
             navLinks.classList.toggle("active");
 
+            const icon =
+                mobileMenuBtn.querySelector("i");
+
+
             if (navLinks.classList.contains("active")) {
 
-                menuIcon.classList.remove("fa-bars");
+                icon.classList.remove("fa-bars");
 
-                menuIcon.classList.add("fa-xmark");
+                icon.classList.add("fa-xmark");
 
             } else {
 
-                menuIcon.classList.remove("fa-xmark");
+                icon.classList.remove("fa-xmark");
 
-                menuIcon.classList.add("fa-bars");
+                icon.classList.add("fa-bars");
 
             }
+
+        }
+    );
+
+
+    /* Close mobile menu */
+
+    document
+        .querySelectorAll(".nav-links a")
+        .forEach(function (link) {
+
+            link.addEventListener(
+                "click",
+                function () {
+
+                    navLinks.classList.remove("active");
+
+                    const icon =
+                        mobileMenuBtn.querySelector("i");
+
+                    icon.classList.remove("fa-xmark");
+
+                    icon.classList.add("fa-bars");
+
+                }
+            );
 
         });
 
 
-        /* Close mobile menu */
 
-        document
-            .querySelectorAll(".nav-links a")
-            .forEach(link => {
+    /* =========================================================
+       HEADER SCROLL
+    ========================================================= */
 
-                link.addEventListener("click", () => {
-
-                    navLinks.classList.remove("active");
-
-                    menuIcon.classList.remove("fa-xmark");
-
-                    menuIcon.classList.add("fa-bars");
-
-                });
-
-            });
+    const header =
+        document.getElementById("header");
 
 
-
-        /* =====================================================
-           HEADER SCROLL
-        ===================================================== */
-
-        const header =
-            document.getElementById("header");
-
-
-        window.addEventListener("scroll", () => {
+    window.addEventListener(
+        "scroll",
+        function () {
 
             if (window.scrollY > 30) {
 
@@ -2930,101 +3206,141 @@
 
             }
 
-        });
+        }
+    );
 
 
 
-        /* =====================================================
-           PRICING TABS
-        ===================================================== */
+    /* =========================================================
+       READ MORE PROJECTS
+    ========================================================= */
 
-        const tabButtons =
-            document.querySelectorAll(".tab-button");
+    const portfolioGrid =
+        document.getElementById("portfolioGrid");
 
-        const tabContents =
-            document.querySelectorAll(".tab-content");
+    const readMoreBtn =
+        document.getElementById("readMoreBtn");
 
-
-        tabButtons.forEach(button => {
-
-            button.addEventListener("click", () => {
-
-                const target =
-                    button.dataset.tab + "-tab";
+    const readMoreWrapper =
+        document.getElementById("readMoreWrapper");
 
 
-                tabButtons.forEach(btn => {
-
-                    btn.classList.remove("active");
-
-                });
+    const hiddenProjects =
+        document.querySelectorAll(".hidden-project");
 
 
-                tabContents.forEach(content => {
+    /* Hide Read More if there are no hidden projects */
 
-                    content.classList.remove("active");
+    if (hiddenProjects.length === 0) {
 
-                });
+        readMoreWrapper.style.display = "none";
 
-
-                button.classList.add("active");
-
-
-                const selected =
-                    document.getElementById(target);
-
-                if (selected) {
-
-                    selected.classList.add("active");
-
-                }
-
-            });
-
-        });
+    }
 
 
+    readMoreBtn.addEventListener(
+        "click",
+        function () {
 
-        /* =====================================================
-           REVEAL ANIMATION
-        ===================================================== */
-
-        const revealElements =
-            document.querySelectorAll(".reveal");
+            portfolioGrid.classList.toggle("show-all");
 
 
-        const revealObserver =
-            new IntersectionObserver(
-                entries => {
+            if (
+                portfolioGrid.classList.contains("show-all")
+            ) {
 
-                    entries.forEach(entry => {
+                readMoreBtn.innerHTML = `
+                    <span>Show Less</span>
+                    <i class="fas fa-chevron-up"></i>
+                `;
 
-                        if (entry.isIntersecting) {
+            } else {
 
-                            entry.target.classList.add("show");
+                readMoreBtn.innerHTML = `
+                    <span>Read More Projects</span>
+                    <i class="fas fa-chevron-down"></i>
+                `;
 
-                            revealObserver.unobserve(
-                                entry.target
-                            );
 
-                        }
+                /* Scroll back to portfolio */
 
+                document
+                    .getElementById("portfolio")
+                    .scrollIntoView({
+                        behavior: "smooth"
                     });
 
-                },
-                {
-                    threshold: 0.12
+            }
+
+        }
+    );
+
+
+
+    /* =========================================================
+       PRICING TABS
+    ========================================================= */
+
+    const tabButtons =
+        document.querySelectorAll(".tab-button");
+
+    const tabContents =
+        document.querySelectorAll(".tab-content");
+
+
+    tabButtons.forEach(
+        function (button) {
+
+            button.addEventListener(
+                "click",
+                function () {
+
+                    tabButtons.forEach(
+                        function (btn) {
+
+                            btn.classList.remove("active");
+
+                        }
+                    );
+
+
+                    tabContents.forEach(
+                        function (content) {
+
+                            content.classList.remove("active");
+
+                        }
+                    );
+
+
+                    button.classList.add("active");
+
+
+                    const tabName =
+                        button.getAttribute("data-tab");
+
+
+                    const target =
+                        document.getElementById(
+                            tabName + "-tab"
+                        );
+
+
+                    if (target) {
+
+                        target.classList.add("active");
+
+                    }
+
                 }
             );
 
+        }
+    );
 
-        revealElements.forEach(element => {
 
-            revealObserver.observe(element);
+</script>
 
-        });
-
-    </script>
 
 </body>
 </html>
